@@ -78,5 +78,4 @@ public class Building
     {
         this.status = status;
     }
-    
 }
