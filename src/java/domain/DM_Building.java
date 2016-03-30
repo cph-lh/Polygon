@@ -11,7 +11,7 @@ package domain;
  */
 public class DM_Building {
     
-    public String adBuilding(){
+    public void adBuilding(){
         
     }
 }
