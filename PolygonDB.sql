@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS PolygonSafeBuildings;
-Create DATABASE PolygonSafeBuildings;
-use PolygonSafeBuildings;
+DROP DATABASE IF EXISTS PolygonDB;
+Create DATABASE PolygonDB;
+use PolygonDB;
 DROP TABLE IF EXISTS buildings;
 DROP TABLE IF EXISTS customers;
 
