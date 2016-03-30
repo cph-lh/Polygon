@@ -14,7 +14,7 @@ CREATE TABLE buildings	(
     	bStatus INT NOT NULL,
 Primary KEY (bParcel));
 
-CREATE TABLE CUSTOMERS (
+CREATE TABLE customers (
 	cID INT NOT NULL,
 	cName VARCHAR(20) NOT NULL,
     	cAddress VARCHAR(25) NOT NULL,
