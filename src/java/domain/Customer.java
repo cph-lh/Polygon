@@ -1,32 +1,32 @@
 package domain;
 
 public class Customer {
-    String Name;
-    String Address;
+    String name;
+    String address;
     int phone;
     int ID;
     
     public Customer(String Name, String Address, int phone, int ID) {
-        this.Name = Name;
-        this.Address = Address;
+        this.name = Name;
+        this.address = Address;
         this.phone = phone;
         this.ID = ID;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String Address) {
-        this.Address = Address;
+        this.address = Address;
     }
 
     public int getPhone() {
