@@ -23,5 +23,4 @@ CREATE TABLE customers (
 primary key (cID),
 foreign key (bParcel) references buildings(bParcel));
 
-insert into buildings values ();
 insert into customers VALUES ('1111','TestPerson1','22334455','98756','1234');
