@@ -11,7 +11,7 @@ package domain;
  */
 public class DM_Building {
     
-    public String addBuilding(String name, String address, int parcel, int floors, int size, int status){
+    public void addBuilding(String name, String address, int parcel, int floors, int size, int status){
         
         String query = "insert into buildings values('"+name+"','" +address+"','"+ 
                                 parcel+"','"+ floors+"','"+size+"','"+status+"')";
