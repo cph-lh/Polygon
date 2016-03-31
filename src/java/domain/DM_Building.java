@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class DM_Building {
 
 
-    public void addBuilding(int id, String name, String address, String city, int zip, int parcel, int size, int floors, int status)
+    public void addBuilding(int id, String name, String address, String city, int zip, int parcel, int size)
     {
         try
         {
