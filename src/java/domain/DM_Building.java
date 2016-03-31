@@ -16,7 +16,7 @@ public class DM_Building {
         String query = "insert into buildings values('"+name+"','" +address+"','"+ 
                                 parcel+"','"+ floors+"','"+size+"','"+status+"')";
                             
-        stmt.executeUpdate(query);
+        //stmt.executeUpdate(query);
         return query;
     }
 }
