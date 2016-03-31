@@ -9,6 +9,7 @@
     <body>
         <h1>Add Building</h1>
         <form name="addBuilding" action="ControllerServlet" method="post">
+            Customer ID:<input type="text" name="cID"><br>
             Building name:<input type="text" name="bName"><br>
             Address:<input type="text" name="bAddress"><br>
             Zipcode:<input type="text" name="bZip"><br>
