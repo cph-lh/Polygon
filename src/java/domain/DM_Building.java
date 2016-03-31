@@ -2,24 +2,22 @@ package domain;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DM_Building {
 
-    Statement stmt;
 
-    public String addBuilding(int id, String name, String address, int zip, String city, int parcel, int size)
+    public void addBuilding(int id, String name, String address, String city, int zip, int parcel, int size)
     {
         try
         {
             String query = "insert into buildings values('" + id + "','" + name + "','"
-                    + address + "','" + zip + "','" + city + "','" + parcel + "','"+ size +"')";
-           
+                    + address + "','" + city + "','" + zip + "','" + parcel + "','"+ size +"')";
+        
+            new Connector().connect().createStatement().executeUpdate(query);
+            
         } catch (SQLException ex)
         {
-            Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
+            ex.printStackTrace();
         }
     }
 
@@ -41,7 +39,7 @@ public class DM_Building {
         int floors = 0;
         int status = 0;
 
-        while (res.next())
+/*        while (res.next())
         {
             try
             {
@@ -62,7 +60,7 @@ public class DM_Building {
                 Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
-        return buildingList;
+*/
+        return null;
     }
 }
