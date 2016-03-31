@@ -37,8 +37,7 @@ public class ControllerServlet extends HttpServlet
                     String city = request.getParameter("bCity");
                     String parcel = request.getParameter("bParcel");
                     String size = request.getParameter("bSize");
-                    //String id = 
-                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), city, Integer.parseInt(parcel), Integer.parseInt(size));
+                    f.addBuilding(Integer.parseInt(id), name, address, city, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/viewBuilding.jsp");
             }
         }
