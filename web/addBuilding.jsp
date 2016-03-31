@@ -1,10 +1,5 @@
-<%-- 
-    Document   : addBuilding
-    Created on : 31-03-2016, 09:35:14
-    Author     : Jmach
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="domain.Facade"%>
 <!DOCTYPE html>
 <html>
     <head>
