@@ -12,6 +12,17 @@ public class Building
     int floors;
     int status;
 
+    public Building(int cID, String name, String address, int zip, String city, int parcel, int size)
+    {
+        this.cID = cID;
+        this.name = name;
+        this.address = address;
+        this.zip = zip;
+        this.city = city;
+        this.parcel = parcel;
+        this.size = size;
+    }
+    
     public Building(int cID, String name, String address, int zip, String city, int parcel, int size, int floors, int status)
     {
         this.cID = cID;
