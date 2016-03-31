@@ -2,21 +2,37 @@ package domain;
 
 public class Building
 {
+    int cID;
     String name;
     String address;
-    int parcel;
-    int floors;
+    String city;
+    int zip;
+    int parcel;   
     int size;
+    int floors;
     int status;
 
-    public Building(String name, String address, int parcel, int floors, int size, int status)
+    public Building(int cID, String name, String address, int zip, String city, int parcel, int size, int floors, int status)
     {
+        this.cID = cID;
         this.name = name;
         this.address = address;
+        this.zip = zip;
+        this.city = city;
         this.parcel = parcel;
-        this.floors = floors;
         this.size = size;
+        this.floors = floors;
         this.status = status;
+    }
+
+    public int getcID()
+    {
+        return cID;
+    }
+
+    public void setcID(int cID)
+    {
+        this.cID = cID;
     }
 
     public String getName()
@@ -42,6 +58,26 @@ public class Building
     public int getParcel()
     {
         return parcel;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public int getZip()
+    {
+        return zip;
+    }
+
+    public void setZip(int zip)
+    {
+        this.zip = zip;
     }
 
     public void setParcel(int parcel)
