@@ -10,9 +10,9 @@ public class DM_Building {
     {
         try
         {
-            String query = "insert into buildings values('" + id + "','" + name + "','"
+            String query = "insert into buildings(cID,bName,bAddress,bCity,bZip,bParcel,bSize)"
+                    + " values('" + id + "','" + name + "','"
                     + address + "','" + city + "','" + zip + "','" + parcel + "','"+ size +"')";
-        
             new Connector().connect().createStatement().executeUpdate(query);
             
         } catch (SQLException ex)
