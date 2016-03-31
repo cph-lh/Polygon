@@ -8,7 +8,7 @@ public class DM_Building {
 
     Statement stmt;
 
-    public String addBuilding(int id, String name, String address, int zip, String city, int parcel, int floors, int size, int status)
+    public String addBuilding(int id, String name, String address, int zip, String city, int parcel, int size)
     {
         try
         {
