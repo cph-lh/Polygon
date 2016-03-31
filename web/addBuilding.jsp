@@ -4,16 +4,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customers add building</title>
+        <title>Polygon - Customer</title>
     </head>
     <body>
         <h1>Add Building</h1>
         <form name="addBuilding" action="ControllerServlet" method="post">
-            Building name: <input type="text" name="bName"><br>
-            Building address:<input type="text" name="bAdress"><br>
-            Parcel no.:<input type="number" name="bFloors"><br>
-            Building size:<input type="number" name="bSize"><br>
+            Building name:<input type="text" name="bName"><br>
+            Address:<input type="text" name="bAddress"><br>
+            Zipcode:<input type="text" name="bZip"><br>
+            City:<input type="text" name="bCity"><br>
+            Parcel no.:<input type="text" name="bParcel"><br>
+            Size:<input type="text" name="bSize"><br>
             <input type="submit" value="Confirm">
+            <input type="hidden" name="do_this" value="addBuilding">
         </form>
     </body>
 </html>
