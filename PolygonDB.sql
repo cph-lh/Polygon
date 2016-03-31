@@ -6,8 +6,9 @@ DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers (
         cID INT NOT NULL,
-		cName VARCHAR(20) NOT NULL,
+        cName VARCHAR(20) NOT NULL,
         cPhone INT(8),
+        cAddress VARCHAR(25),
         cPassword VARCHAR (15),
 primary key (cID));
 
