@@ -9,7 +9,7 @@ CREATE TABLE buildings	(
 	bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
     	bParcel INT NOT NULL,
-    	bFloors INT NOT NULL,
+    	bFloors INT default null,
     	bSize INT NOT NULL,
     	bStatus INT default NULL,
 Primary KEY (bParcel));
