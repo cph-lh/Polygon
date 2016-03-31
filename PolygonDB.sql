@@ -9,16 +9,16 @@ CREATE TABLE buildings	(
 	bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
     	bParcel INT NOT NULL,
-    	bFloors INT NOT NULL,
+    	bFloors INT default null,
     	bSize INT NOT NULL,
-    	bStatus INT NOT NULL,
+    	bStatus INT default NULL,
 Primary KEY (bParcel));
 
 CREATE TABLE customers (
         cID INT NOT NULL,
-	cName VARCHAR(20) NOT NULL,
+		cName VARCHAR(20) NOT NULL,
         cPhone INT(8),
-	bParcel INT NOT NULL,
+		bParcel INT NOT NULL,
         cPassword VARCHAR (15),
 primary key (cID),
 foreign key (bParcel) references buildings(bParcel));
