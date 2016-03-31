@@ -8,12 +8,12 @@ public class DM_Building {
 
     Statement stmt;
 
-    public String addBuilding(String name, String address, int parcel, int floors, int size, int status)
+    public String addBuilding(int id, String name, String address, int zip, String city, int parcel, int floors, int size, int status)
     {
         try
         {
-            String query = "insert into buildings values('" + name + "','" + address + "','"
-                    + parcel + "','" + floors + "','" + size + "','" + status + "')";
+            String query = "insert into buildings values('" + id + "','" + name + "','"
+                    + address + "','" + zip + "','" + city + "','" + parcel + "','"+ size +"')";
 
             stmt.executeUpdate(query);
             return query;
