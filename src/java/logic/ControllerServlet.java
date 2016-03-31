@@ -30,12 +30,15 @@ public class ControllerServlet extends HttpServlet
             switch(request.getParameter("do_this"))
             {
                 case "addBuilding":
+                    String id = request.getParameter("cID");
                     String name = request.getParameter("bName");
                     String address = request.getParameter("bAddress");
+                    String zip = request.getParameter("bZip");
+                    String city = request.getParameter("bCity");
                     String parcel = request.getParameter("bParcel");
                     String size = request.getParameter("bSize");
                     //String id = 
-                    //f.addBuilding(name, address, Integer.parseInt(parcel), Integer.parseInt(size));
+                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), city, Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/viewBuilding.jsp");
             }
         }
