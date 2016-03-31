@@ -43,7 +43,7 @@ public class DM_Building {
         int floors = 0;
         int status = 0;
 
-        while (res.next())
+/*        while (res.next())
         {
             try
             {
@@ -64,7 +64,7 @@ public class DM_Building {
                 Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
-        return buildingList;
+*/
+        return null;
     }
 }
