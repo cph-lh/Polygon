@@ -15,9 +15,7 @@ public class DM_Building {
         {
             String query = "insert into buildings values('" + id + "','" + name + "','"
                     + address + "','" + zip + "','" + city + "','" + parcel + "','"+ size +"')";
-
-            stmt.executeUpdate(query);
-            return query;
+           
         } catch (SQLException ex)
         {
             Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
