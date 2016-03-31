@@ -5,28 +5,30 @@ public class Customer {
     String address;
     int phone;
     int ID;
-    
-    public Customer(String Name, String Address, int phone, int ID) {
-        this.name = Name;
-        this.address = Address;
+    String password;
+
+    public Customer(String name, String address, int phone, int ID, String password) {
+        this.name = name;
+        this.address = address;
         this.phone = phone;
         this.ID = ID;
+        this.password = password;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String Name) {
-        this.name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String Address) {
-        this.address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getPhone() {
@@ -44,5 +46,14 @@ public class Customer {
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
 }
+    
