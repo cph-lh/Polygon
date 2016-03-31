@@ -15,6 +15,8 @@ primary key (cID));
 CREATE TABLE buildings	(
 	bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
+        bCity VARCHAR (20) NOT NULL,
+        bZip INT (4) NOT NULL,
     	bParcel INT NOT NULL,
     	bFloors INT default null,
         cID INT NOT NULL,
