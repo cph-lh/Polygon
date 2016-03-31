@@ -4,23 +4,22 @@ use PolygonDB;
 DROP TABLE IF EXISTS buildings;
 DROP TABLE IF EXISTS customers;
 
+CREATE TABLE customers (
+        cID INT NOT NULL,
+		cName VARCHAR(20) NOT NULL,
+        cPhone INT(8),
+        cPassword VARCHAR (15),
+primary key (cID));
 
 CREATE TABLE buildings	(
 	bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
     	bParcel INT NOT NULL,
     	bFloors INT default null,
+        cID INT NOT NULL,
     	bSize INT NOT NULL,
     	bStatus INT default NULL,
-Primary KEY (bParcel));
+foreign key (cID) references customers(cID));
 
-CREATE TABLE customers (
-        cID INT NOT NULL,
-		cName VARCHAR(20) NOT NULL,
-        cPhone INT(8),
-		bParcel INT NOT NULL,
-        cPassword VARCHAR (15),
-primary key (cID),
-foreign key (bParcel) references buildings(bParcel));
-
-insert into customers VALUES ('1111','TestPerson1','22334455','98756','1234');
+insert into customers VALUES ('1111','TestPerson1','22334455','1234');
+select * from customers; 
