@@ -30,6 +30,7 @@ public class DM_Building {
         } catch (SQLException ex)
         {
             Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
     }
 }
