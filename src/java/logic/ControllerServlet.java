@@ -3,6 +3,8 @@ package logic;
 import domain.Facade;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +29,14 @@ public class ControllerServlet extends HttpServlet
         {
             switch(request.getParameter("do_this"))
             {
-                case "createBuilding":
+                case "addBuilding":
+                    String name = request.getParameter("bName");
+                    String address = request.getParameter("bAddress");
+                    String parcel = request.getParameter("bParcel");
+                    String size = request.getParameter("bSize");
+                    //String id = 
+                    //f.addBuilding(name, address, Integer.parseInt(parcel), Integer.parseInt(size));
+                    forward(request, response, "/viewBuilding.jsp");
             }
         }
     }
@@ -74,4 +83,10 @@ public class ControllerServlet extends HttpServlet
         return "Short description";
     }// </editor-fold>
 
+    private void forward(HttpServletRequest req, HttpServletResponse res, String path) throws IOException, ServletException
+    {
+        ServletContext sc = getServletContext();
+        RequestDispatcher rd = sc.getRequestDispatcher(path);
+        rd.forward(req, res);
+    }
 }
