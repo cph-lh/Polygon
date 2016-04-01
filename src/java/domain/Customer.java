@@ -3,16 +3,29 @@ package domain;
 public class Customer {
     String name;
     String address;
+    int zip;
+    String city;
     int phone;
     int ID;
     String password;
 
-    public Customer(String name, String address, int phone, int ID, String password) {
+    public Customer(int ID, String name, String address, int zip, String city, int phone, String password) {
+        this.ID = ID;
         this.name = name;
         this.address = address;
+        this.zip = zip;
+        this.city = city;
         this.phone = phone;
-        this.ID = ID;
         this.password = password;
+    }
+    
+    public Customer(int ID, String name, String address, int zip, String city, int phone) {
+        this.ID = ID;
+        this.name = name;
+        this.address = address;
+        this.zip = zip;
+        this.city = city;
+        this.phone = phone;
     }
 
     public String getName() {
@@ -54,6 +67,25 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public int getZip()
+    {
+        return zip;
+    }
+
+    public void setZip(int zip)
+    {
+        this.zip = zip;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }  
 }
     
