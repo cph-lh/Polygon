@@ -18,12 +18,13 @@ public class DM_Building {
 
         } catch (SQLException ex)
         {
-            ex.printStackTrace();
+            Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public ArrayList<Building> buildings(int cID)
     {
+
         try
         {
             ArrayList<Building> buildingList = new ArrayList();
@@ -34,6 +35,7 @@ public class DM_Building {
 
             while (res.next())
             {
+
                 String name = res.getString("bName");
                 String address = res.getString("bAddress");
                 String city = res.getString("bCity");
