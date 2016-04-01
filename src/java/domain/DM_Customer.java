@@ -6,12 +6,12 @@ import java.util.logging.Logger;
 
 public class DM_Customer {
     
-    public void addCustomer(int id, String name, String address, int zip, String city, int phone, String password)
+    public void addCustomer(int id, String name, String address, int zip, int phone, String password)
     {
         try
         {
             String query = "insert into buildings values('" + id + "','" + name + "','"
-                    + address + "','" + zip + "','" + city + "','" + phone +"')";
+                    + address + "','" + zip +"'','" + phone +"')";
 
             new Connector().connect().createStatement().executeUpdate(query);
             

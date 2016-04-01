@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 
 public class DM_Building {
 
-    public void addBuilding(int id, String name, String address, String city, int zip, int parcel, int size)
+    public void addBuilding(int id, String name, String address, int zip, int parcel, int size)
     {
         try
         {
-            String query = "insert into buildings(cID,bName,bAddress,bCity,bZip,bParcel,bSize)"
+            String query = "insert into buildings(cID,bName,bAddress,bZip,bParcel,bSize)"
                     + " values('" + id + "','" + name + "','"
-                    + address + "','" + city + "','" + zip + "','" + parcel + "','" + size + "')";
+                    + address + "','" + zip + "','" + parcel + "','" + size + "')";
             new Connector().connect().createStatement().executeUpdate(query);
 
         } catch (SQLException ex)

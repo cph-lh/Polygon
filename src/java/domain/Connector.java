@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class Connector
 {
-    private final String username = "root";
-    private final String password = "1234";
-    private final String host = "localhost";
+    private final String username = "root"; //sql7113086
+    private final String password = "1234"; //kbHfiyC5dS
+    private final String host = "localhost"; //sql7.freemysqlhosting.net
     private final String port = "3306";
-    private final String db = "PolygonDB";
+    private final String db = "PolygonDB"; //sql7113086
     Connection con;
 
     public Connection connect() throws SQLException 

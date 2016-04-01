@@ -13,7 +13,6 @@
             Building name:<input type="text" name="bName"><br>
             Address:<input type="text" name="bAddress"><br>
             Zipcode:<input type="text" name="bZip"><br>
-            City:<input type="text" name="bCity"><br>
             Parcel no.:<input type="text" name="bParcel"><br>
             Size:<input type="text" name="bSize"><br>
             <input type="submit" value="Confirm">

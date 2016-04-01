@@ -34,11 +34,12 @@ public class ControllerServlet extends HttpServlet
                     String name = request.getParameter("bName");
                     String address = request.getParameter("bAddress");
                     String zip = request.getParameter("bZip");
-                    String city = request.getParameter("bCity");
                     String parcel = request.getParameter("bParcel");
                     String size = request.getParameter("bSize");
-                    f.addBuilding(Integer.parseInt(id), name, address, city, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
+                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/viewBuilding.jsp");
+                case "viewBuilding":
+                case "addCustomer":
             }
         }
     }
