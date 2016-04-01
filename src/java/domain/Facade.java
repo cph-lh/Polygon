@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.ArrayList;
+
 public class Facade
 {
     DM_Building bdm = new DM_Building();
@@ -13,5 +15,9 @@ public class Facade
     public void addCustomer(int id, String name, String address, int zip, String city, int phone)
     {
         cdm.addCustomer(id, name, address, zip, city, phone, address);
+    }
+    
+    public ArrayList<Building> viewBuilding(int cID){
+       return bdm.buildings(cID);
     }
 }
