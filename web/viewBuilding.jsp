@@ -37,7 +37,7 @@
             </thead>
             
             <tbody>
-                <% for(Building b : f.viewBuilding(cID))
+                <% for(Building b : f.viewBuilding(1111))
                   {   
                  %>
                 <tr>

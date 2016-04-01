@@ -39,6 +39,7 @@ public class ControllerServlet extends HttpServlet
                     f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/viewBuilding.jsp");
                 case "viewBuilding":
+                    id = request.getParameter("cID");
                 case "addCustomer":
             }
         }
