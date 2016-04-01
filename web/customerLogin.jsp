@@ -15,7 +15,7 @@
         <h1>Login</h1>
         <form name="cLogin" action="ControllerServlet" method="post">
             Name:<input type="text" name="name"><br>
-            Password:<input type="text" name="pwd"><br>
+            Password:<input type="password" name="pwd"><br>
             <input type="submit" value="Login">
         </form>
     </body>

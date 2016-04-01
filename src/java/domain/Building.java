@@ -9,6 +9,8 @@ public class Building
     int zip;
     int parcel;   
     int size;
+    int floors;
+    int status;
 
 
     public Building(int cID, String name, String address, int zip, String city, int parcel, int size)
@@ -22,7 +24,7 @@ public class Building
         this.size = size;
     }
     
-    /*public Building(int cID, String name, String address, int zip, String city, int parcel, int size, int floors, int status)
+    public Building(int cID, String name, String address, int zip, String city, int parcel, int size, int floors, int status)
     {
         this.cID = cID;
         this.name = name;
@@ -33,7 +35,7 @@ public class Building
         this.size = size;
         this.floors = floors;
         this.status = status;
-    }*/
+    }
 
     public int getcID()
     {
@@ -95,15 +97,15 @@ public class Building
         this.parcel = parcel;
     }
 
-//    public int getFloors()
-//    {
-//        return floors;
-//    }
+    public int getFloors()
+    {
+        return floors;
+    }
 
-//    public void setFloors(int floors)
-//    {
-//        this.floors = floors;
-//    }
+    public void setFloors(int floors)
+    {
+        this.floors = floors;
+    }
 
     public int getSize()
     {
@@ -115,13 +117,13 @@ public class Building
         this.size = size;
     }
 
-//    public int getStatus()
-//    {
-//        return status;
-//    }
-//
-//    public void setStatus(int status)
-//    {
-//        this.status = status;
-//    }
+    public int getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(int status)
+    {
+        this.status = status;
+    }
 }
