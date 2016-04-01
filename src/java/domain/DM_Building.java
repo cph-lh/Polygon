@@ -24,7 +24,6 @@ public class DM_Building {
 
     public ArrayList<Building> buildings(int cID)
     {
-
         try
         {
             ArrayList<Building> buildingList = new ArrayList();
@@ -53,6 +52,7 @@ public class DM_Building {
         } catch (SQLException ex)
         {
             Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
+            
             return null;
         }
     }

@@ -19,7 +19,7 @@ CREATE TABLE customers (
         cZip INT(4),
         cPassword VARCHAR (15),
 primary key (cID),
-foreign key(zip) references zipcodes(zip));
+foreign key(cZip) references zipcodes(zip));
 
 
 CREATE TABLE buildings	(
@@ -32,7 +32,7 @@ CREATE TABLE buildings	(
     	bSize INT NOT NULL,
         bFloors INT default null,
         bStatus INT default NULL,
-foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
+foreign key (cID) references customers(cID), foreign key(bZip) references zipcodes(zip));
 
 insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','kbh','2222','1234');
 select * from customers;
