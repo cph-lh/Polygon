@@ -4,6 +4,12 @@ use PolygonDB;
 DROP TABLE IF EXISTS buildings;
 DROP TABLE IF EXISTS customers;
 
+CREATE TABLE zipcodes (
+        city    VARCHAR(25),
+        zip     INT(4),
+primary key (zip));
+
+
 CREATE TABLE customers (
         cID INT NOT NULL,
         cName VARCHAR(20) NOT NULL,
@@ -12,7 +18,9 @@ CREATE TABLE customers (
         cCity VARCHAR (25),
         cZip INT(4),
         cPassword VARCHAR (15),
-primary key (cID));
+primary key (cID),
+foreign key(zip) references zipcodes(zip));
+
 
 CREATE TABLE buildings	(
 	cID INT NOT NULL,
@@ -24,7 +32,7 @@ CREATE TABLE buildings	(
     	bSize INT NOT NULL,
         bFloors INT default null,
         bStatus INT default NULL,
-foreign key (cID) references customers(cID));
+foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
 
 insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','kbh','2222','1234');
 select * from customers;
