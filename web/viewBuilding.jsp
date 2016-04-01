@@ -4,7 +4,10 @@
     Author     : Andreas
 --%>
 
+<%@page import="domain.Building"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="domain.Facade" %>
+<% Facade f = new Facade(); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,5 +22,38 @@
             <input type="submit" value="View Buildings">
             <input type="hidden" name="do_this" value="addbuilding">
         </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>cID</th>
+                    <th>bName</th>
+                    <th>bAddress</th>
+                    <th>bZip</th>
+                    <th>bParcel</th>
+                    <th>bSize</th>
+                    <th>bFloors</th>
+                    <th>bStatus</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% for(Building b : f.viewBuilding(cID))
+                  {   
+                 %>
+                <tr>
+                    <td><%= b.getcID() %></td>
+                    <td><%= b.getName() %></td>
+                    <td><%= b.getAddress() %></td>
+                    <td><%= b.getZip() %></td>
+                    <td><%= b.getParcel() %></td>
+                    <td><%= b.getSize() %></td>
+                    <td><%= b.getFloors() %></td>
+                    <td><%= b.getStatus() %></td>                    
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </table>
     </body>
 </html>
