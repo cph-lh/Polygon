@@ -18,7 +18,7 @@ public class Facade
     }
     
     public ArrayList<Building> viewBuilding(int cID){
-       return bdm.buildings(cID);
+       return bdm.viewBuildings(cID);
     }
     
     public Customer getCustomer(int cID)

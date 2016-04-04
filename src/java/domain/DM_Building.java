@@ -22,7 +22,7 @@ public class DM_Building {
         }
     }
 
-    public ArrayList<Building> buildings(int cID)
+    public ArrayList<Building> viewBuildings(int cID)
     {
         try
         {

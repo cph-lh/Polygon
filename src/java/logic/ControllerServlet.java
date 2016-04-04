@@ -1,5 +1,6 @@
 package logic;
 
+import domain.Customer;
 import domain.Facade;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,6 +49,19 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("cZip");
                     String password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
+                case "login":
+                    String cID = request.getParameter("cID");
+                    Customer c = f.getCustomer(Integer.parseInt(cID));
+                if(c != null && c.getPassword().equals(request.getParameter("pwd")))
+                {
+                    request.getSession().setAttribute("title", c.getName());
+                    forward(request,response,"/customerPage.jsp");
+                }
+                else
+                {
+                    forward(request,response,"/customerLogin.jsp");
+                }
+                break;
             }
         }
     }
