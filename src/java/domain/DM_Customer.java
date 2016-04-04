@@ -25,6 +25,7 @@ public class DM_Customer {
     {        
         try
         {
+            System.out.println("******1******");
             Connection con = new Connector().connect();
             Statement state =  con.createStatement();
         
@@ -33,7 +34,7 @@ public class DM_Customer {
         
             if(res.next())
             {
-                Customer c = new Customer(res.getInt(1),res.getString(2),res.getString(3), res.getInt(4),res.getString(5),res.getInt(6),res.getString(7));
+                Customer c = new Customer(res.getInt(1),res.getString(2),res.getInt(3), res.getString(4),res.getInt(5),res.getString(6));
                 return c;
             }
         }

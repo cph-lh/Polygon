@@ -9,7 +9,7 @@ public class Customer {
     int ID;
     String password;
 
-    public Customer(int ID, String name, String address, int zip, String city, int phone, String password) {
+    public Customer(int ID, String name, int phone, String address, int zip, String password) {
         this.ID = ID;
         this.name = name;
         this.address = address;
@@ -19,7 +19,7 @@ public class Customer {
         this.password = password;
     }
     
-    public Customer(int ID, String name, String address, int zip, String city, int phone) {
+    public Customer(int ID, String name, int phone, String address, String city) {
         this.ID = ID;
         this.name = name;
         this.address = address;

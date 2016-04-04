@@ -52,6 +52,7 @@ public class ControllerServlet extends HttpServlet
                     String password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
                 case "login":
+                    System.out.println("*******2*******");
                     String cID = request.getParameter("cID");
                     Customer c = f.getCustomer(Integer.parseInt(cID));
                     if (c != null && c.getPassword().equals(request.getParameter("pwd")))
