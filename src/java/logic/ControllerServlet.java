@@ -10,10 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-    
+
 public class ControllerServlet extends HttpServlet
 {
+
     Facade f = new Facade();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -26,9 +28,9 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        try(PrintWriter out = response.getWriter())
+        try (PrintWriter out = response.getWriter())
         {
-            switch(request.getParameter("do_this"))
+            switch (request.getParameter("do_this"))
             {
                 case "addBuilding":
                     String id = request.getParameter("cID");
@@ -40,7 +42,7 @@ public class ControllerServlet extends HttpServlet
                     f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/viewBuilding.jsp");
                 case "viewBuilding":
-                    id = request.getParameter("cID");
+                    //id = request.getParameter("cID");
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
@@ -52,16 +54,15 @@ public class ControllerServlet extends HttpServlet
                 case "login":
                     String cID = request.getParameter("cID");
                     Customer c = f.getCustomer(Integer.parseInt(cID));
-                if(c != null && c.getPassword().equals(request.getParameter("pwd")))
-                {
-                    request.getSession().setAttribute("title", c.getName());
-                    forward(request,response,"/customerPage.jsp");
-                }
-                else
-                {
-                    forward(request,response,"/customerLogin.jsp");
-                }
-                break;
+                    if (c != null && c.getPassword().equals(request.getParameter("pwd")))
+                    {
+                        request.getSession().setAttribute("title", c.getName());
+                        forward(request, response, "/customerPage.jsp");
+                    } else
+                    {
+                        forward(request, response, "/customerLogin.jsp");
+                    }
+                    break;
             }
         }
     }

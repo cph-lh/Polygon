@@ -6,6 +6,6 @@
         <title>Polygon - Customer <%= session.getAttribute("cID")%></title>
     </head>
     <body>
-        <h1></h1>
+        <h1>Welcome,<%= session.getAttribute("title")%></h1>
     </body>
 </html>

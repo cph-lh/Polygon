@@ -28,7 +28,7 @@ public class DM_Customer {
             Connection con = new Connector().connect();
             Statement state =  con.createStatement();
         
-            String query = "select  from customers where cID = '"+cID+"';";
+            String query = "select * from customers where cID = '"+cID+"';";
             ResultSet res = state.executeQuery(query);
         
             if(res.next())
