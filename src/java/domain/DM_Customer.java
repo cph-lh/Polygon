@@ -44,4 +44,8 @@ public class DM_Customer {
         }
         return null;
     }
+    
+    public void deleteCustomer(int cID){
+        
+    }
 }
