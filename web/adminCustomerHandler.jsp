@@ -14,12 +14,12 @@
     <body>
         <h1>Admin Page</h1>
         <form name="addOrDelete" action="ControllerServlet" method="post">
-            Customer ID: <input type="text" name="cID">
-            Customer Name: <input type="text" name="cName">
-            Customer phone: <input type="text" name="cPhone">
-            Customer Address: <input type="text" name="cAddress">
-            Customer Zip: <input type="text" name="cZip">
-            Customer password: <input type="text" name="cPassword">
+            Customer ID: <input type="text" name="cID"><br>
+            Customer Name: <input type="text" name="cName"><br>
+            Customer phone: <input type="text" name="cPhone"><br>
+            Customer Address: <input type="text" name="cAddress"><br>
+            Customer Zip: <input type="text" name="cZip"><br>
+            Customer password: <input type="text" name="cPassword"><br>
             <input type="submit" value="add customer">
             <input type="hidden" name="do_this" value="add customer">
         </form>
