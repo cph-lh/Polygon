@@ -9,7 +9,6 @@ CREATE TABLE zipcodes (
         city    VARCHAR(25),        
 primary key (zip));
 
-
 CREATE TABLE customers (
         cID INT NOT NULL,
         cName VARCHAR(20) NOT NULL,
@@ -19,7 +18,6 @@ CREATE TABLE customers (
         cPassword VARCHAR (15),
 primary key (cID),
 foreign key(cZip) references zipcodes(zip));
-
 
 CREATE TABLE buildings	(
 	cID INT NOT NULL,
@@ -31,7 +29,6 @@ CREATE TABLE buildings	(
         bFloors INT default null,
         bStatus INT default NULL,
 foreign key (cID) references customers(cID), foreign key(bZip) references zipcodes(zip));
-
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
 INSERT INTO zipcodes VALUES ('0877', 'Valby');
