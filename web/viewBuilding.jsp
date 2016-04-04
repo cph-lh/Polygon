@@ -1,9 +1,3 @@
-<%-- 
-    Document   : viewBuilding
-    Created on : Mar 31, 2016, 12:04:33 PM
-    Author     : Andreas
---%>
-
 <%@page import="domain.Building"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="domain.Facade" %>
@@ -12,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Buildings</title>
+        <title>Polygon - Customer</title>
     </head>
     <body>
         <h1>View Buildings</h1>
@@ -25,14 +19,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>cID</th>
-                    <th>bName</th>
-                    <th>bAddress</th>
-                    <th>bZip</th>
-                    <th>bParcel</th>
-                    <th>bSize</th>
-                    <th>bFloors</th>
-                    <th>bStatus</th>
+                    <th>cID&#160</th>
+                    <th>bName&#160</th>
+                    <th>bAddress&#160</th>
+                    <th>bZip&#160</th>
+                    <th>bParcel&#160</th>
+                    <th>bSize&#160</th>
+                    <th>bFloors&#160</th>
+                    <th>bStatus&#160</th>
                 </tr>
             </thead>
             

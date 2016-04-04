@@ -1,22 +1,17 @@
-<%-- 
-    Document   : customerLogin
-    Created on : 31-03-2016, 10:35:07
-    Author     : Jmach
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CustomerLogin</title>
+        <title>Polygon - Customer login</title>
     </head>
     <body>
         <h1>Login</h1>
         <form name="cLogin" action="ControllerServlet" method="post">
-            Name:<input type="text" name="name"><br>
+            Customer ID:<input type="text" name="cID"><br>
             Password:<input type="password" name="pwd"><br>
             <input type="submit" value="Login">
+            <input type="hidden" value="login" name="do_this">
         </form>
     </body>
 </html>
