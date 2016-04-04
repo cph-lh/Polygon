@@ -20,7 +20,7 @@
             Customer ID<br> 
             <input type="text" name="viewBuilding"><br>
             <input type="submit" value="View Buildings">
-            <input type="hidden" name="do_this" value="addbuilding">
+            <input type="hidden" name="do_this" value="viewBuilding">
         </form>
         <table>
             <thead>
