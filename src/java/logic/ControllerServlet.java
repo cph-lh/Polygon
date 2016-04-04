@@ -41,6 +41,13 @@ public class ControllerServlet extends HttpServlet
                 case "viewBuilding":
                     id = request.getParameter("cID");
                 case "addCustomer":
+                    id = request.getParameter("cID");
+                    name = request.getParameter("cName");
+                    String phone = request.getParameter("cPhone");
+                    address = request.getParameter("cAddress");
+                    zip = request.getParameter("cZip");
+                    String password = request.getParameter("cPassword");
+                    
             }
         }
     }
