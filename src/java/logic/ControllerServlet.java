@@ -47,7 +47,7 @@ public class ControllerServlet extends HttpServlet
                     address = request.getParameter("cAddress");
                     zip = request.getParameter("cZip");
                     String password = request.getParameter("cPassword");
-                    
+                    f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
             }
         }
     }
