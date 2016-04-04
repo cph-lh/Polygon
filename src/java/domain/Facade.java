@@ -12,9 +12,9 @@ public class Facade
         bdm.addBuilding(id, name, address, zip, parcel, size);
     }
     
-    public void addCustomer(int id, String name, String address, int zip, int phone)
+    public void addCustomer(int id, String name, String address, int zip, int phone, String password)
     {
-        cdm.addCustomer(id, name, address, zip, phone, address);
+        cdm.addCustomer(id, name, address, zip, phone, password);
     }
     
     public ArrayList<Building> viewBuilding(int cID){
