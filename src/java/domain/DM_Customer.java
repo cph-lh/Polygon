@@ -25,7 +25,6 @@ public class DM_Customer {
     {        
         try
         {
-            System.out.println("******1******");
             Connection con = new Connector().connect();
             Statement state =  con.createStatement();
         
@@ -47,6 +46,15 @@ public class DM_Customer {
     }
     
     public void deleteCustomer(int cID){
-        
+         try
+        {
+            String query = "delete from customers where cID = '" + cID + "';";
+
+            new Connector().connect().createStatement().executeUpdate(query);
+            
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
