@@ -43,5 +43,8 @@
                 %>
             </tbody>
         </table>
+            <form action="customerPage.jsp" method="post">
+        <input type="button" value="Back" onClick="history.go(-1);return true;"> 
+        </form>
     </body>
 </html>
