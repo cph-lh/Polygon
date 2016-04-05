@@ -28,36 +28,47 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+        String id, name, address, zip, parcel, size, phone, password;
         try (PrintWriter out = response.getWriter())
         {
             switch (request.getParameter("do_this"))
-            {
+            {   
+                case "customerButtons":
+                    switch(request.getParameter("button"))
+                    {
+                        case "Add new building":
+                            forward(request, response, "/addBuilding.jsp");
+                            break;
+                        case "View buildings":  
+                            forward(request, response, "/viewBuilding.jsp");
+                            break;
+                    }
+                    break;
                 case "addBuilding":
-                    String id = request.getParameter("cID");
-                    String name = request.getParameter("bName");
-                    String address = request.getParameter("bAddress");
-                    String zip = request.getParameter("bZip");
-                    String parcel = request.getParameter("bParcel");
-                    String size = request.getParameter("bSize");
-                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
-                    forward(request, response, "/viewBuilding.jsp");
-                case "viewBuilding":
-                    //id = request.getParameter("cID");
+                    id = request.getParameter("cID");
+                    name = request.getParameter("bName");
+                    address = request.getParameter("bAddress");
+                    zip = request.getParameter("bZip");
+                    parcel = request.getParameter("bParcel");
+                    size = request.getParameter("bSize");
+                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));                  
+                    break;
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
-                    String phone = request.getParameter("cPhone");
+                    phone = request.getParameter("cPhone");
                     address = request.getParameter("cAddress");
                     zip = request.getParameter("cZip");
-                    String password = request.getParameter("cPassword");
+                    password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
+                    break;
                 case "login":
-                    System.out.println("*******2*******");
-                    String cID = request.getParameter("cID");
-                    Customer c = f.getCustomer(Integer.parseInt(cID));
+                    id = request.getParameter("cID");
+                    Customer c = f.getCustomer(Integer.parseInt(id));
                     if (c != null && c.getPassword().equals(request.getParameter("pwd")))
                     {
                         request.getSession().setAttribute("title", c.getName());
+                        request.getSession().setAttribute("cID", c.getID());                  
                         forward(request, response, "/customerPage.jsp");
                     } else
                     {

@@ -10,11 +10,9 @@
     </head>
     <body>
         <h1>View Buildings</h1>
-        <form name="viewBuilding" action="ControllerServlet" method="post">
+        <form name="viewBuilding" action="ControllerServlet" method="get">
             Customer ID<br> 
             <input type="text" name="viewBuilding"><br>
-            <input type="submit" value="View Buildings">
-            <input type="hidden" name="do_this" value="viewBuilding">
         </form>
         <table>
             <thead>
@@ -31,7 +29,8 @@
             </thead>
             
             <tbody>
-                <% for(Building b : f.viewBuilding(cID))
+                <% Integer cID = (Integer) session.getAttribute("cID");
+                for(Building b : f.viewBuilding(cID))
                   {   
                  %>
                 <tr>
