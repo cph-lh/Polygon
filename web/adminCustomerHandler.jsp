@@ -22,7 +22,7 @@
         <hr>
         <h2> Delete Customer</h2>
         <form name="delete" action="ControllerServlet" method="post">
-            Customer ID: <input type="text" name="cID"><br>
+            Customer ID: <input type="text" name="deletecID"><br>
             <input type="submit" value="Delete customer">
             <input type="hidden" name="do_this" value="deleteCustomer">
         </form>

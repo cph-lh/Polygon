@@ -32,10 +32,12 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("cZip");
                     password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
+                    forward(request, response, "/adminCustomerHandler.jsp");
                     break;
                 case "deleteCustomers":
-                    id = request.getParameter("cID");
+                    id = request.getParameter("deletecID");
                     f.deleteCustomer(Integer.parseInt(id));
+                    forward(request, response, "/adminCustomerHandler.jsp");
                     break;
                 case "customerButtons":
                     switch (request.getParameter("button"))
