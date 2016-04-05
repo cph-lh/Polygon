@@ -12,7 +12,6 @@ public class Building
     int floors;
     int status;
 
-
     public Building(int cID, String name, String address, int zip, int parcel, int size)
     {
         this.cID = cID;

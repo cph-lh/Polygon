@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form name="cLogin" action="ControllerServlet" method="get">
+        <form name="cLogin" action="ControllerServlet" method="post">
             Customer ID:<input type="text" name="cID"><br>
             Password:<input type="password" name="pwd"><br>
             <input type="submit" value="Login" name="login">
