@@ -33,8 +33,7 @@ public class DM_Building {
             ResultSet res = new Connector().connect().createStatement().executeQuery(query);
 
             while (res.next())
-            {
-
+            {               
                 String name = res.getString("bName");
                 String address = res.getString("bAddress");
                 int zip = res.getInt("bZip");
@@ -42,7 +41,7 @@ public class DM_Building {
                 int size = res.getInt("bSize");
                 int floors = res.getInt("bFloors");
                 int status = res.getInt("bStatus");
-                String city = res.getString("bCity");
+                String city = res.getString("City");
 
                 Building building = new Building(cID, name, address, zip, parcel, size, floors, status, city);
                 buildingList.add(building);

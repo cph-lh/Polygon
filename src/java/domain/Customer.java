@@ -14,20 +14,10 @@ public class Customer {
         this.name = name;
         this.address = address;
         this.zip = zip;
-        this.city = city;
         this.phone = phone;
         this.password = password;
     }
     
-    public Customer(int ID, String name, int phone, String address, String city) {
-        this.ID = ID;
-        this.name = name;
-        this.address = address;
-        this.zip = zip;
-        this.city = city;
-        this.phone = phone;
-    }
-
     public String getName() {
         return name;
     }
