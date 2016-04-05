@@ -25,4 +25,8 @@ public class Facade
     {
         return cdm.getCustomer(cID);
     }
+    
+    public void deleteCustomer(int cID){
+        cdm.deleteCustomer(cID);
+    }
 }

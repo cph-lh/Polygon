@@ -24,6 +24,19 @@ public class ControllerServlet extends HttpServlet
         {
             switch (request.getParameter("do_this"))
             {
+                case "addCustomer":
+                    id = request.getParameter("cID");
+                    name = request.getParameter("cName");
+                    phone = request.getParameter("cPhone");
+                    address = request.getParameter("cAddress");
+                    zip = request.getParameter("cZip");
+                    password = request.getParameter("cPassword");
+                    f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
+                    break;
+                case "deleteCustomers":
+                    id = request.getParameter("cID");
+                    f.deleteCustomer(Integer.parseInt(id));
+                    break;
                 case "customerButtons":
                     switch (request.getParameter("button"))
                     {
@@ -50,16 +63,6 @@ public class ControllerServlet extends HttpServlet
                     break;
                 case "viewButton":
                     forward(request, response, "/viewBuilding.jsp");
-                    break;
-                case "addCustomer":
-                    id = request.getParameter("cID");
-                    name = request.getParameter("cName");
-                    phone = request.getParameter("cPhone");
-                    address = request.getParameter("cAddress");
-                    zip = request.getParameter("cZip");
-                    password = request.getParameter("cPassword");
-                    f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
-                    //forward?
                     break;
                 case "login":
                     id = request.getParameter("cID");
