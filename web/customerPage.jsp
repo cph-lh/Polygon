@@ -8,9 +8,12 @@
     <body>
         <h1>Welcome, <%= session.getAttribute("title")%></h1>
         <form action="ControllerServlet" method="get">
-            <input type="submit" value="View buildings" name="button">
-            <input type="submit" value="Add new building" name="button">
-            <input type="hidden" name="do_this" value="customerButtons">         
+            <input type="submit" value="Add new building" name="addButton">
+            <input type="hidden" name="do_this" value="addButton">         
+        </form>
+        <form action="ControllerServlet" method="get">
+            <input type="submit" value="View buildings" name="viewButton">
+            <input type="hidden" name="do_this" value="viewButton">         
         </form>
     </body>
 </html>

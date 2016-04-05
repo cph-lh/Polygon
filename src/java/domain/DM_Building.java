@@ -28,7 +28,7 @@ public class DM_Building {
         {
             ArrayList<Building> buildingList = new ArrayList();
 
-            String query = "select * from buildings where cID = '" + cID + "'";
+            String query = "select *, (select city from zipcodes where zip = b.bzip) as 'City' from buildings b where cID = '"+ cID +"'";
 
             ResultSet res = new Connector().connect().createStatement().executeQuery(query);
 
@@ -37,14 +37,14 @@ public class DM_Building {
 
                 String name = res.getString("bName");
                 String address = res.getString("bAddress");
-                String city = res.getString("bCity");
                 int zip = res.getInt("bZip");
                 int parcel = res.getInt("bParcel");
                 int size = res.getInt("bSize");
                 int floors = res.getInt("bFloors");
                 int status = res.getInt("bStatus");
+                String city = res.getString("bCity");
 
-                Building building = new Building(cID, name, address, zip, city, parcel, size, floors, status);
+                Building building = new Building(cID, name, address, zip, parcel, size, floors, status, city);
                 buildingList.add(building);
 
             }
