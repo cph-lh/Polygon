@@ -51,7 +51,7 @@ public class DM_Customer {
         {
             String query = "delete from customers where cID = '" + cID + "';";
 
-            new Connector().connect().createStatement().executeQuery(query);
+            new Connector().connect().createStatement().executeUpdate(query);
             
         } catch (SQLException ex)
         {
