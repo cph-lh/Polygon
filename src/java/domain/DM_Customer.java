@@ -12,7 +12,7 @@ public class DM_Customer {
         {
             String query = "insert into customers (cID,cName,cPhone,cAddress,cZip,cPassword) "
                     + "values('" + id + "','" + name + "','"
-                    + address + "','" + zip +"','" + phone + "','" + password + "')";
+                    + phone + "','" + address +"','" + zip + "','" + password + "')";
 
             new Connector().connect().createStatement().executeUpdate(query);
             
