@@ -13,14 +13,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>cID&#160</th>
-                    <th>bName&#160</th>
-                    <th>bAddress&#160</th>
-                    <th>bZip&#160</th>
-                    <th>bParcel&#160</th>
-                    <th>bSize&#160</th>
-                    <th>bFloors&#160</th>
-                    <th>bStatus&#160</th>
+                    <th>ID&#160</th>
+                    <th>Name&#160</th>
+                    <th>Address&#160</th>
+                    <th>Zip&#160</th>
+                    <th>Parcel&#160</th>
+                    <th>Size&#160</th>
+                    <th>Floors&#160</th>
+                    <th>Status&#160</th>
                 </tr>
             </thead>           
             <tbody>
