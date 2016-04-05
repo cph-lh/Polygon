@@ -26,8 +26,7 @@
                     <th>bFloors&#160</th>
                     <th>bStatus&#160</th>
                 </tr>
-            </thead>
-            
+            </thead>           
             <tbody>
                 <% Integer cID = (Integer) session.getAttribute("cID");
                 for(Building b : f.viewBuilding(cID))

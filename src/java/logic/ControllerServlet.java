@@ -16,15 +16,6 @@ public class ControllerServlet extends HttpServlet
 
     Facade f = new Facade();
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -32,15 +23,15 @@ public class ControllerServlet extends HttpServlet
         try (PrintWriter out = response.getWriter())
         {
             switch (request.getParameter("do_this"))
-            {   
+            {
                 case "customerButtons":
-                    switch(request.getParameter("button"))
+                    switch (request.getParameter("button"))
                     {
+                        case "View buildings":
+                            forward(request, response, "/viewBuilding.jsp");
+                            break;
                         case "Add new building":
                             forward(request, response, "/addBuilding.jsp");
-                            break;
-                        case "View buildings":  
-                            forward(request, response, "/viewBuilding.jsp");
                             break;
                     }
                     break;
@@ -51,7 +42,8 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("bZip");
                     parcel = request.getParameter("bParcel");
                     size = request.getParameter("bSize");
-                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));                  
+                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
+                    forward(request, response, "/customerPage.jsp");
                     break;
                 case "addCustomer":
                     id = request.getParameter("cID");
@@ -61,15 +53,23 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("cZip");
                     password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
+                    //forward?
                     break;
                 case "login":
                     id = request.getParameter("cID");
-                    Customer c = f.getCustomer(Integer.parseInt(id));
-                    if (c != null && c.getPassword().equals(request.getParameter("pwd")))
+                    if (id != "")
                     {
-                        request.getSession().setAttribute("title", c.getName());
-                        request.getSession().setAttribute("cID", c.getID());                  
-                        forward(request, response, "/customerPage.jsp");
+                        Customer c = f.getCustomer(Integer.parseInt(id));
+
+                        if (c != null && c.getPassword().equals(request.getParameter("pwd")))
+                        {
+                            request.getSession().setAttribute("title", c.getName());
+                            request.getSession().setAttribute("cID", c.getID());
+                            forward(request, response, "/customerPage.jsp");
+                        } else
+                        {
+                            forward(request, response, "/customerLogin.jsp");
+                        }
                     } else
                     {
                         forward(request, response, "/customerLogin.jsp");
