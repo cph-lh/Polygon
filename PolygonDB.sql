@@ -1214,6 +1214,6 @@ INSERT INTO zipcodes VALUES ('9982', 'Ålbæk');
 INSERT INTO zipcodes VALUES ('9990', 'Skagen');
 insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','2500','1234');
 select *, (select city from zipcodes where zip = c.czip) as 'City' from customers c;
-insert into buildings VALUES (1111,'A1','Street 1234','2500',250,123,0,0);
+insert into buildings VALUES (1111,'A1','Street 1234','2500',250,123,null,null);
 select *, (select city from zipcodes where zip = b.bzip) as 'City' from buildings b;
 
