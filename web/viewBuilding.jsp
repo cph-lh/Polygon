@@ -10,10 +10,6 @@
     </head>
     <body>
         <h1>View Buildings</h1>
-        <form name="viewBuilding" action="ControllerServlet" method="get">
-            Customer ID<br> 
-            <input type="text" name="viewBuilding"><br>
-        </form>
         <table>
             <thead>
                 <tr>
