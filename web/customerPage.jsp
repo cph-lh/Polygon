@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Polygon - Customer <%= session.getAttribute("cID")%></title>
     </head>
-    <body>
+    <body style>
         <h1>Welcome, <%= session.getAttribute("title")%></h1>
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Add new building" name="cButton">       

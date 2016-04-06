@@ -28,7 +28,7 @@ public class DM_Building {
         {
             ArrayList<Building> buildingList = new ArrayList();
 
-            String query = "select * from zipcodes natural join customers where cID = '"+ cID +"'";
+            String query = "select * from zipcodes natural join buildings where cID = '"+ cID +"'";
 
             ResultSet res = new Connector().connect().createStatement().executeQuery(query);
 

@@ -6,10 +6,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Polygon - Customer</title>
+        <title>Polygon - Customer buildings</title>
     </head>
-    <body>
-        <h1>View Buildings</h1>
+    <body style="text-align: left">
+        <h1>Registered buildings</h1>
         <table>
             <thead>
                 <tr>
@@ -17,6 +17,7 @@
                     <th>Name&#160</th>
                     <th>Address&#160</th>
                     <th>Zip&#160</th>
+                    <th>City&#160</th>
                     <th>Parcel&#160</th>
                     <th>Size&#160</th>
                     <th>Floors&#160</th>
@@ -33,6 +34,7 @@
                     <td><%= b.getName() %></td>
                     <td><%= b.getAddress() %></td>
                     <td><%= b.getZip()%></td>
+                    <td><%= b.getCity()%></td>
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
