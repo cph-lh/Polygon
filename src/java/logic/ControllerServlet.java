@@ -20,6 +20,7 @@ public class ControllerServlet extends HttpServlet
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, phone, password;
+
         try (PrintWriter out = response.getWriter())
         {
             switch (request.getParameter("do_this"))
@@ -40,7 +41,7 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/adminCustomerHandler.jsp");
                     break;
                 case "customerButtons":
-                    switch (request.getParameter("button"))
+                    switch (request.getParameter("cButton"))
                     {
                         case "View buildings":
                             forward(request, response, "/viewBuilding.jsp");
