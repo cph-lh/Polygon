@@ -9,26 +9,29 @@ CREATE TABLE zipcodes (
         city    VARCHAR(25),        
 primary key (zip));
 
+
 CREATE TABLE customers (
         cID INT NOT NULL,
         cName VARCHAR(20) NOT NULL,
         cPhone INT(8),
         cAddress VARCHAR(25),
-        cZip varchar(4),
+        zip varchar(4),
         cPassword VARCHAR (15),
 primary key (cID),
-foreign key(cZip) references zipcodes(zip));
+foreign key(zip) references zipcodes(zip));
+
 
 CREATE TABLE buildings	(
 	cID INT NOT NULL,
         bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
-        bZip varchar (4) NOT NULL,
+        zip varchar (4) NOT NULL,
     	bParcel INT NOT NULL,        
     	bSize INT NOT NULL,
         bFloors INT default null,
         bStatus INT default NULL,
-foreign key (cID) references customers(cID), foreign key(bZip) references zipcodes(zip));
+foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
+
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
 INSERT INTO zipcodes VALUES ('0877', 'Valby');
@@ -1213,7 +1216,6 @@ INSERT INTO zipcodes VALUES ('9981', 'Jerup');
 INSERT INTO zipcodes VALUES ('9982', 'Ålbæk');
 INSERT INTO zipcodes VALUES ('9990', 'Skagen');
 insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','2500','1234');
-select *, (select city from zipcodes where zip = c.czip) as 'City' from customers c;
-insert into buildings VALUES (1111,'A1','Street 1234','2500',250,123,null,null);
-select *, (select city from zipcodes where zip = b.bzip) as 'City' from buildings b;
+select * from customers;
+select * from buildings;
 
