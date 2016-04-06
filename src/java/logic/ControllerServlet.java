@@ -26,7 +26,12 @@ public class ControllerServlet extends HttpServlet
             switch (request.getParameter("do_this"))
             {
                 case "adminButtons":
-//                    switch(request.getParameter("aButton"))
+                    switch(request.getParameter("aButton"))
+                    {
+                        case "Customers":
+                            forward(request, response, "/adminCustomerHandler.jsp");
+                            break;
+                    }
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
