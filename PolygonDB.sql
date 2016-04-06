@@ -28,9 +28,12 @@ CREATE TABLE buildings	(
     	bSize INT NOT NULL,
         bFloors INT default null,
         bStatus INT default NULL,
+primary key (cID,bParcel),
 foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
 
-
+insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','2500','1234');
+select * from customers;
+select * from buildings;
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
 INSERT INTO zipcodes VALUES ('0877', 'Valby');
 INSERT INTO zipcodes VALUES ('0900', 'København C');
@@ -1213,7 +1216,4 @@ INSERT INTO zipcodes VALUES ('9970', 'Strandby');
 INSERT INTO zipcodes VALUES ('9981', 'Jerup');
 INSERT INTO zipcodes VALUES ('9982', 'Ålbæk');
 INSERT INTO zipcodes VALUES ('9990', 'Skagen');
-insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','2500','1234');
-select * from customers;
-select * from buildings;
 
