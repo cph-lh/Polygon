@@ -8,7 +8,8 @@
     <body>
         <h1>Admin Page</h1>
         <form action="ControllerServlet" method="post">
-            <input type="submit" value="Customers" name="aButton">
+            <input type="submit" value="Add/delete customers" name="aButton">
+            <input type="submit" value="Customer list" name="aButton">
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
     </body>

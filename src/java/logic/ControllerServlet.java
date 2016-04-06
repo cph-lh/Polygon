@@ -10,16 +10,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ControllerServlet extends HttpServlet {
 
     Facade f = new Facade();
-
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, phone, password;
-
+        HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
             switch (request.getParameter("do_this"))
@@ -59,13 +61,12 @@ public class ControllerServlet extends HttpServlet {
                     }
                     break;
                 case "addBuilding":
-                    id = request.getParameter("cID");
                     name = request.getParameter("bName");
                     address = request.getParameter("bAddress");
                     zip = request.getParameter("bZip");
                     parcel = request.getParameter("bParcel");
                     size = request.getParameter("bSize");
-                    f.addBuilding(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
+                    f.addBuilding((int)session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/customerPage.jsp");
                     break;
                 case "login":
@@ -76,8 +77,8 @@ public class ControllerServlet extends HttpServlet {
 
                         if (c != null && c.getPassword().equals(request.getParameter("pwd")))
                         {
-                            request.getSession().setAttribute("title", c.getName());
-                            request.getSession().setAttribute("cID", c.getID());
+                            session.setAttribute("title", c.getName());
+                            session.setAttribute("cID", c.getID());
                             forward(request, response, "/customerPage.jsp");
                         } else
                         {
