@@ -11,7 +11,7 @@ public class DM_Building {
     {
         try
         {
-            String query = "insert into buildings(cID,bName,bAddress,bZip,bParcel,bSize)"
+            String query = "insert into buildings(cID,bName,bAddress,zip,bParcel,bSize)"
                     + " values('" + id + "','" + name + "','"
                     + address + "','" + zip + "','" + parcel + "','" + size + "')";
             new Connector().connect().createStatement().executeUpdate(query);
@@ -28,20 +28,20 @@ public class DM_Building {
         {
             ArrayList<Building> buildingList = new ArrayList();
 
-            String query = "select *, (select city from zipcodes where zip = b.bzip) as 'City' from buildings b where cID = '"+ cID +"'";
+            String query = "select * from zipcodes natural join customers where cID = '"+ cID +"'";
 
             ResultSet res = new Connector().connect().createStatement().executeQuery(query);
 
             while (res.next())
             {               
                 String name = res.getString("bName");
-                String address = res.getString("bAddress");
-                int zip = res.getInt("bZip");
+                String address = res.getString("bAddress");               
                 int parcel = res.getInt("bParcel");
                 int size = res.getInt("bSize");
                 int floors = res.getInt("bFloors");
                 int status = res.getInt("bStatus");
-                String city = res.getString("City");
+                int zip = res.getInt("zip");
+                String city = res.getString("city");
 
                 Building building = new Building(cID, name, address, zip, parcel, size, floors, status, city);
                 buildingList.add(building);

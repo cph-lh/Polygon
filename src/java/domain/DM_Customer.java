@@ -10,7 +10,7 @@ public class DM_Customer {
     {
         try
         {
-            String query = "insert into customers (cID,cName,cPhone,cAddress,cZip,cPassword) "
+            String query = "insert into customers (cID,cName,cPhone,cAddress,zip,cPassword) "
                     + "values('" + id + "','" + name + "','"
                     + phone + "','" + address +"','" + zip + "','" + password + "')";
 
