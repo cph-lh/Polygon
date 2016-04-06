@@ -9,7 +9,6 @@ CREATE TABLE zipcodes (
         city    VARCHAR(25),        
 primary key (zip));
 
-
 CREATE TABLE customers (
         cID INT NOT NULL,
         cName VARCHAR(20) NOT NULL,
@@ -19,7 +18,6 @@ CREATE TABLE customers (
         cPassword VARCHAR (15),
 primary key (cID),
 foreign key(zip) references zipcodes(zip));
-
 
 CREATE TABLE buildings	(
 	cID INT NOT NULL,
