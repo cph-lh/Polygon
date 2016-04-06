@@ -25,6 +25,8 @@ public class ControllerServlet extends HttpServlet
         {
             switch (request.getParameter("do_this"))
             {
+                case "adminButtons":
+//                    switch(request.getParameter("aButton"))
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
@@ -35,7 +37,7 @@ public class ControllerServlet extends HttpServlet
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
                     forward(request, response, "/adminCustomerHandler.jsp");
                     break;
-                case "deleteCustomers":
+                case "deleteCustomer":
                     id = request.getParameter("deletecID");
                     f.deleteCustomer(Integer.parseInt(id));
                     forward(request, response, "/adminCustomerHandler.jsp");
@@ -81,6 +83,7 @@ public class ControllerServlet extends HttpServlet
                         forward(request, response, "/customerLogin.jsp");
                     }
                     break;
+                default: throw new UnsupportedOperationException("Case doesn't exists");
             }
         }
     }
