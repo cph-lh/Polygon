@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ControllerServlet extends HttpServlet
-{
+public class ControllerServlet extends HttpServlet {
 
     Facade f = new Facade();
 
@@ -26,12 +25,13 @@ public class ControllerServlet extends HttpServlet
             switch (request.getParameter("do_this"))
             {
                 case "adminButtons":
-                    switch(request.getParameter("aButton"))
+                    switch (request.getParameter("aButton"))
                     {
                         case "Customers":
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
                     }
+                    break;
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
@@ -88,7 +88,8 @@ public class ControllerServlet extends HttpServlet
                         forward(request, response, "/customerLogin.jsp");
                     }
                     break;
-                default: throw new UnsupportedOperationException("Case doesn't exists");
+                default:
+                    throw new UnsupportedOperationException("Case doesn't exists");
             }
         }
     }
