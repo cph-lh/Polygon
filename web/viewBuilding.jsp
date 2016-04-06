@@ -32,7 +32,7 @@
                     <td><%= b.getcID() %></td>
                     <td><%= b.getName() %></td>
                     <td><%= b.getAddress() %></td>
-                    <td><%= b.getZip() %></td>
+                    <td><%= b.getZip()%></td>
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
