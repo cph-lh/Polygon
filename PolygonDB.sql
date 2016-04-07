@@ -1216,6 +1216,7 @@ INSERT INTO zipcodes VALUES ('9982', 'Ålbæk');
 INSERT INTO zipcodes VALUES ('9990', 'Skagen');
 
 insert into customers VALUES ('1111','TestPerson1','22334455','gadegade 123','2500','1234');
+insert into customers VALUES ('1122','TestPerson2','22332233','gadegade 123','2800','1234');
 select * from customers;
 select * from buildings;
 

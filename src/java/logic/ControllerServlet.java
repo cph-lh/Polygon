@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class ControllerServlet extends HttpServlet {
+public class ControllerServlet extends HttpServlet
+{
 
     Facade f = new Facade();
-    
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -58,6 +58,14 @@ public class ControllerServlet extends HttpServlet {
                         case "Add new building":
                             forward(request, response, "/addBuilding.jsp");
                             break;
+                        case "Logout":
+                            session = request.getSession(false);
+                            if (session != null)
+                            {
+                                session.invalidate();
+                                forward(request, response, "/customerLogin.jsp");
+                            }                        
+                            break;
                     }
                     break;
                 case "addBuilding":
@@ -66,7 +74,7 @@ public class ControllerServlet extends HttpServlet {
                     zip = request.getParameter("bZip");
                     parcel = request.getParameter("bParcel");
                     size = request.getParameter("bSize");
-                    f.addBuilding((int)session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
+                    f.addBuilding((int) session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
                     forward(request, response, "/customerPage.jsp");
                     break;
                 case "login":
@@ -83,6 +91,7 @@ public class ControllerServlet extends HttpServlet {
                         } else
                         {
                             forward(request, response, "/customerLogin.jsp");
+
                         }
                     } else
                     {
