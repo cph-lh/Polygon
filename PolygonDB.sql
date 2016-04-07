@@ -29,7 +29,7 @@ CREATE TABLE buildings	(
     	bSize INT NOT NULL,
         bFloors INT default null,
         bStatus INT default NULL,
-primary key (cID,bParcel),
+primary key (cID),
 foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
