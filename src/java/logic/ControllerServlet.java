@@ -63,8 +63,8 @@ public class ControllerServlet extends HttpServlet
                             if (session != null)
                             {
                                 session.invalidate();
-                            }
-                            forward(request, response, "/customerLogin.jsp");
+                                forward(request, response, "/customerLogin.jsp");
+                            }                        
                             break;
                     }
                     break;
