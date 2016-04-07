@@ -29,7 +29,7 @@ public class ControllerServlet extends HttpServlet
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
                     {
-                        case "Customers":
+                        case "Add/delete customers":
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
                     }
