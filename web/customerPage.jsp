@@ -10,6 +10,7 @@
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Add new building" name="cButton">       
             <input type="submit" value="View buildings" name="cButton">
+            <input type="submit" value="Logout" name="cButton">           
             <input type="hidden" name="do_this" value="customerButtons">         
         </form>
     </body>
