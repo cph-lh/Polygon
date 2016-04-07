@@ -13,7 +13,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID&#160</th>
+                    <%--<th>ID&#160</th>--%>
                     <th>Name&#160</th>
                     <th>Address&#160</th>
                     <th>Zip&#160</th>
@@ -30,7 +30,7 @@
                   {   
                  %>
                 <tr>
-                    <td><%= b.getcID() %></td>
+                    <%--<td><%= b.getcID() %></td>--%>
                     <td><%= b.getName() %></td>
                     <td><%= b.getAddress() %></td>
                     <td><%= b.getZip()%></td>
