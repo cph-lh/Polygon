@@ -14,5 +14,8 @@
             <input type="submit" value="Login" name="login">
             <input type="hidden" value="login" name="do_this">
         </form>
+        <form action="index.html" method="post"><br>
+            <input type="button" value="Back" onClick="window.location = 'index.html'; return true;"> 
+        </form>
     </body>
 </html>

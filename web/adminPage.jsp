@@ -12,5 +12,8 @@
             <input type="submit" value="Customer list" name="aButton">
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
+        <form action="index.html" method="post"><br>
+            <input type="button" value="Back" onClick="window.location = 'index.html'; return true;"> 
+        </form>
     </body>
 </html>

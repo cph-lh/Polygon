@@ -1,10 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="domain.Facade"%>
+<% Facade f = new Facade(); %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Polygon - Customer</title>
+        <title>Polygon - Customer <%= session.getAttribute("cID")%> - Add building</title>
     </head>
     <body>
         <h1>Add Building</h1>
@@ -18,7 +19,7 @@
             <input type="hidden" name="do_this" value="addBuilding">
         </form>
         <form action="customerPage.jsp" method="post">
-        <input type="button" value="Back" onClick="history.go(-1);return true;"> 
+        <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;">
         </form>
     </body>
 </html>

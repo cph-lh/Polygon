@@ -1,12 +1,12 @@
 <%@page import="domain.Building"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="domain.Facade" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% Facade f = new Facade(); %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Polygon - Customer buildings</title>
+        <title>Polygon - Customer <%= session.getAttribute("cID")%> - Buildings</title>
     </head>
     <body style="text-align: left">
         <h1>Registered buildings</h1>
@@ -26,7 +26,7 @@
             </thead>           
             <tbody>
                 <% Integer cID = (Integer) session.getAttribute("cID");
-                for(Building b : f.viewBuilding(cID))
+                for(Building b : f.viewBuildings(cID))
                   {   
                  %>
                 <tr>
@@ -45,8 +45,8 @@
                 %>
             </tbody>
         </table>
-            <form action="customerPage.jsp" method="post"><br>
-        <input type="button" value="Back" onClick="history.go(-1);return true;"> 
+        <form action="customerPage.jsp" method="post"><br>
+            <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;"> 
         </form>
     </body>
 </html>
