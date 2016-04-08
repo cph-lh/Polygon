@@ -1,6 +1,7 @@
 package domain;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -56,6 +57,37 @@ public class DM_Customer {
         } catch (SQLException ex)
         {
             Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+   public ArrayList<Customer> viewCustomers()
+    {        
+        try
+        {
+            ArrayList<Customer> cList = new ArrayList();
+            
+            Connection con = new Connector().connect();
+            Statement state =  con.createStatement();
+        
+            String query = "select * from customers natural join zipcodes";
+            ResultSet res = state.executeQuery(query);
+            
+            while(res.next())
+            {
+                int id = res.getInt("cID");
+                String name = res.getString("cName");
+                String address = res.getString("cAddress");               
+                int zip = res.getInt("zip");
+                String city = res.getString("city");
+                int phone = res.getInt("cPhone");
+                cList.add(new Customer(id,name,address,zip,city,phone));
+            }
+            return cList;
+                } catch (SQLException ex)
+        {
+            Logger.getLogger(DM_Building.class.getName()).log(Level.SEVERE, null, ex);
+            
+            return null;
         }
     }
 }

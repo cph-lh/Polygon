@@ -17,7 +17,7 @@ public class Facade
         cdm.addCustomer(id, name, address, zip, phone, password);
     }
     
-    public ArrayList<Building> viewBuilding(int cID){
+    public ArrayList<Building> viewBuildings(int cID){
        return bdm.viewBuildings(cID);
     }
     
@@ -28,5 +28,10 @@ public class Facade
     
     public void deleteCustomer(int cID){
         cdm.deleteCustomer(cID);
+    }
+    
+     public ArrayList<Customer> viewCustomers()
+    {
+        return cdm.viewCustomers();
     }
 }

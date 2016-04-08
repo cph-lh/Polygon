@@ -18,6 +18,14 @@ public class Customer {
         this.password = password;
     }
     
+    public Customer(int ID, String name, String address, int zip, String city, int phone){
+        this.ID = ID;
+        this.name = name;
+        this.address = address;
+        this.zip = zip;
+        this.phone = phone;
+    }
+    
     public String getName() {
         return name;
     }

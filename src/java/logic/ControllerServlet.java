@@ -21,6 +21,7 @@ public class ControllerServlet extends HttpServlet
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, phone, password;
+        //Boolean loggedIn = false;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -31,6 +32,9 @@ public class ControllerServlet extends HttpServlet
                     {
                         case "Add/delete customers":
                             forward(request, response, "/adminCustomerHandler.jsp");
+                            break;
+                        case "Customer list":
+                            forward(request, response, "/viewCustomerList.jsp");
                             break;
                     }
                     break;
@@ -62,9 +66,10 @@ public class ControllerServlet extends HttpServlet
                             session = request.getSession(false);
                             if (session != null)
                             {
+                                //loggedIn = false;
                                 session.invalidate();
                                 forward(request, response, "/customerLogin.jsp");
-                            }                        
+                            }
                             break;
                     }
                     break;
@@ -75,16 +80,17 @@ public class ControllerServlet extends HttpServlet
                     parcel = request.getParameter("bParcel");
                     size = request.getParameter("bSize");
                     f.addBuilding((int) session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
-                    forward(request, response, "/customerPage.jsp");
+                    forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "login":
                     id = request.getParameter("cID");
-                    if (id != "")
+                    if (id != "" || id != null)
                     {
                         Customer c = f.getCustomer(Integer.parseInt(id));
 
                         if (c != null && c.getPassword().equals(request.getParameter("pwd")))
                         {
+                            //loggedIn = true;
                             session.setAttribute("title", c.getName());
                             session.setAttribute("cID", c.getID());
                             forward(request, response, "/customerPage.jsp");
