@@ -60,6 +60,7 @@ public class BuildingDataMapper {
 
             while (res.next())
             {               
+                int bID = res.getInt("bID");
                 String name = res.getString("bName");
                 String address = res.getString("bAddress");               
                 int parcel = res.getInt("bParcel");
@@ -69,7 +70,7 @@ public class BuildingDataMapper {
                 int zip = res.getInt("zip");
                 String city = res.getString("city");
 
-                Building building = new Building(cID, name, address, zip, parcel, size, floors, year, city);
+                Building building = new Building(cID, bID, name, address, zip, parcel, size, floors, year, city);
                 buildingList.add(building);
 
             }

@@ -46,7 +46,7 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("cZip");
                     password = request.getParameter("cPassword");
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
-                    forward(request, response, "/adminCustomerHandler.jsp");
+                    forward(request, response, "/viewCustomerList.jsp");
                     break;
                 case "deleteC":
                     id = request.getParameter("deleteC");

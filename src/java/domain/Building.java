@@ -2,7 +2,7 @@ package domain;
 
 public class Building
 {
-    int cID, zip, parcel, size, floors, year;
+    int cID, bID, zip, parcel, size, floors, year;
     String name, address, city;
 
     public Building(int cID, String name, String address, int zip, int parcel, int size)
@@ -15,8 +15,9 @@ public class Building
         this.size = size;
     }
     
-    public Building(int cID, String name, String address, int zip, int parcel, int size, int floors, int year, String city)
+    public Building(int cID, int bID, String name, String address, int zip, int parcel, int size, int floors, int year, String city)
     {
+        this.bID = bID;
         this.cID = cID;
         this.name = name;
         this.address = address;
@@ -36,6 +37,16 @@ public class Building
     public void setcID(int cID)
     {
         this.cID = cID;
+    }
+
+    public int getbID()
+    {
+        return bID;
+    }
+
+    public void setbID(int bID)
+    {
+        this.bID = bID;
     }
 
     public String getName()
