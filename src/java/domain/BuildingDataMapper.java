@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 
 public class BuildingDataMapper {
 
-    public void addBuilding(int id, String name, String address, int zip, int parcel, int size)
+    public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int floors, int year)
     {
         try
         {
-            String query = "insert into buildings(cID,bName,bAddress,zip,bParcel,bSize)"
+            String query = "insert into buildings(cID,bName,bAddress,zip,bParcel,bSize,bYear,bFloors)"
                     + " values('" + id + "','" + name + "','"
-                    + address + "','" + zip + "','" + parcel + "','" + size + "')";
+                    + address + "','" + zip + "','" + parcel + "','" + size + "',"+floors+","+year+");";
             new Connector().connect().createStatement().executeUpdate(query);
 
         } catch (SQLException ex)
@@ -65,11 +65,11 @@ public class BuildingDataMapper {
                 int parcel = res.getInt("bParcel");
                 int size = res.getInt("bSize");
                 int floors = res.getInt("bFloors");
-                int status = res.getInt("bStatus");
+                int year = res.getInt("bYear");
                 int zip = res.getInt("zip");
                 String city = res.getString("city");
 
-                Building building = new Building(cID, name, address, zip, parcel, size, floors, status, city);
+                Building building = new Building(cID, name, address, zip, parcel, size, floors, year, city);
                 buildingList.add(building);
 
             }

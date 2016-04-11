@@ -7,9 +7,9 @@ public class Facade
     BuildingDataMapper bdm = new BuildingDataMapper();
     CustomerDataMapper cdm = new CustomerDataMapper();
     
-    public void addBuilding(int id, String name, String address, int zip, int parcel, int size)
+    public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int year, int floors)
     {
-        bdm.addBuilding(id, name, address, zip, parcel, size);
+        bdm.addBuilding(id, name, address, zip, parcel, size, year, floors);
     }
     
     public void addCustomer(int id, String name, String address, int zip, int phone, String password)

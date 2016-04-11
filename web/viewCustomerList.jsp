@@ -13,7 +13,6 @@
         <table>
             <thead>
                 <tr>
-                    <%--<th>ID&#160</th>--%>
                     <th>ID&#160</th>
                     <th>Name&#160</th>
                     <th>Address&#160</th>

@@ -20,7 +20,7 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String id, name, address, zip, parcel, size, phone, password;
+        String id, name, address, zip, parcel, size, year, floors, phone, password;
         //Boolean loggedIn = false;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
@@ -84,7 +84,9 @@ public class ControllerServlet extends HttpServlet
                     zip = request.getParameter("bZip");
                     parcel = request.getParameter("bParcel");
                     size = request.getParameter("bSize");
-                    f.addBuilding((int) session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size));
+                    year = request.getParameter("year");
+                    floors = request.getParameter("bFloors");
+                    f.addBuilding((int) session.getAttribute("cID"), name, address, Integer.parseInt(zip), Integer.parseInt(parcel), Integer.parseInt(size), Integer.parseInt(year), Integer.parseInt(floors));
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "login":

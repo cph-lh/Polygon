@@ -13,7 +13,6 @@
         <table>
             <thead>
                 <tr>
-                    <%--<th>ID&#160</th>--%>
                     <th>Name&#160</th>
                     <th>Address&#160</th>
                     <th>Zip&#160</th>
@@ -21,7 +20,7 @@
                     <th>Parcel&#160</th>
                     <th>Size&#160</th>
                     <th>Floors&#160</th>
-                    <th>Status&#160</th>
+                    <th>Year&#160</th>
                 </tr>
             </thead>           
             <tbody>
@@ -38,7 +37,7 @@
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
-                    <td></td>                    
+                    <td><%= b.getYear() %></td>                    
                 </tr>
                 <%
                     }
