@@ -6,12 +6,12 @@ DROP TABLE IF EXISTS buildings;
 DROP TABLE IF EXISTS customers;
 
 CREATE TABLE zipcodes (
-		zip     varchar(4),
+        zip     varchar(4),
         city    VARCHAR(25),        
 primary key (zip));
 
 CREATE TABLE customers (
-        cID INT NOT NULL auto_increment,
+        cID INT NOT NULL,
         cName VARCHAR(20) NOT NULL,
         cPhone INT(8),
         cAddress VARCHAR(25),
@@ -20,25 +20,25 @@ CREATE TABLE customers (
 primary key (cID),
 foreign key(zip) references zipcodes(zip));
 alter table customers auto_increment=1000;
+
 CREATE TABLE buildings	(
-		cID INT NOT NULL auto_increment,
         bID INT NOT NULL auto_increment,
+        cID INT not null,
         bName VARCHAR(20) NOT NULL,
     	bAddress VARCHAR(25) NOT NULL,
-		bYear Year default null,
         zip varchar (4) NOT NULL,
     	bParcel INT NOT NULL,        
     	bSize INT NOT NULL,
         bFloors INT default null,
+        bYear Year not null,
 primary key (bID),
 foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
+alter table buildings auto_increment=1000;
 
 CREATE TABLE rapportp1 (
 	bID INT NOT NULL,
     bStatus INT default NULL,
-    
-	
-    
+     
 foreign key (bID) references buildings(bID));
 
 
@@ -1226,10 +1226,12 @@ INSERT INTO zipcodes VALUES ('9981', 'Jerup');
 INSERT INTO zipcodes VALUES ('9982', 'Ålbæk');
 INSERT INTO zipcodes VALUES ('9990', 'Skagen');
 
-insert into customers VALUES ('TestPerson4','22334455','gadegade 123','2500','1234');
-insert into customers VALUES ('TestPerson3','22332233','gadegade 123','2800','1234');
+insert into customers VALUES (1111,'TestPerson1','22334455','gadegade 123','2500','1234');
+insert into customers VALUES (1122,'TestPerson2','22332233','gadegade 123','2800','1234');
+insert into customers VALUES (2211,'TestPerson4','22334455','gadegade 123','2900','1234');
+insert into customers VALUES (2222,'TestPerson3','22332233','gadegade 123','2700','1234');
 select * from customers;
 select * from buildings;
-insert into buildings VALUES ('A422','gade 123','2500',1421,30,1946,null,null);
+insert into buildings (cID,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES ('A422','gade 123','2500',123,40,2,1990);
 
 
