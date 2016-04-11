@@ -23,6 +23,7 @@ public class Customer {
         this.name = name;
         this.address = address;
         this.zip = zip;
+        this.city = city;
         this.phone = phone;
     }
     

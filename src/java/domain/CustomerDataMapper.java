@@ -49,9 +49,9 @@ public class CustomerDataMapper {
     
     public void deleteCustomer(int cID){
          try
-        {
+        {           
             String query = "delete from customers where cID = '" + cID + "';";
-
+            
             new Connector().connect().createStatement().executeUpdate(query);
             
         } catch (SQLException ex)

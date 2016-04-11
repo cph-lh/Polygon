@@ -14,7 +14,9 @@
             Address:<input type="text" name="bAddress"><br>
             Zipcode:<input type="text" name="bZip"><br>
             Parcel no.:<input type="text" name="bParcel"><br>
+            Building year:<input type="text" name="bYear"><br>
             Size:<input type="text" name="bSize"><br>
+            Floors:<input type="text" name="bFloors"><br>
             <input type="submit" value="Confirm">
             <input type="hidden" name="do_this" value="addBuilding">
         </form>

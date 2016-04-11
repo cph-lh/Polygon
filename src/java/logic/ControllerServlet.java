@@ -48,6 +48,11 @@ public class ControllerServlet extends HttpServlet
                     f.addCustomer(Integer.parseInt(id), name, address, Integer.parseInt(zip), Integer.parseInt(phone), password);
                     forward(request, response, "/adminCustomerHandler.jsp");
                     break;
+                case "deleteC":
+                    id = request.getParameter("deleteC");
+                    f.deleteCustomer(Integer.parseInt(id));
+                    forward(request, response, "/viewCustomerList.jsp");
+                    break;   
                 case "deleteCustomer":
                     id = request.getParameter("deletecID");
                     f.deleteCustomer(Integer.parseInt(id));

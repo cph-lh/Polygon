@@ -26,12 +26,25 @@ public class Facade
         return cdm.getCustomer(cID);
     }
     
-    public void deleteCustomer(int cID){
+    public void deleteBuilding(int bID)
+    {
+        bdm.deleteBuilding(bID);
+    }
+    
+    private void deleteAllBuildings(int cID)
+    {
+        bdm.deleteAllBuildings(cID);
+    }
+    
+    public void deleteCustomer(int cID)
+    {
+        deleteAllBuildings(cID);
         cdm.deleteCustomer(cID);
     }
     
-     public ArrayList<Customer> viewCustomers()
+    public ArrayList<Customer> viewCustomers()
     {
         return cdm.viewCustomers();
     }
+    
 }

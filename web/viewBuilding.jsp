@@ -38,7 +38,7 @@
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
-                    <td><%= b.getStatus() %></td>                    
+                    <td></td>                    
                 </tr>
                 <%
                     }

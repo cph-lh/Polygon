@@ -27,14 +27,19 @@
                     {
                 %>
                 <tr>
-                    <%--<td><%= b.getcID() %></td>--%>
                     <td><%= c.getID()%></td>
                     <td><%= c.getName()%></td>
                     <td><%= c.getAddress()%></td>
                     <td><%= c.getZip()%></td>
                     <td><%= c.getCity()%></td>
                     <td><%= c.getPhone()%></td>              
-                    <td><form><input type="submit" value="Delete" name="deleteC"></form></td>              
+                    <td>
+                        <form action="ControllerServlet" method="post">
+                            <input type="submit" value="Delete" name="delete">
+                            <input type="hidden" value="deleteC" name="do_this">
+                            <input type="hidden" value="<%=c.getID()%>" name="deleteC">
+                        </form>
+                    </td>              
                 </tr>
                 <%
                     }

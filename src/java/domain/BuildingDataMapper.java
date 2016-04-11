@@ -21,6 +21,32 @@ public class BuildingDataMapper {
             Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void deleteBuilding(int bID){
+         try
+        {
+            String query = "delete from buildings where bID = '" + bID + "';";
+
+            new Connector().connect().createStatement().executeUpdate(query);
+            
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void deleteAllBuildings(int cID){
+         try
+        {
+            String query = "delete from buildings where cID = '" + cID + "';";
+
+            new Connector().connect().createStatement().executeUpdate(query);
+            
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public ArrayList<Building> viewBuildings(int cID)
     {
