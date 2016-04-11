@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Facade
 {
-    DM_Building bdm = new DM_Building();
-    DM_Customer cdm = new DM_Customer();
+    BuildingDataMapper bdm = new BuildingDataMapper();
+    CustomerDataMapper cdm = new CustomerDataMapper();
     
     public void addBuilding(int id, String name, String address, int zip, int parcel, int size)
     {
