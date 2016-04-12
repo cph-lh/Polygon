@@ -23,7 +23,7 @@ public class PicturesMapper {
             Connection con = new Connector().connect();
             String query = "insert into pictures (documents) values (?)";
             PreparedStatement state = con.prepareStatement(query);
-            state.setBinaryStream(1, inputStream);
+//            state.setBinaryStream(1, inputStream);
             
             state.executeUpdate(query);
         } catch (SQLException ex)
