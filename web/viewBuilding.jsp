@@ -38,7 +38,9 @@
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
-                    <td><%= b.getYear() %></td>                    
+                    <td><%= b.getYear() %></td>
+                    <td colspan="6"></td>                   
+                    <td>Upload bilag<br><input type="file" value="uploadFile"></td>
                 </tr>
                 <%
                     }
