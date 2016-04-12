@@ -2,9 +2,6 @@ DROP DATABASE IF EXISTS PolygonDB;
 Create DATABASE PolygonDB;
 use PolygonDB;
 
-DROP TABLE IF EXISTS buildings;
-DROP TABLE IF EXISTS customers;
-
 CREATE TABLE zipcodes (
         zip     varchar(4),
         city    VARCHAR(25),        
@@ -19,7 +16,6 @@ CREATE TABLE customers (
         cPassword VARCHAR (15),
 primary key (cID),
 foreign key(zip) references zipcodes(zip));
-alter table customers auto_increment=1000;
 
 CREATE TABLE buildings	(
         bID INT NOT NULL auto_increment,
@@ -29,18 +25,87 @@ CREATE TABLE buildings	(
         zip varchar (4) NOT NULL,
     	bParcel INT NOT NULL,        
     	bSize INT NOT NULL,
-        bFloors INT default null,
-        bYear Year not null,
+        bFloors INT DEFAULT NULL,
+        bStatus int(1) DEFAULT NULL,
+        bYear YEAR NOT NULL,
 primary key (bID),
-foreign key (cID) references customers(cID), foreign key(zip) references zipcodes(zip));
+foreign key (cID) references customers(cID), 
+foreign key(zip) references zipcodes(zip));
 alter table buildings auto_increment=1000;
 
-CREATE TABLE rapportp1 (
-	bID INT NOT NULL,
-    bStatus INT default NULL,
-     
+CREATE TABLE polygonEmployee (
+	pID INT NOT NULL auto_increment,
+    pName VARCHAR (25),
+primary key(pID));
+alter table polygonEmployee auto_increment=50;
+
+CREATE TABLE rapportINFO (
+	rID INT NOT NULL,
+    rDate DATE,
+	pID VARCHAR (25),
+	bResponsible VARCHAR (25),
+    bID INT NOT NULL,
+primary key (rID),
+foreign key (bID) references buildings(bID), 
+foreign key(pID) references polygonEmployee(pID));
+
+CREATE TABLE buildingFloor (
+	fNo INT DEFAULT NULL,
+    bSize INT DEFAULT NULL,
+    bID INT NOT NULL,
 foreign key (bID) references buildings(bID));
 
+CREATE TABLE room (
+	roomID INT NOT NULL,
+    roomName VARCHAR(25),
+    roomComment VARCHAR (50),
+    rRecommendation VARCHAR (50),
+primary key (roomID));
+
+CREATE TABLE moistureAnalysis (
+	roomID INT NOT NULL,
+    moistScanned BOOLEAN DEFAULT NULL,
+    moistScan VARCHAR (50),
+    analysisResult DOUBLE DEFAULT NULL,
+foreign key (roomID) references room(roomID));    
+
+CREATE TABLE damageRepair (
+	roomID INT NOT NULL,
+    damage VARCHAR (50),
+    damDate DATE,
+    damReason VARCHAR (50),
+    damLocation VARCHAR (50),
+    damRepair VARCHAR (50),
+foreign key(roomID) references room(roomID));
+CREATE TABLE damageType (
+	moist	BOOLEAN DEFAULT NULL,
+    rotten	BOOLEAN DEFAULT NULL, 
+    fungus	BOOLEAN DEFAULT NULL,
+    mould	BOOLEAN DEFAULT NULL,
+    fire	BOOLEAN DEFAULT NULL,
+    other	BOOLEAN DEFAULT NULL);
+    
+CREATE TABLE pictures (
+	bID INT NOT NULL,
+    bOutside BLOB,
+    roofOutside BLOB,
+    outerWalls BLOB,
+    walls BLOB,
+    celing BLOB,
+	floor BLOB,
+    windows BLOB,
+foreign key (bID) references buildings(bID));
+
+CREATE TABLE comments (
+	bID INT NOT NULL,
+    bOutsideC VARCHAR (50),
+    roofOutsideC VARCHAR (50),
+    outerWallsC VARCHAR (50),
+    wallsC VARCHAR (50),
+    celingC VARCHAR (50),
+	floorC VARCHAR (50),
+    windowsC VARCHAR (50),
+foreign key(bID) references buildings(bID));    
 
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
