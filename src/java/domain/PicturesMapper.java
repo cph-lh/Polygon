@@ -6,6 +6,8 @@
 package domain;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,11 +16,19 @@ import java.sql.*;
 public class PicturesMapper {
     
     public void customerDocument(){
+               
         
-        String query = "insert into pictures (documents) values (?)";
-        
-        new Connector().connect().createStatement().executeUpdate(query);
-        
-        Statement.setBinaryStream(1, );
+        try
+        {
+            Connection con = new Connector().connect();
+            String query = "insert into pictures (documents) values (?)";
+            PreparedStatement state = con.prepareStatement(query);
+            state.setBinaryStream(1, inputStream);
+            
+            state.executeUpdate(query);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(PicturesMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
