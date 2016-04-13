@@ -14,18 +14,18 @@ import java.util.logging.Logger;
  * @author Jmach
  */
 public class PicturesMapper {
-    
-    public void customerDocument(){
-               
-        
+
+    public void customerDocument(String filePath)
+    {
+
         try
         {
             Connection con = new Connector().connect();
-            String query = "insert into pictures (documents) values (?)";
+            String query = "insert into pictures (documents) values (LOAD_FILE(?))";
             PreparedStatement state = con.prepareStatement(query);
-//            state.setBinaryStream(1, inputStream);
-            
-            state.executeUpdate(query);
+            state.setString(1, filePath);
+
+            state.executeUpdate();
         } catch (SQLException ex)
         {
             Logger.getLogger(PicturesMapper.class.getName()).log(Level.SEVERE, null, ex);
