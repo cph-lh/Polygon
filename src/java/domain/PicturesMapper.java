@@ -28,7 +28,7 @@ public class PicturesMapper {
 
             inputStream = new FileInputStream(new File(filePath));
 
-            String query = "insert into pictures ('" + column + "') values (?,?)";
+            String query = "insert into pictures (bID '" + column + "') values (?,?)";
             PreparedStatement state = con.prepareStatement(query);
             state.setInt(1, bID);
             state.setBlob(column, inputStream);
