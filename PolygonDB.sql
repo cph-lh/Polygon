@@ -42,7 +42,7 @@ alter table polygonEmployee auto_increment=50;
 CREATE TABLE reportINFO (
 	rID INT NOT NULL,
     rDate DATE,
-	pID VARCHAR (25),
+	pID INT,
 	bResponsible VARCHAR (25),
     bID INT NOT NULL,
 primary key (rID),
