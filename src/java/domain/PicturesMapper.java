@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.io.*;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,20 +16,30 @@ import java.util.logging.Logger;
  */
 public class PicturesMapper {
 
-    public void customerDocument(String filePath)
+    public void addCustomerDocument(String filePath)
     {
 
         try
         {
             Connection con = new Connector().connect();
-            String query = "insert into pictures (documents) values (LOAD_FILE(?))";
+            InputStream inputStream;
+
+            inputStream = new FileInputStream(new File(filePath));
+
+            String query = "insert into pictures (documents) values (?)";
             PreparedStatement state = con.prepareStatement(query);
-            state.setString(1, filePath);
+            state.setBlob(1, inputStream);
 
             state.executeUpdate();
-        } catch (SQLException ex)
+        } catch (SQLException | FileNotFoundException ex)
         {
             Logger.getLogger(PicturesMapper.class.getName()).log(Level.SEVERE, null, ex);
+
         }
+
     }
+}
+
+public void addBuildingOutside(String FilePath){
+    
 }
