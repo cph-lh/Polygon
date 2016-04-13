@@ -15,8 +15,10 @@ import java.util.logging.Logger;
  * @author Jmach
  */
 public class PicturesMapper {
+    
+//måske en insert og update, eller noget if ?
 
-    public void addCustomerDocument(String filePath)
+    public void addPicture(int bID, String filePath, int column)
     {
 
         try
@@ -26,9 +28,10 @@ public class PicturesMapper {
 
             inputStream = new FileInputStream(new File(filePath));
 
-            String query = "insert into pictures (documents) values (?)";
+            String query = "insert into pictures ('" + column + "') values (?,?)";
             PreparedStatement state = con.prepareStatement(query);
-            state.setBlob(1, inputStream);
+            state.setInt(1, bID);
+            state.setBlob(column, inputStream);
 
             state.executeUpdate();
         } catch (SQLException | FileNotFoundException ex)
@@ -38,8 +41,4 @@ public class PicturesMapper {
         }
 
     }
-}
-
-public void addBuildingOutside(String FilePath){
-    
 }
