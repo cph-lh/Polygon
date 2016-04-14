@@ -42,12 +42,11 @@ alter table polygonEmployee auto_increment=100;
 CREATE TABLE reportINFO (
     reportID INT NOT NULL,
     reportDate DATE,
+    cName VARCHAR (25),
     pID INT,
     bID INT,
-    cName VARCHAR (25),
-primary key (rID),
+primary key (reportID),
 foreign key (bID) references buildings(bID), 
-foreign key (cName) references customers(cName), 
 foreign key(pID) references polygonEmployee(pID));
 
 CREATE TABLE buildingFloor (
@@ -88,13 +87,18 @@ CREATE TABLE damageType (
     
 CREATE TABLE pictures (
 	bID INT NOT NULL,
-    bOutside BLOB,
-    roof BLOB,
-    outerWalls BLOB,
-    walls BLOB,
-    celing BLOB,
-	floor BLOB,
-    windows_doors BLOB,
+    bOutside MEDIUMBLOB,
+    roof MEDIUMBLOB,
+    outerWalls MEDIUMBLOB,
+    walls MEDIUMBLOB,
+    celing MEDIUMBLOB,
+	floor MEDIUMBLOB,
+    windows_doors MEDIUMBLOB,
+foreign key (bID) references buildings(bID));
+
+create table floor_plan(
+    bID int not null,
+    floor_plan MEDIUMBLOB,
 foreign key (bID) references buildings(bID));
 
 CREATE TABLE comments (
@@ -107,7 +111,6 @@ CREATE TABLE comments (
 	floorC VARCHAR (50),
     windows_doorsC VARCHAR (50),
 foreign key(bID) references buildings(bID));    
-
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
 INSERT INTO zipcodes VALUES ('0877', 'Valby');
