@@ -3,15 +3,19 @@ package logic;
 import domain.Customer;
 import domain.Facade;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
+@MultipartConfig
 public class ControllerServlet extends HttpServlet
 {
 
@@ -21,12 +25,20 @@ public class ControllerServlet extends HttpServlet
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password;
+        int cID;
         //Boolean loggedIn = false;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
             switch (request.getParameter("do_this"))
             {
+                case "uploadFP":
+                    Part filepart = request.getPart("file");
+                    InputStream input = filepart.getInputStream();
+                    id = request.getParameter("bID");
+                    f.addFloorPlan(Integer.parseInt(id), input);
+                    forward(request, response, "/viewBuilding.jsp");                   
+                    break;
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
                     {

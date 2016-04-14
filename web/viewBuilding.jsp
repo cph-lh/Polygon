@@ -40,7 +40,14 @@
                     <td><%= b.getFloors() %></td>
                     <td><%= b.getYear() %></td>
                     <td colspan="6"></td>                   
-                    <td>Upload bilag<br><input type="file" value="uploadFile"></td>
+                    <td>Upload floor plan<br>
+                        <form action="ControllerServlet" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file">
+                            <input type="hidden" name="do_this" value="uploadFP">
+                            <input type="hidden" name="bID" value="<%=b.getbID()%>">
+                            <input type="submit" value="Upload">
+                        </form>
+                    </td>
                 </tr>
                 <%
                     }

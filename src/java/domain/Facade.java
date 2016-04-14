@@ -1,11 +1,13 @@
 package domain;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Facade
 {
     BuildingDataMapper bdm = new BuildingDataMapper();
     CustomerDataMapper cdm = new CustomerDataMapper();
+    PictureDataMapper pdm = new PictureDataMapper();
     
     public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int year, int floors)
     {
@@ -47,4 +49,8 @@ public class Facade
         return cdm.viewCustomers();
     }
     
+    public void addFloorPlan(int bID, InputStream input)
+    {
+        bdm.addFloorPlan(bID, input);
+    }  
 }

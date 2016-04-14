@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -80,6 +81,19 @@ public class BuildingDataMapper {
             Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
             
             return null;
+        }
+    }
+        public void addFloorPlan(int bID, InputStream input)
+    {
+        try
+        {
+            PreparedStatement state = new Connector().connect().prepareStatement("insert into floor_plan values (?,?)");
+            state.setInt(1, bID);
+            state.setBlob(2, input);
+            state.executeUpdate();           
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(PictureDataMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
