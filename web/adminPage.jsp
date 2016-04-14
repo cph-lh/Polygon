@@ -10,6 +10,7 @@
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Add/delete customers" name="aButton">
             <input type="submit" value="Customer list" name="aButton">
+            <input type="submit" value="Submit report" name="aButton">        
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
         <form action="index.html" method="post"><br>

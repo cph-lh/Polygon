@@ -37,7 +37,7 @@ public class ControllerServlet extends HttpServlet
                     InputStream input = filepart.getInputStream();
                     id = request.getParameter("bID");
                     f.addFloorPlan(Integer.parseInt(id), input);
-                    forward(request, response, "/viewBuilding.jsp");                   
+                    forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
@@ -48,8 +48,12 @@ public class ControllerServlet extends HttpServlet
                         case "Customer list":
                             forward(request, response, "/viewCustomerList.jsp");
                             break;
+                        case "Submit report":
+                            forward(request, response, "/report.jsp");
+                            break;
                     }
                     break;
+                case "submitReport":
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
@@ -64,7 +68,7 @@ public class ControllerServlet extends HttpServlet
                     id = request.getParameter("deleteC");
                     f.deleteCustomer(Integer.parseInt(id));
                     forward(request, response, "/viewCustomerList.jsp");
-                    break;   
+                    break;
                 case "deleteCustomer":
                     id = request.getParameter("deletecID");
                     f.deleteCustomer(Integer.parseInt(id));

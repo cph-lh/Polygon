@@ -12,7 +12,11 @@
             }
             .header{
                 font-size: 120%;
-            }             
+            }
+            .button{
+                width: 200px;
+                height: 400px;
+            }
         </style>
         <title>Polygon - Submit report</title>
     </head>
@@ -52,7 +56,7 @@
                     <td><table border="0" cellspacing="0" cellpadding="2">
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" name="roofComment" value="ON"/>Bemærkninger</td>
+                                    <td><input type="checkbox" name="roofC" value="ON"/>Bemærkninger</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -67,13 +71,13 @@
                     <td><table border="0" cellspacing="0"cellpadding="2">
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" name="uploadPicture" value="ON"/>Billede</td>
+                                    <td><input type="checkbox" name="roofPicture" value="ON"/>Billede</td>
                                 </tr>
 
                             </tbody>
                         </table></td>                      
                 </tr>
-            <td colspan="5"><input type="text" size="55"></td>
+            <td colspan="5"><input type="text" name="roofComment" size="55"></td>
         </tbody>
     </table><br>
     <table border="1" cellspacing="0" cellpadding="2">
@@ -103,14 +107,14 @@
                     <table border="0" cellspacing="0"cellpadding="2">
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" name="uploadPicture" value="ON"/>Billede</td>
+                                <td><input type="checkbox" name="outerWallPicture" value="ON"/>Billede</td>
                             </tr>
 
                         </tbody>
                     </table>
                 </td>                    
             </tr>
-        <td colspan="3"><input type="text" size="55"></td>
+        <td colspan="3"><input type="text" name="outerWallComment" size="55"></td>
     </tbody>
 </table><br><br>
 <label class="header">Indvendig gennemgang af bygningen</label><br><br>
@@ -161,10 +165,76 @@
         <td><input type="checkbox" name="fire" value="ON"/>Brand</td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="otherDamage" value="ON"/>Anden skade&#160<input type="text" name="room" size="30"/></td></td>
+        <td><input type="checkbox" name="other" value="ON"/>Anden skade&#160<input type="text" name="otherDamage" size="30"/></td></td>
     </tr>
 </tbody>
-</table><br><br>
+</table><br>
+<table border="1" cellspacing="0" cellpadding="2">
+    <tbody>
+    <thead class="thead">
+        <tr>
+            <th align="left">Gennemgang af:</th>
+            <th>Bemærkninger</th>
+            <th>Ingen bemærkninger</th>
+            <th>Billede</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>Vægge</td>
+        <td align="center"><input type="checkbox" name="wallC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noWallComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="wallPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="wallComment" size="70"/></td>
+    </tr>
+    <tr>
+        <td>Loft</td>
+        <td align="center"><input type="checkbox" name="ceilingC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="ceilingPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="ceilingComment" size="70"/></td>
+    </tr>
+    <tr>
+        <td>Gulv</td>
+        <td align="center"><input type="checkbox" name="floorC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="floorPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="floorComment" size="70"/></td>
+    </tr>
+    <tr>
+        <td>Vinduer/døre</td>
+        <td align="center"><input type="checkbox" name="window/doorC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="window/doorPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="window/doorComment" size="70"/></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="customElement" size="16"/></td>
+        <td align="center"><input type="checkbox" name="customC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="customPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="customComment" size="70"/></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="customElement" size="16"/></td>
+        <td align="center"><input type="checkbox" name="customC" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="noComment" value="ON"/></td>
+        <td align="center"><input type="checkbox" name="customPicture" value="ON"/></td>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="text" name="customComment" size="70"/></td>
+    </tr>
+</tbody>
+</table><br>
 <label class="header">Fugtscanning</label><br><br>
 <table border="0" cellspacing="0" cellpadding="2">
     <tbody>
@@ -192,16 +262,16 @@
     </thead>
     <tr><td><input type="text" name="roomID" size="15"/></td>
         <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
-    <tr><td><input type="text" name="roomID2" size="15"/></td>
-        <td><input type="text" name="dmgRecomendation2" size="60"/></td></tr>
-    <tr><td><input type="text" name="roomID3" size="15"/></td>
-        <td><input type="text" name="dmgRecomendation3" size="60"/></td></tr>
-    <tr><td><input type="text" name="roomID4" size="15"/></td>
-        <td><input type="text" name="dmgRecomendation4" size="60"/></td></tr>
-    <tr><td><input type="text" name="roomID5" size="15"/></td>
-        <td><input type="text" name="dmgRecomendation5" size="60"/></td></tr>
-    <tr><td><input type="text" name="roomID6" size="15"/></td>
-        <td><input type="text" name="dmgRecomendation6" size="60"/></td>
+    <tr><td><input type="text" name="roomID" size="15"/></td>
+        <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
+    <tr><td><input type="text" name="roomID" size="15"/></td>
+        <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
+    <tr><td><input type="text" name="roomID" size="15"/></td>
+        <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
+    <tr><td><input type="text" name="roomID" size="15"/></td>
+        <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
+    <tr><td><input type="text" name="roomID" size="15"/></td>
+        <td><input type="text" name="dmgRecomendation" size="60"/></td>
     </tr>
 </tbody>
 </table><br>
@@ -240,9 +310,16 @@
     </tr>
     <tr>
         <td><label name="condition3">Tilstandsgrad 3</label></td>
-        <td><label name="describtion3">Bygningsdelen er nedbruft og<br>skal udskiftes</label></td>
+        <td><label name="describtion3">Bygningsdelen er nedbru raft og<br>skal udskiftes</label></td>
         <td><label name="function3">Funktionen er ophørt - fare<br>for følgeskader</label></td>
         <td align="center"><input type="checkbox" name="bStatus3" value="ON"/></td>
     </tr>
+</tbody>
+</table><br>
+<form action="ControllerServlet" method="post">
+    <input class="button" type="submit" value="Submit report" name="submitReport" >        
+    <input type="hidden" name="do_this" value="submitReport">&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
+    <input type="button" value="Back" onClick="window.location = 'adminPage.jsp'; return true;"> 
+</form>
 </body>
 </html>
