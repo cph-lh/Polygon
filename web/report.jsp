@@ -15,7 +15,6 @@
             }
             .button{
                 width: 200px;
-                height: 400px;
             }
         </style>
         <title>Polygon - Submit report</title>

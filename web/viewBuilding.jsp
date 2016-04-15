@@ -1,7 +1,7 @@
 <%@page import="domain.Building"%>
-<%@page import="domain.Facade" %>
+<%@page import="domain.Controller" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% Facade f = new Facade(); %>
+<% Controller con = new Controller(); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +26,7 @@
             </thead>           
             <tbody>
                 <% Integer cID = (Integer) session.getAttribute("cID");
-                for(Building b : f.viewBuildings(cID))
+                for(Building b : con.viewBuildings(cID))
                   {   
                  %>
                 <tr>

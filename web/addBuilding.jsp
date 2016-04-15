@@ -1,6 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="domain.Facade"%>
-<% Facade f = new Facade(); %>
 <!DOCTYPE html>
 <html>
     <head>

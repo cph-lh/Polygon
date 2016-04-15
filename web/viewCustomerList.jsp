@@ -1,7 +1,7 @@
-<%@page import="domain.Facade"%>
+<%@page import="domain.Controller"%>
 <%@page import="domain.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% Facade f = new Facade(); %>
+<% Controller con = new Controller(); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +22,7 @@
                 </tr>
             </thead>           
             <tbody>
-                <%  for (Customer c : f.viewCustomers())
+                <%  for (Customer c : con.viewCustomers())
                     {
                 %>
                 <tr>
