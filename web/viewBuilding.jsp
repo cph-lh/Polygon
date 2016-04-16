@@ -6,22 +6,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
         <title>Polygon - Customer <%= session.getAttribute("cID")%> - Buildings</title>
     </head>
-    <body style="text-align: left">
-        <h1>Registered buildings</h1>
+    <body>
+        <h1>POLYGON</h1>
+        <hr>
+        <h2>Registered buildings</h2>
         <table>
             <thead>
                 <tr>
-                    <th>ID&#160</th>
-                    <th>Name&#160</th>
-                    <th>Address&#160</th>
-                    <th>Zip&#160</th>
-                    <th>City&#160</th>
-                    <th>Parcel&#160</th>
-                    <th>Size&#160</th>
-                    <th>Floors&#160</th>
-                    <th>Year&#160</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Zip</th>
+                    <th>City</th>
+                    <th>Parcel no.</th>
+                    <th>Size</th>
+                    <th>Floors</th>
+                    <th>Year</th>
+                    <th colspan="2">Building documents</th>
                 </tr>
             </thead>           
             <tbody>
@@ -38,12 +42,11 @@
                     <td><%= b.getParcel() %></td>
                     <td><%= b.getSize() %></td>
                     <td><%= b.getFloors() %></td>
-                    <td><%= b.getYear() %></td>
-                    <td colspan="6"></td>                   
+                    <td><%= b.getYear() %></td>                                       
                     <td>Upload floor plan<br>
                         <form action="ControllerServlet" method="post" enctype="multipart/form-data">
                             <input type="file" name="file">
-                            <input type="hidden" name="do_this" value="uploadFP">
+                            <input type="hidden" name="do_this" value="uploadFP"><br>
                             <input type="hidden" name="bID" value="<%=b.getbID()%>">
                             <input type="submit" value="Upload">
                         </form>
@@ -60,7 +63,7 @@
                     }
                 %>
             </tbody>
-        </table>
+        </table>            
         <form action="customerPage.jsp" method="post"><br>
             <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;"> 
         </form>

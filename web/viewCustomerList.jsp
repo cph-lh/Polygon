@@ -6,19 +6,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
         <title>Polygon - Admin - Customer List</title>
     </head>
-    <body style="text-align: left">
+    <body>
         <h1>Customer list</h1>
         <table>
             <thead>
                 <tr>
-                    <th>ID&#160</th>
-                    <th>Name&#160</th>
-                    <th>Address&#160</th>
-                    <th>Zip&#160</th>
-                    <th>City&#160</th>
-                    <th>Phone&#160</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Zip</th>
+                    <th>City</th>
+                    <th>Phone</th>
+                    <th>Delete</th>
                 </tr>
             </thead>           
             <tbody>
