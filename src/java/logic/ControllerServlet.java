@@ -1,10 +1,9 @@
 package logic;
 
+import domain.Controller;
 import domain.Customer;
 import domain.Facade;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,6 +19,7 @@ public class ControllerServlet extends HttpServlet
 {
 
     Facade f = new Facade();
+    Controller c = new Controller();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
@@ -38,6 +38,15 @@ public class ControllerServlet extends HttpServlet
                     id = request.getParameter("bID");
                     f.addFloorPlan(Integer.parseInt(id), input);
                     forward(request, response, "/viewBuilding.jsp");
+                    break;
+                case "viewFP":
+                    id = request.getParameter("bID");
+                    byte [] imgData = c.viewFloorPlan(Integer.parseInt(id));
+                    response.setContentType("image/gif");
+                    OutputStream o = response.getOutputStream();
+                    o.write(imgData);
+                    o.flush();
+                    o.close();
                     break;
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
