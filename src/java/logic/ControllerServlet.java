@@ -43,10 +43,10 @@ public class ControllerServlet extends HttpServlet
                     id = request.getParameter("bID");
                     byte [] imgData = c.viewFloorPlan(Integer.parseInt(id));
                     response.setContentType("image/gif");
-                    OutputStream o = response.getOutputStream();
-                    o.write(imgData);
-                    o.flush();
-                    o.close();
+                    OutputStream output = response.getOutputStream();
+                    output.write(imgData);
+                    output.flush();
+                    output.close();
                     break;
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
