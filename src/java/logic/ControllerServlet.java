@@ -47,6 +47,7 @@ public class ControllerServlet extends HttpServlet
                     output.write(imgData);
                     output.flush();
                     output.close();
+                    forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
