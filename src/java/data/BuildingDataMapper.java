@@ -109,13 +109,13 @@ public class BuildingDataMapper {
             Blob img;
             byte[] imgData = null;
 
-            String query = "select floor_plan from floor_plan where bID =" + bID;
+            String query = "select floor_plan from floor_plan where bID = '" + bID + "'";
 
             ResultSet res = new Connector().connect().createStatement().executeQuery(query);
 
             while (res.next())
             {
-                img = res.getBlob(2);
+                img = res.getBlob(1);
                 imgData = img.getBytes(1, (int) img.length());
             }
 

@@ -48,6 +48,13 @@
                             <input type="submit" value="Upload">
                         </form>
                     </td>
+                    <td>
+                        <form action="ControllerServlet" method="post">
+                            <input type="hidden" name="do_this" value="viewFP">
+                           
+                            <input type="submit" value="View building">
+                        </form>
+                    </td>
                 </tr>
                 <%
                     }
