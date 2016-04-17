@@ -55,7 +55,7 @@
                         <form action="ControllerServlet" method="post">
                             <input type="hidden" name="do_this" value="viewFP">
                            
-                            <input type="submit" value="View building">
+                            <input type="submit" value="View Floor Plan">
                         </form>
                     </td>
                 </tr>
@@ -63,7 +63,7 @@
                     }
                 %>
             </tbody>
-        </table>            
+        </table>
         <form action="customerPage.jsp" method="post"><br>
             <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;"> 
         </form>
