@@ -126,4 +126,17 @@ public class BuildingDataMapper {
             return null;
         }
     }
+    
+    public void setStatus(int bID, int status){
+        
+        try
+        {
+            String query = "insert into buildings (status) values ('" + status + "' where bID = '" + bID + "'";
+            
+            new Connector().connect().createStatement().executeQuery(query);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
