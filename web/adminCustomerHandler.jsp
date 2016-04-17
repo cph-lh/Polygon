@@ -17,14 +17,14 @@
             <input type="submit" value="Add customer">
             <input type="hidden" name="do_this" value="addCustomer">
         </form>
-        <br>
+<!--        <br>
         <hr>
         <h1> Delete Customer</h1>
         <form name="delete" action="ControllerServlet" method="post">
             Customer ID: <input type="text" name="deletecID"><br>
             <input type="submit" value="Delete customer">
             <input type="hidden" name="do_this" value="deleteCustomer">
-        </form>
+        </form>-->
         <form action="adminPage.jsp" method="post"><br>
             <input type="button" value="Back" onClick="window.location = 'adminPage.jsp'; return true;"> 
         </form>
