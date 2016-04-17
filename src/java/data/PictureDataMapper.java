@@ -6,26 +6,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PictureDataMapper {
-    
-    public void addPicture(int bID, String filePath, int column)
+
+    public void addPicture(int bID, InputStream input, int column)
     {
 
         try
         {
             Connection con = new Connector().connect();
-     
-
-            InputStream inputStream = new FileInputStream(new File(filePath));
 
             String query = "insert into pictures (bID '" + column + "') values (?,?)";
             PreparedStatement state = con.prepareStatement(query);
             state.setInt(1, bID);
-            state.setBlob(column, inputStream);
-
+            state.setBlob(column, input);
             state.executeUpdate();
-        } catch (SQLException | FileNotFoundException ex)
+        } catch (SQLException ex)
         {
             Logger.getLogger(PictureDataMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 }

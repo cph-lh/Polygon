@@ -1,5 +1,6 @@
 package data;
 
+import com.mysql.fabric.Response;
 import domain.Building;
 import java.io.InputStream;
 import java.sql.*;
@@ -115,10 +116,9 @@ public class BuildingDataMapper {
 
             while (res.next())
             {
-                img = res.getBlob(1);
+                img = res.getBlob("floor_plans");
                 imgData = img.getBytes(1, (int) img.length());
             }
-
             return imgData;
         } catch (SQLException ex)
         {

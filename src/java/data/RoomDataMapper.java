@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package data;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Jmach
+ */
+public class RoomDataMapper {
+    
+    public void addRoom(int bID, String rName, String rComment,String rRecommendation ){
+        
+        try
+        {
+            String query = "insert into reportInfo (roomName, roomRecommendation)"
+                    + "values('" + rName + "','" + rComment + "','" + rRecommendation + "')";
+            
+            new Connector().connect().createStatement().executeQuery(query);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(RoomDataMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
