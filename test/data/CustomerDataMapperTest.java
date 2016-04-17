@@ -10,28 +10,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
 
-public class CustomerDataMapperTest
-{
-    
+public class CustomerDataMapperTest {
+
     public CustomerDataMapperTest()
     {
     }
-    
+
     @BeforeClass
     public static void setUpClass()
     {
     }
-    
+
     @AfterClass
     public static void tearDownClass()
     {
     }
-    
+
     @Before
     public void setUp()
     {
     }
-    
+
     @After
     public void tearDown()
     {
@@ -40,7 +39,7 @@ public class CustomerDataMapperTest
     /**
      * Test of addCustomer method, of class DM_Customer.
      */
-    @Ignore
+    
     @Test
     public void testAddCustomer()
     {
@@ -53,7 +52,7 @@ public class CustomerDataMapperTest
         String password = "1234";
         CustomerDataMapper instance = new CustomerDataMapper();
         instance.addCustomer(id, name, address, zip, phone, password);
-       
+
     }
 
     /**
@@ -75,7 +74,7 @@ public class CustomerDataMapperTest
     /**
      * Test of deleteCustomer method, of class DM_Customer.
      */
-    @Ignore
+    
     @Test(expected = NullPointerException.class)
     public void testDeleteCustomer()
     {
@@ -86,7 +85,7 @@ public class CustomerDataMapperTest
         instance.deleteCustomer(cID);
         Customer result = instance.getCustomer(cID);
         assertEquals(expName, result.getName());
-        
+
     }
-    
+
 }
