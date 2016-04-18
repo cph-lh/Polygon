@@ -2,6 +2,7 @@ package data;
 
 import data.*;
 import domain.*;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -84,6 +85,70 @@ public class CustomerDataMapperTest {
         Customer result = instance.getCustomer(cID);
         assertEquals(expName, result.getName());
 
+    }
+
+    /**
+     * Test of addCustomer method, of class CustomerDataMapper.
+     */
+    @Test
+    public void testAddCustomer()
+    {
+        System.out.println("addCustomer");
+        int id = 0;
+        String name = "";
+        String address = "";
+        int zip = 0;
+        int phone = 0;
+        String password = "";
+        CustomerDataMapper instance = new CustomerDataMapper();
+        instance.addCustomer(id, name, address, zip, phone, password);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCustomer method, of class CustomerDataMapper.
+     */
+    @Test
+    public void testGetCustomer()
+    {
+        System.out.println("getCustomer");
+        int cID = 0;
+        CustomerDataMapper instance = new CustomerDataMapper();
+        Customer expResult = null;
+        Customer result = instance.getCustomer(cID);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of deleteCustomer method, of class CustomerDataMapper.
+     */
+    @Test
+    public void testDeleteCustomer()
+    {
+        System.out.println("deleteCustomer");
+        int cID = 0;
+        CustomerDataMapper instance = new CustomerDataMapper();
+        instance.deleteCustomer(cID);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of viewCustomers method, of class CustomerDataMapper.
+     */
+    @Test
+    public void testViewCustomers()
+    {
+        System.out.println("viewCustomers");
+        CustomerDataMapper instance = new CustomerDataMapper();
+        ArrayList<Customer> expResult = null;
+        ArrayList<Customer> result = instance.viewCustomers();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 
 }
