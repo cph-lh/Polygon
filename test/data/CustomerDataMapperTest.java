@@ -39,9 +39,8 @@ public class CustomerDataMapperTest {
     /**
      * Test of addCustomer method, of class DM_Customer.
      */
-    
     @Test
-    public void testAddCustomer()
+    public void test3AddCustomer()
     {
         System.out.println("addCustomer");
         int id = 4444;
@@ -59,7 +58,7 @@ public class CustomerDataMapperTest {
      * Test of getCustomer method, of class DM_Customer.
      */
     @Test
-    public void testGetCustomer()
+    public void test2GetCustomer()
     {
         System.out.println("getCustomer");
         int cID = 4444;
@@ -74,9 +73,8 @@ public class CustomerDataMapperTest {
     /**
      * Test of deleteCustomer method, of class DM_Customer.
      */
-    
     @Test(expected = NullPointerException.class)
-    public void testDeleteCustomer()
+    public void test1DeleteCustomer()
     {
         System.out.println("deleteCustomer");
         int cID = 4444;
