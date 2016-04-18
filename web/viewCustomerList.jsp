@@ -20,6 +20,7 @@
                     <th>Zip</th>
                     <th>City</th>
                     <th>Phone</th>
+                    <th>Buildings</th>
                     <th>Delete customer</th>
                 </tr>
             </thead>           
@@ -36,11 +37,18 @@
                     <td><%= c.getPhone()%></td>              
                     <td align="center">
                         <form action="ControllerServlet" method="post">
+                            <input type="submit" value="View buildings" name="viewCBuilding">
+                            <input type="hidden" value="viewCBuilding" name="do_this">
+                            <input type="hidden" value="<%=c.getID()%>" name="getID">                        
+                        </form>
+                    </td> 
+                    <td align="center">
+                        <form action="ControllerServlet" method="post">
                             <input type="submit" value="Delete" name="delete">
                             <input type="hidden" value="deleteC" name="do_this">
                             <input type="hidden" value="<%=c.getID()%>" name="deleteC">
                         </form>
-                    </td>              
+                    </td> 
                 </tr>
                 <%
                     }

@@ -45,7 +45,7 @@
                     <td><%= b.getYear() %></td>                                       
                     <td>Upload floor plan<br>
                         <form action="ControllerServlet" method="post" enctype="multipart/form-data">
-                            <input type="file" name="file">
+                            <input type="file" name="file" accept="image/*, application/x-pdf">
                             <input type="hidden" name="do_this" value="uploadFP"><br>
                             <input type="hidden" name="bID" value="<%=b.getbID()%>">
                             <input type="submit" value="Upload">
@@ -53,9 +53,8 @@
                     </td>
                     <td>
                         <form action="ControllerServlet" method="post">
-                            <input type="hidden" name="do_this" value="viewFP">
-                           
-                            <input type="submit" value="View Floor Plan">
+                            <input type="submit" value="View floor plan">
+                            <input type="hidden" name="do_this" value="viewFP">                           
                         </form>
                     </td>
                 </tr>

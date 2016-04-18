@@ -25,7 +25,8 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String id, name, address, zip, parcel, size, year, floors, phone, password;
+        String id, name, address, zip, parcel, size, year, floors, phone, password, employee, customer, checked;
+        int cID;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -38,9 +39,9 @@ public class ControllerServlet extends HttpServlet
                     con.addFloorPlan(Integer.parseInt(id), input);
                     forward(request, response, "/viewBuilding.jsp");
                     break;
-                    case "viewFP":
+                case "viewFP":
                     id = request.getParameter("bID");
-                    byte [] imgData = con.viewFloorPlan(Integer.parseInt(id));
+                    byte[] imgData = con.viewFloorPlan(Integer.parseInt(id));
                     response.setContentType("image/gif");
                     OutputStream output = response.getOutputStream();
                     output.write(imgData);
@@ -62,7 +63,21 @@ public class ControllerServlet extends HttpServlet
                             break;
                     }
                     break;
-                case "submitReport":
+                case "viewCBuilding":
+                    cID = Integer.parseInt(request.getParameter("getID"));
+                    session.setAttribute("cID", cID);
+                    forward(request, response, "/adminCustomerBuilding.jsp");
+                    break;
+                case "reportButtons":
+                    switch (request.getParameter("rButton"))
+                    {
+                        case "Submit report":
+                        forward(request, response, "/report.jsp");    
+                            break;
+                        case "View report":
+                        forward(request, response, "/report.jsp"); //ny JSP her
+                            break;
+                    }
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");
