@@ -34,84 +34,84 @@ foreign key(zip) references zipcodes(zip));
 alter table buildings auto_increment=1000;
 
 CREATE TABLE polygonEmployee (
-	pID INT NOT NULL auto_increment,
+		pID INT NOT NULL auto_increment,
         pName VARCHAR (25),
 primary key(pID));
 alter table polygonEmployee auto_increment=100;
 ##report
 CREATE TABLE reportINFO (
-    reportID INT NOT NULL auto_increment,
-    reportDate DATE,
-    cName VARCHAR (25),
-    pID INT,
-    bID INT,
-    bResponsible varchar(25),
+		reportID INT NOT NULL auto_increment,
+		reportDate DATE,
+		cName VARCHAR (25),
+		pID INT,
+		bID INT,
+		bResponsible varchar(25),
 primary key (reportID),
 foreign key (bID) references buildings(bID), 
 foreign key(pID) references polygonEmployee(pID));
 alter table reportINFO auto_increment = 1000;
 
 CREATE TABLE buildingFloor (
-    bID INT NOT NULL,
-    fNo INT DEFAULT NULL,
-    fSize INT DEFAULT NULL,
+		bID INT NOT NULL,
+		fNo INT DEFAULT NULL,
+		fSize INT DEFAULT NULL,
 foreign key (bID) references buildings(bID));
 
 CREATE TABLE room (
-    roomID INT NOT NULL,
-    roomName VARCHAR(25),
-    roomComment VARCHAR (50),
-    rRecommendation VARCHAR (50),
+		roomID INT NOT NULL,
+		roomName VARCHAR(25),
+		roomComment VARCHAR (50),
+		rRecommendation VARCHAR (50),
 primary key (roomID));
 
 CREATE TABLE moistureAnalysis (
-    roomID INT NOT NULL,
-    moistureScan BOOLEAN DEFAULT NULL,
-    analysisResult DOUBLE DEFAULT NULL,
-    analysisComment VARCHAR (50) default null,
+		roomID INT NOT NULL,
+		moistureScan BOOLEAN DEFAULT NULL,
+		analysisResult DOUBLE DEFAULT NULL,
+		analysisComment VARCHAR (50) default null,
 foreign key (roomID) references room(roomID));    
 
 CREATE TABLE damageRepair (
-    roomID INT NOT NULL,
-    damaged boolean default false,
-    dmgDate DATE,
-    dmgLocation VARCHAR (20),
-    dmgDone VARCHAR (50),
-    dmgRepaired VARCHAR (50),
+		roomID INT NOT NULL,
+		damaged boolean default false,
+		dmgDate DATE,
+		dmgLocation VARCHAR (20),
+		dmgDone VARCHAR (50),
+		dmgRepaired VARCHAR (50),
 foreign key(roomID) references room(roomID));
 
 CREATE TABLE damageType (
-    moisture_water	BOOLEAN DEFAULT NULL,
-    rot_fungus	BOOLEAN DEFAULT NULL,
-    mould	BOOLEAN DEFAULT NULL,
-    fire	BOOLEAN DEFAULT NULL,
-    otherDamage	BOOLEAN DEFAULT NULL);
-    
+		moisture_water	BOOLEAN DEFAULT NULL,
+		rot_fungus	BOOLEAN DEFAULT NULL,
+		mould	BOOLEAN DEFAULT NULL,
+		fire	BOOLEAN DEFAULT NULL,
+		otherDamage	BOOLEAN DEFAULT NULL);
+		
 CREATE TABLE pictures (
-	bID INT NOT NULL,
-    bOutside MEDIUMBLOB,
-    roof MEDIUMBLOB,
-    outerWalls MEDIUMBLOB,
-    walls MEDIUMBLOB,
-    celing MEDIUMBLOB,
-	floor MEDIUMBLOB,
-    windows_doors MEDIUMBLOB,
+		bID INT NOT NULL,
+		bOutside MEDIUMBLOB,
+		roof MEDIUMBLOB,
+		outerWalls MEDIUMBLOB,
+		walls MEDIUMBLOB,
+		celing MEDIUMBLOB,
+		floor MEDIUMBLOB,
+		windows_doors MEDIUMBLOB,
 foreign key (bID) references buildings(bID));
 
 create table floor_plan(
-    bID int not null,
-    floor_plan MEDIUMBLOB,
+		bID int not null,
+		floor_plan MEDIUMBLOB,
 foreign key (bID) references buildings(bID));
 
 CREATE TABLE comments (
-	bID INT NOT NULL,
-    bOutsideC VARCHAR (50),
-    roofC VARCHAR (50),
-    outerWallsC VARCHAR (50),
-    wallsC VARCHAR (50),
-    celingC VARCHAR (50),
-	floorC VARCHAR (50),
-    windows_doorsC VARCHAR (50),
+		bID INT NOT NULL,
+		bOutsideC VARCHAR (50),
+		roofC VARCHAR (50),
+		outerWallsC VARCHAR (50),
+		wallsC VARCHAR (50),
+		celingC VARCHAR (50),
+		floorC VARCHAR (50),
+		windows_doorsC VARCHAR (50),
 foreign key(bID) references buildings(bID));    
 
 INSERT INTO zipcodes VALUES ('0800', 'Høje Taastrup');
