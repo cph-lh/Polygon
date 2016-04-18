@@ -4,6 +4,7 @@ import domain.Customer;
 import domain.Controller;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -19,14 +20,12 @@ import javax.servlet.http.Part;
 public class ControllerServlet extends HttpServlet
 {
 
-    Controller con = new Controller(); //Controller klasse
+    Controller con = new Controller();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password;
-        int cID;
-        //Boolean loggedIn = false;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -37,6 +36,16 @@ public class ControllerServlet extends HttpServlet
                     InputStream input = filepart.getInputStream();
                     id = request.getParameter("bID");
                     con.addFloorPlan(Integer.parseInt(id), input);
+                    forward(request, response, "/viewBuilding.jsp");
+                    break;
+                    case "viewFP":
+                    id = request.getParameter("bID");
+                    byte [] imgData = con.viewFloorPlan(Integer.parseInt(id));
+                    response.setContentType("image/gif");
+                    OutputStream output = response.getOutputStream();
+                    output.write(imgData);
+                    output.flush();
+                    output.close();
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "adminButtons":

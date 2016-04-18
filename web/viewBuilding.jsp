@@ -39,9 +39,9 @@
                     <td><%= b.getAddress() %></td>
                     <td><%= b.getZip()%></td>
                     <td><%= b.getCity()%></td>
-                    <td><%= b.getParcel() %></td>
-                    <td><%= b.getSize() %></td>
-                    <td><%= b.getFloors() %></td>
+                    <td class="align"><%= b.getParcel() %></td>
+                    <td class="align"><%= b.getSize() %></td>
+                    <td class="align"><%= b.getFloors() %></td>
                     <td><%= b.getYear() %></td>                                       
                     <td>Upload floor plan<br>
                         <form action="ControllerServlet" method="post" enctype="multipart/form-data">

@@ -20,7 +20,7 @@
                     <th>Zip</th>
                     <th>City</th>
                     <th>Phone</th>
-                    <th>Delete</th>
+                    <th>Delete customer</th>
                 </tr>
             </thead>           
             <tbody>
@@ -34,7 +34,7 @@
                     <td><%= c.getZip()%></td>
                     <td><%= c.getCity()%></td>
                     <td><%= c.getPhone()%></td>              
-                    <td>
+                    <td align="center">
                         <form action="ControllerServlet" method="post">
                             <input type="submit" value="Delete" name="delete">
                             <input type="hidden" value="deleteC" name="do_this">
