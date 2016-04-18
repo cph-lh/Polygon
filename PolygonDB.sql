@@ -45,6 +45,7 @@ CREATE TABLE reportINFO (
     cName VARCHAR (25),
     pID INT,
     bID INT,
+    bResponsible varchar(25),
 primary key (reportID),
 foreign key (bID) references buildings(bID), 
 foreign key(pID) references polygonEmployee(pID));
