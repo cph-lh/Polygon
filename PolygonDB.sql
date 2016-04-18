@@ -38,9 +38,9 @@ CREATE TABLE polygonEmployee (
         pName VARCHAR (25),
 primary key(pID));
 alter table polygonEmployee auto_increment=100;
-
+##report
 CREATE TABLE reportINFO (
-    reportID INT NOT NULL,
+    reportID INT NOT NULL auto_increment,
     reportDate DATE,
     cName VARCHAR (25),
     pID INT,
@@ -49,6 +49,7 @@ CREATE TABLE reportINFO (
 primary key (reportID),
 foreign key (bID) references buildings(bID), 
 foreign key(pID) references polygonEmployee(pID));
+alter table reportINFO auto_increment = 1000;
 
 CREATE TABLE buildingFloor (
     bID INT NOT NULL,
@@ -72,7 +73,7 @@ foreign key (roomID) references room(roomID));
 
 CREATE TABLE damageRepair (
     roomID INT NOT NULL,
-    damaged boolean default null,
+    damaged boolean default false,
     dmgDate DATE,
     dmgLocation VARCHAR (20),
     dmgDone VARCHAR (50),
