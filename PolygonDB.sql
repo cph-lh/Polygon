@@ -28,6 +28,7 @@ CREATE TABLE buildings	(
         bFloors INT DEFAULT NULL,
         bStatus int(1) DEFAULT NULL,
         bYear YEAR NOT NULL,
+        bUsage varchar(25),
 primary key (bID),
 foreign key (cID) references customers(cID), 
 foreign key(zip) references zipcodes(zip));
