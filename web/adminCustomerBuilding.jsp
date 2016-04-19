@@ -10,7 +10,7 @@
         <title>Polygon - Admin - Se kunde bygninger</title>
     </head>
     <body>
-        <h1>Registrede bygninger for kunder <%=session.getAttribute("cID")%></h1>
+        <h1>Registrede bygninger for kunde <%=session.getAttribute("cID")%></h1>
         <table>
             <thead>
                 <tr>
@@ -20,10 +20,10 @@
                     <th>Postnummer</th>
                     <th>By</th>
                     <th>Matrikel nr.</th>
-                    <th>Size</th>
+                    <th>Bygningsareal</th>
                     <th>Etager</th>
-                    <th>År</th>
-                    <th>Etage plan</th>
+                    <th>Byggeår</th>
+                    <th>Plantegning</th>
                     <th colspan="2">Rapporter</th>
                 </tr>
             </thead>           
@@ -45,7 +45,7 @@
                     <td><%= b.getYear()%></td>                                       
                     <td>
                         <form action="ControllerServlet" method="post">
-                            <input type="submit" value="View floor plan">
+                            <input type="submit" value="Se plantegning">
                             <input type="hidden" name="do_this" value="viewFP">
                         </form>
                     </td>
@@ -59,8 +59,8 @@
                             <input type="hidden" name="parcel" value="<%= b.getParcel()%>">
                             <input type="hidden" name="size" value="<%= b.getSize()%>">
                             <input type="hidden" name="year" value="<%= b.getYear()%>">
-                            <input type="submit" value="Submit report" name="rButton">
-                            <input type="submit" value="View report" name="rButton">
+                            <input type="submit" value="Udfyld rapport" name="rButton">
+                            <input type="submit" value="Se rapport" name="rButton">
                             <input type="hidden" name="do_this" value="reportButtons">
                         </form>
                     </td>
@@ -71,7 +71,7 @@
             </tbody>
         </table>
         <form action="viewCustomerList.jsp" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'viewCustomerList.jsp';
+            <input type="button" value="Tilbage" onClick="window.location = 'viewCustomerList.jsp';
                     return true;"> 
         </form>
     </body>

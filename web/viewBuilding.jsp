@@ -24,8 +24,8 @@
                     <th>Matrikel nr.</th>
                     <th>Areal</th>
                     <th>Etager</th>
-                    <th>År</th>
-                    <th colspan="2">Bygning dokumenter</th>
+                    <th>Byggeår</th>
+                    <th colspan="2">Bygningsdokumenter</th>
                 </tr>
             </thead>           
             <tbody>
@@ -43,7 +43,7 @@
                     <td class="align"><%= b.getSize() %></td>
                     <td class="align"><%= b.getFloors() %></td>
                     <td><%= b.getYear() %></td>                                       
-                    <td>Upload floor plan<br>
+                    <td>Upload plantegning<br>
                         <form action="ControllerServlet" method="post" enctype="multipart/form-data">
                             <input type="file" name="file" accept="image/*, application/x-pdf">
                             <input type="hidden" name="do_this" value="uploadFP"><br>
@@ -53,7 +53,7 @@
                     </td>
                     <td>
                         <form action="ControllerServlet" method="post">
-                            <input type="submit" value="View floor plan">
+                            <input type="submit" value="Se plantegning">
                             <input type="hidden" name="do_this" value="viewFP">                           
                         </form>
                     </td>
@@ -64,7 +64,7 @@
             </tbody>
         </table>
         <form action="customerPage.jsp" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;"> 
+            <input type="button" value="Tilbage" onClick="window.location = 'customerPage.jsp'; return true;"> 
         </form>
     </body>
 </html>

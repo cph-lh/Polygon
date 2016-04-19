@@ -7,15 +7,15 @@
         <title>Polygon - Admin</title>
     </head>
     <body>
-        <h1>Admin side</h1>
+        <h1>Admin forside</h1>
         <form action="ControllerServlet" method="post">
-            <input type="submit" value="Add/delete customers" name="aButton">
-            <input type="submit" value="Customer list" name="aButton">
-            <input type="submit" value="Submit report" name="aButton">        
+            <input type="submit" value="Tilføj/slet kunde" name="aButton">
+            <input type="submit" value="Kundeliste" name="aButton">
+            <input type="submit" value="Udfyld rapport" name="aButton">        
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
         <form action="index.html" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'index.html'; return true;"> 
+            <input type="button" value="Tilbage" onClick="window.location = 'index.html'; return true;"> 
         </form>
     </body>
 </html>

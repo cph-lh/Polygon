@@ -15,7 +15,7 @@
             Address: <input type="text" name="cAddress"><br>
             Postnummer: <input type="text" name="cZip"><br>
             Password: <input type="text" name="cPassword"><br>
-            <input type="submit" value="Add customer">
+            <input type="submit" value="Tilføj kunde">
             <input type="hidden" name="do_this" value="addCustomer">
         </form>
 <!--        <br>
@@ -27,7 +27,7 @@
             <input type="hidden" name="do_this" value="deleteCustomer">
         </form>-->
         <form action="adminPage.jsp" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'adminPage.jsp'; return true;"> 
+            <input type="button" value="Tilbage" onClick="window.location = 'adminPage.jsp'; return true;"> 
         </form>
     </body>
 </html>

@@ -7,16 +7,16 @@
         <title>Polygon - Kunde <%= session.getAttribute("cID")%> - Tilføj Bygning</title>
     </head>
     <body>
-        <h1>Add a building</h1>
+        <h1>Tilføj ny bygning</h1>
         <form name="addBuilding" action="ControllerServlet" method="post">
-            Bygnings Navn:<input type="text" name="bName"><br>
+            Bygnings navn:<input type="text" name="bName"><br>
             Adresse:<input type="text" name="bAddress"><br>
             Postnummer:<input type="text" name="bZip"><br>
             Matrikel nr.:<input type="text" name="bParcel"><br>
-            Bygnings år:<input type="text" name="year"><br>
+            Byggeår:<input type="text" name="year"><br>
             Areal:<input type="text" name="bSize"><br>
             Etager:<input type="text" name="bFloors"><br>
-            <input type="submit" value="Confirm">
+            <input type="submit" value="Gem">
             <input type="hidden" name="do_this" value="addBuilding">
         </form>
         <form action="customerPage.jsp" method="post">
