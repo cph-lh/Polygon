@@ -2,10 +2,13 @@ package presentation;
 
 import domain.Customer;
 import domain.Controller;
+import java.util.Date;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -21,11 +24,13 @@ public class ControllerServlet extends HttpServlet
 {
 
     Controller con = new Controller();
+    DateFormat df = new SimpleDateFormat("yy/mm/dd");
+    Date dateobj = new Date();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String id, name, address, zip, parcel, size, year, floors, phone, password, city;
+        String id, name, address, zip, parcel, size, year, floors, phone, password, city, date;
         int cID, bID;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
@@ -69,6 +74,8 @@ public class ControllerServlet extends HttpServlet
                     switch (request.getParameter("rButton"))
                     {
                         case "Udfyld rapport":
+                     
+                            session.setAttribute("date", df.format(dateobj));                     
                             bID = Integer.parseInt(request.getParameter("bID"));
                             session.setAttribute("bID", bID);
                             name = request.getParameter("name");
