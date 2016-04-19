@@ -31,6 +31,7 @@
                 <% Integer cID = (Integer) session.getAttribute("cID");
                     for (Building b : con.viewBuildings(cID))
                     {
+                        request.getSession().setAttribute("bID", b.getbID());
                 %>
                 <tr>
                     <td><%= b.getbID()%></td>
