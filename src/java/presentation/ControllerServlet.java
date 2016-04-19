@@ -52,13 +52,13 @@ public class ControllerServlet extends HttpServlet
                 case "adminButtons":
                     switch (request.getParameter("aButton"))
                     {
-                        case "Add/delete customers":
+                        case "Tilføj/slet kunde":
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
-                        case "Customer list":
+                        case "Kundeliste":
                             forward(request, response, "/viewCustomerList.jsp");
                             break;
-                        case "Submit report":
+                        case "Udfyld rapport":
                             forward(request, response, "/report.jsp");
                             break;
                     }
@@ -71,7 +71,7 @@ public class ControllerServlet extends HttpServlet
                 case "reportButtons":
                     switch (request.getParameter("rButton"))
                     {
-                        case "Submit report":
+                        case "Udfyld rapport":
                             bID = Integer.parseInt(request.getParameter("bID"));
                             session.setAttribute("bID", bID);
                             name = request.getParameter("name");
@@ -90,7 +90,7 @@ public class ControllerServlet extends HttpServlet
                             session.setAttribute("year", year);
                             forward(request, response, "/report.jsp");    
                             break;
-                        case "View report":
+                        case "Se rapport":
                         forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
@@ -117,13 +117,13 @@ public class ControllerServlet extends HttpServlet
                 case "customerButtons":
                     switch (request.getParameter("cButton"))
                     {
-                        case "View buildings":
+                        case "Se bygninger":
                             forward(request, response, "/viewBuilding.jsp");
                             break;
-                        case "Add new building":
+                        case "Tilføj bygning":
                             forward(request, response, "/addBuilding.jsp");
                             break;
-                        case "Logout":
+                        case "Log ud":
                             session = request.getSession(false);
                             if (session != null)
                             {
