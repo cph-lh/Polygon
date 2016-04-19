@@ -20,7 +20,7 @@
                     <th>Postnummer</th>
                     <th>By</th>
                     <th>Matrikel nr.</th>
-                    <th>Size</th>
+                    <th>Areal</th>
                     <th>Etager</th>
                     <th>År</th>
                     <th>Etage plan</th>
