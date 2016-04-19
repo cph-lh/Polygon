@@ -16,7 +16,7 @@
             <input type="hidden" value="login" name="do_this">
         </form>
         <form action="index.html" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'index.html'; return true;"> 
+            <input type="button" value="Tilbage" onClick="window.location = 'index.html'; return true;"> 
         </form>
     </body>
 </html>

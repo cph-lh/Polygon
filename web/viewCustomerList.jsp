@@ -7,10 +7,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Admin - Kunde liste</title>
+        <title>Polygon - Admin - Kundeliste</title>
     </head>
     <body>
-        <h1>Kunde liste</h1>
+        <h1>Kundeliste</h1>
         <table>
             <thead>
                 <tr>
@@ -37,14 +37,14 @@
                     <td><%= c.getPhone()%></td>              
                     <td align="center">
                         <form action="ControllerServlet" method="post">
-                            <input type="submit" value="View buildings" name="viewCBuilding">
+                            <input type="submit" value="Se bygninger" name="viewCBuilding">
                             <input type="hidden" value="viewCBuilding" name="do_this">
                             <input type="hidden" value="<%=c.getID()%>" name="getID">                        
                         </form>
                     </td> 
                     <td align="center">
                         <form action="ControllerServlet" method="post">
-                            <input type="submit" value="Delete" name="delete">
+                            <input type="submit" value="Slet" name="delete">
                             <input type="hidden" value="deleteC" name="do_this">
                             <input type="hidden" value="<%=c.getID()%>" name="deleteC">
                         </form>
@@ -56,7 +56,7 @@
             </tbody>
         </table>
         <form action="adminPage.jsp" method="post"><br>
-            <input type="button" value="Back" onClick="window.location = 'adminPage.jsp'; return true;">
+            <input type="button" value="Tilbage" onClick="window.location = 'adminPage.jsp'; return true;">
         </form>
     </body>
 </html>

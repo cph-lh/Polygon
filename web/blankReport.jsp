@@ -17,7 +17,7 @@
                 width: 200px;
             }
         </style>
-        <title>Polygon - Submit report</title>
+        <title>Polygon - Bygningsrapport</title>
     </head>
     <body>
         <%--<img src="polygon-logo.jpg" alt="logo"/>--%>
@@ -319,9 +319,9 @@
 </tbody>
 </table><br>
 <form action="ControllerServlet" method="post">
-    <input class="button" type="submit" value="Submit report" name="submitReport" >        
+    <input class="button" type="submit" value="Gem rapport" name="submitReport" >        
     <input type="hidden" name="do_this" value="submitReport">&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
-    <input type="button" value="Cancel" onClick="window.location = 'adminPage.jsp';
+    <input type="button" value="Tilbage" onClick="window.location = 'adminPage.jsp';
             return true;">
 </form>
 </body>
