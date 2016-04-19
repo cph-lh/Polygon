@@ -27,22 +27,24 @@
         <label for="date">Dato</label>  
         <input type="text" id="date" name="date"><br>
         <label for="customerID">Kunde ID</label>
-        <input type="text" id="customerID" name="customerID" value="<%=session.getAttribute("cID")%>"><br>
+        <input type="text" id="customerID" name="customerID"><br>
         <label for="buildingName">Navn på bygning</label>
-        <input type="text" id="buildingName" name="buildingName" value="<%=session.getAttribute("name")%>"><br>
+        <input type="text" id="buildingName" name="buildingName"><br>
+        <label for="buildingName">Bygning ID</label>
+        <input type="text" id="buildingName" name="buildingName"><br>
         <label for="address">Adresse</label>
-        <input type="text" id="address" name="address" value="<%=session.getAttribute("address")%>"><br>
+        <input type="text" id="address" name="address"><br>
         <label for="zip">Postnummer</label>
-        <input type="text" id="zip" name="zip" value="<%=session.getAttribute("zip")%>"><br>
+        <input type="text" id="zip" name="zip"><br>
         <label for="city">By</label>
-        <input type="text" id="city" name="city" value="<%=session.getAttribute("city")%>"><br>
-        <label for="parcel">Matrikel nr.</label>
-        <input type="text" id="parcel" name="parcel" value="<%=session.getAttribute("parcel")%>"><br><br><br>       
+        <input type="text" id="city" name="city"><br>
+        <label for="parcel">By</label>
+        <input type="text" id="parcel" name="parcel"><br><br><br>       
         <label style="font-size: 120%">Generel information om bygningen</label><br><br>
         <label for="year">Byggeår&#160</label>
-        <input type="text" id="year" name="year" size="6" value="<%=session.getAttribute("year")%>"><br>
+        <input type="text" id="year" name="year" size="6"><br>
         <label for="size">Bygningsareal i m² (hver etage tælles separat)&#160</label>
-        <input type="text" id="size" name="size" size="6" value="<%=session.getAttribute("size")%>"><br>
+        <input type="text" id="size" name="size" size="6"><br>
         <label for="usage">Hvad bruges/har bygningen været brugt til?&#160</label>
         <input type="text" id="usage" name="usage" size="35"><br><br><br>
         <label class="header">Udvendig gennemgang af bygningen</label><br><br>

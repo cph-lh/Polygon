@@ -52,7 +52,7 @@
                     <td>
                         <form action="ControllerServlet" method="post">
                             <input type="hidden" name="bID" value="<%=b.getbID()%>">
-                            <input type="hidden" name="bName" value="<%= b.getName()%>">
+                            <input type="hidden" name="name" value="<%= b.getName()%>">
                             <input type="hidden" name="address" value="<%= b.getAddress()%>">
                             <input type="hidden" name="zip" value="<%= b.getZip()%>">
                             <input type="hidden" name="city" value="<%= b.getCity()%>">

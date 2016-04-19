@@ -25,8 +25,8 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String id, name, address, zip, parcel, size, year, floors, phone, password, employee, customer, checked;
-        int cID;
+        String id, name, address, zip, parcel, size, year, floors, phone, password, city;
+        int cID, bID;
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -72,10 +72,26 @@ public class ControllerServlet extends HttpServlet
                     switch (request.getParameter("rButton"))
                     {
                         case "Submit report":
-                        forward(request, response, "/report.jsp");    
+                            bID = Integer.parseInt(request.getParameter("bID"));
+                            session.setAttribute("bID", bID);
+                            name = request.getParameter("name");
+                            session.setAttribute("name", name);
+                            address = request.getParameter("address");
+                            session.setAttribute("address", address);
+                            zip = request.getParameter("zip");
+                            session.setAttribute("zip", zip);
+                            city = request.getParameter("city");
+                            session.setAttribute("bID", city);
+                            parcel = request.getParameter("parcel");
+                            session.setAttribute("parcel", parcel);
+                            size = request.getParameter("size");
+                            session.setAttribute("size", size);
+                            year = request.getParameter("year");
+                            session.setAttribute("year", year);
+                            forward(request, response, "/report.jsp");    
                             break;
                         case "View report":
-                        forward(request, response, "/report.jsp"); //ny JSP her
+                        forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
                 case "addCustomer":
