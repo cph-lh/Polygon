@@ -7,25 +7,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Customer <%= session.getAttribute("cID")%> - Buildings</title>
+        <title>Polygon - Kunder <%= session.getAttribute("cID")%> - Buildings</title>
     </head>
     <body>
         <h1>POLYGON</h1>
         <hr>
-        <h2>Registered buildings</h2>
+        <h2>Registrede bygninger</h2>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Zip</th>
-                    <th>City</th>
-                    <th>Parcel no.</th>
-                    <th>Size</th>
-                    <th>Floors</th>
-                    <th>Year</th>
-                    <th colspan="2">Building documents</th>
+                    <th>Navn</th>
+                    <th>Adresse</th>
+                    <th>Postnummer</th>
+                    <th>By</th>
+                    <th>Matrikel nr.</th>
+                    <th>Areal</th>
+                    <th>Etager</th>
+                    <th>År</th>
+                    <th colspan="2">Bygning dokumenter</th>
                 </tr>
             </thead>           
             <tbody>

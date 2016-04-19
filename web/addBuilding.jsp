@@ -4,18 +4,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Customer <%= session.getAttribute("cID")%> - Add a building</title>
+        <title>Polygon - Kunde <%= session.getAttribute("cID")%> - Tilføj Bygning</title>
     </head>
     <body>
         <h1>Add a building</h1>
         <form name="addBuilding" action="ControllerServlet" method="post">
-            Building name:<input type="text" name="bName"><br>
-            Address:<input type="text" name="bAddress"><br>
-            Zipcode:<input type="text" name="bZip"><br>
-            Parcel no.:<input type="text" name="bParcel"><br>
-            Building year:<input type="text" name="year"><br>
-            Size:<input type="text" name="bSize"><br>
-            Floors:<input type="text" name="bFloors"><br>
+            Bygnings Navn:<input type="text" name="bName"><br>
+            Adresse:<input type="text" name="bAddress"><br>
+            Postnummer:<input type="text" name="bZip"><br>
+            Matrikel nr.:<input type="text" name="bParcel"><br>
+            Bygnings år:<input type="text" name="year"><br>
+            Areal:<input type="text" name="bSize"><br>
+            Etager:<input type="text" name="bFloors"><br>
             <input type="submit" value="Confirm">
             <input type="hidden" name="do_this" value="addBuilding">
         </form>

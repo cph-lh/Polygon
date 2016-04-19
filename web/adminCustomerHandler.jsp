@@ -4,17 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Add customer</title>
+        <title>Polygon - Tilføj kunde</title>
     </head>
     <body>
-        <h1>Add Customer</h1>
+        <h1>Tilføj kunde</h1>
         <form name="add" action="ControllerServlet" method="post">
-            Customer ID: <input type="text" name="cID"><br>
-            Customer name: <input type="text" name="cName"><br>
-            Customer phone: <input type="text" name="cPhone"><br>
-            Customer address: <input type="text" name="cAddress"><br>
-            Customer zip: <input type="text" name="cZip"><br>
-            Customer password: <input type="text" name="cPassword"><br>
+            ID: <input type="text" name="cID"><br>
+            Navn: <input type="text" name="cName"><br>
+            Telefon: <input type="text" name="cPhone"><br>
+            Address: <input type="text" name="cAddress"><br>
+            Postnummer: <input type="text" name="cZip"><br>
+            Password: <input type="text" name="cPassword"><br>
             <input type="submit" value="Add customer">
             <input type="hidden" name="do_this" value="addCustomer">
         </form>

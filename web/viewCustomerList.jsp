@@ -7,21 +7,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Admin - Customer List</title>
+        <title>Polygon - Admin - Kunde liste</title>
     </head>
     <body>
-        <h1>Customer list</h1>
+        <h1>Kunde liste</h1>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Zip</th>
-                    <th>City</th>
-                    <th>Phone</th>
-                    <th>Buildings</th>
-                    <th>Delete customer</th>
+                    <th>Navn</th>
+                    <th>Adresse</th>
+                    <th>Postnummer</th>
+                    <th>By</th>
+                    <th>Telefon</th>
+                    <th>Bygninger</th>
+                    <th>Slet kunde</th>
                 </tr>
             </thead>           
             <tbody>

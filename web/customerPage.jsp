@@ -4,10 +4,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Customer <%= session.getAttribute("cID")%></title>
+        <title>Polygon - Kunde <%= session.getAttribute("cID")%></title>
     </head>
     <body style>
-        <h1>Welcome, <%= session.getAttribute("title")%></h1>
+        <h1>Velkommen, <%= session.getAttribute("title")%></h1>
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Add new building" name="cButton">       
             <input type="submit" value="View buildings" name="cButton">

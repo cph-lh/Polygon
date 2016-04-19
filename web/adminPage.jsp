@@ -7,7 +7,7 @@
         <title>Polygon - Admin</title>
     </head>
     <body>
-        <h1>Admin Page</h1>
+        <h1>Admin side</h1>
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Add/delete customers" name="aButton">
             <input type="submit" value="Customer list" name="aButton">
