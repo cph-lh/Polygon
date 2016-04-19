@@ -54,9 +54,9 @@ public class Controller {
         f.addFloorPlan(bID, input);
     }
 
-    public byte[] viewFloorPlan(int bID)
+    public byte[] getFloorPlan(int bID)
     {
-        return f.viewFloorPlan(bID);
+        return f.getFloorPlan(bID);
     }
     
     public void addComment(int bID, String column, String comment){

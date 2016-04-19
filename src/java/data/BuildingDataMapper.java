@@ -1,4 +1,4 @@
-package data;
+    package data;
 
 import domain.Building;
 import java.io.InputStream;

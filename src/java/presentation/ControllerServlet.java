@@ -41,7 +41,7 @@ public class ControllerServlet extends HttpServlet
                     break;
                 case "viewFP":
                     id = request.getParameter("bID");
-                    byte[] imgData = con.viewFloorPlan(Integer.parseInt(id));
+                    byte[] imgData = con.getFloorPlan(Integer.parseInt(id));
                     response.setContentType("image/gif");
                     OutputStream output = response.getOutputStream();
                     output.write(imgData);

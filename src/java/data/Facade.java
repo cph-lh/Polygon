@@ -59,7 +59,7 @@ public class Facade {
         bdm.addFloorPlan(bID, input);
     }
 
-    public byte[] viewFloorPlan(int bID)
+    public byte[] getFloorPlan(int bID)
     {
 
         return bdm.getFloorPlan(bID);
