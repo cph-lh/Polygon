@@ -22,7 +22,7 @@
                     <th>Postnummer</th>
                     <th>By</th>
                     <th>Matrikel nr.</th>
-                    <th>Areal</th>
+                    <th>Bygningsareal</th>
                     <th>Etager</th>
                     <th>Byggeår</th>
                     <th colspan="2">Bygningsdokumenter</th>
