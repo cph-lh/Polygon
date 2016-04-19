@@ -85,7 +85,7 @@ public class ControllerServlet extends HttpServlet
                             zip = request.getParameter("zip");
                             session.setAttribute("zip", zip);
                             city = request.getParameter("city");
-                            session.setAttribute("bID", city);
+                            session.setAttribute("city", city);
                             parcel = request.getParameter("parcel");
                             session.setAttribute("parcel", parcel);
                             size = request.getParameter("size");
