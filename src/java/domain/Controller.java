@@ -58,4 +58,16 @@ public class Controller {
     {
         return f.viewFloorPlan(bID);
     }
+    
+    public void addComment(int bID, String column, String comment){
+        f.addComment(bID, column, comment);
+    }
+    
+    public void setStatus(int bID, int status){
+        f.setStatus(bID, status);
+    }
+    
+    public void addRoom(int bID, String rName, String rComment,String rRecommendation){
+        f.addRoom(bID, rName, rComment, rRecommendation);
+    }
 }

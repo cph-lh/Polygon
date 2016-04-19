@@ -10,6 +10,8 @@ public class Facade {
     BuildingDataMapper bdm = new BuildingDataMapper();
     CustomerDataMapper cdm = new CustomerDataMapper();
     PictureDataMapper pdm = new PictureDataMapper();
+    CommentDataMapper comdm = new CommentDataMapper();
+    RoomDataMapper rdm = new RoomDataMapper();
 
     public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int year, int floors)
     {
@@ -62,4 +64,17 @@ public class Facade {
 
         return bdm.getFloorPlan(bID);
     }
+    
+    public void addComment(int bID, String column, String comment){
+        comdm.addComment(bID, column, comment);
+    }
+    
+    public void setStatus(int bID, int status){
+        bdm.setStatus(bID, status);
+    }
+    
+    public void addRoom(int bID, String rName, String rComment,String rRecommendation){
+        rdm.addRoom(bID, rName, rComment, rRecommendation);
+    }
 }
+

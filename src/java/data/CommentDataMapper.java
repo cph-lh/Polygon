@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 public class CommentDataMapper {
 
-    public void addComments(int bID, String column, String comment)
+    public void addComment(int bID, String column, String comment)
     {
         String query = "insert into comments (bID'" + column + "') values('" + bID + "','" + comment + "')";
         try
