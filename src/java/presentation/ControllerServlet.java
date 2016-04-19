@@ -51,16 +51,18 @@ public class ControllerServlet extends HttpServlet
                     break;
                 case "adminButtons":
                     System.out.println("1");
-                    switch (request.getParameter("aButton"))
+                    System.out.println(request.getParameter("aButton").substring(0, 4));
+                 
+                    switch (request.getParameter("aButton").substring(0,4))
                     {
-                        case "Tilføj kunde":
+                        case "Tilf"/*Tilføj Kunde*/:
                             System.out.println("2");
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
-                        case "Kundeliste":
+                        case "Kund"/*Kundeliste*/:
                             forward(request, response, "/viewCustomerList.jsp");
                             break;
-                        case "Udfyld rapport":
+                        case "Udfy" /*Udfyld rapport*/:
                             forward(request, response, "/report.jsp");
                             break;
                     }
@@ -117,15 +119,15 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/adminCustomerHandler.jsp");
                     break;
                 case "customerButtons":
-                    switch (request.getParameter("cButton"))
+                    switch (request.getParameter("cButton").substring(0, 4))
                     {
-                        case "Se bygninger":
+                        case "Se b"/*Se bygninger*/:
                             forward(request, response, "/viewBuilding.jsp");
                             break;
-                        case "Tilføj bygning":
+                        case "Tilf"/*Tilføj bygning*/:
                             forward(request, response, "/addBuilding.jsp");
                             break;
-                        case "Log ud":
+                        case "Log "/*Log ud*/:
                             session = request.getSession(false);
                             if (session != null)
                             {
