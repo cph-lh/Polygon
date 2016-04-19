@@ -50,9 +50,11 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "adminButtons":
+                    System.out.println("1");
                     switch (request.getParameter("aButton"))
                     {
-                        case "Tilføj/slet kunde":
+                        case "Tilføj kunde":
+                            System.out.println("2");
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
                         case "Kundeliste":
