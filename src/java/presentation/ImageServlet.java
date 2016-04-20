@@ -39,16 +39,13 @@ public class ImageServlet extends HttpServlet
 
             BufferedInputStream input = null;
             BufferedOutputStream output = null;
-            System.out.println("bcus Tim");
             try
             {
-                System.out.println("111111");
                 input = new BufferedInputStream(stream, 16177215);
 
                 response.setContentType("image/jpeg");
 
                 output = new BufferedOutputStream(response.getOutputStream(), 16177215);
-                System.out.println("222222");
 
                 byte[] buffer = new byte[16177215];
                 int length;

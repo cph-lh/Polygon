@@ -51,8 +51,9 @@
                     </td>
                     <td>
                         <form action="ImageServlet" method="get">
-                            <input type="submit" value="Se plantegning">
+                            <input type="hidden" name="bID" value="<%=b.getbID()%>">
                             <input type="hidden" name="do_this" value="viewFP">                           
+                            <input type="submit" value="Se plantegning">
                         </form>
                     </td>
                 </tr>
