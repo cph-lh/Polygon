@@ -30,8 +30,10 @@ public class ControllerServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String id, name, address, zip, parcel, size, year, floors, phone, password, city, date;
-        int cID, bID;
+        String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
+                pName, cName;
+        int cID, bID, rID, pID;
+        
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -105,6 +107,15 @@ public class ControllerServlet extends HttpServlet
                         forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
+                case "Gem rapport":
+                    rID = Integer.parseInt(request.getParameter("rID"));
+                    date = request.getParameter("date");
+                    pID = Integer.parseInt(request.getParameter("pID"));
+                    cName = request.getParameter("cName");
+                    bID = Integer.parseInt(request.getParameter("bID"));
+                    con.addReportInfo(rID, date, pID, cName, bID);
+                    
+                    break;
                 case "addCustomer":
                     id = request.getParameter("cID");
                     name = request.getParameter("cName");

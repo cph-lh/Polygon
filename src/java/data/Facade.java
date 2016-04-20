@@ -12,6 +12,7 @@ public class Facade {
     PictureDataMapper pdm = new PictureDataMapper();
     CommentDataMapper comdm = new CommentDataMapper();
     RoomDataMapper rdm = new RoomDataMapper();
+    ReportDataMapper repdm = new ReportDataMapper();
 
     public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int year, int floors)
     {
@@ -75,6 +76,10 @@ public class Facade {
     
     public void addRoom(int bID, String rName, String rComment,String rRecommendation){
         rdm.addRoom(bID, rName, rComment, rRecommendation);
+    }
+    
+    public void addReportInfo(int rID, String rDate, int pID, String bResponsible, int bID){
+        repdm.addReportInfo(rID, rDate, pID, bResponsible, bID);
     }
 }
 

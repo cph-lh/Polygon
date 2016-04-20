@@ -278,7 +278,7 @@
 <label for="pName">Bygningsgennemgangen er foretaget af&#160</label>
 <input type="text" id="pName" name="polygon" size="30">
 <label for="cName">, Polygon<br> i samarbejde med&#160</label>
-<input type="text" id="cName" name="customer" size=41"><label>(bygningsansvarlig).</label><br><br>
+<input type="text" id="pID" name="customer" size=41"><label>(bygningsansvarlig).</label><br><br>
 <label class="header">Bygningstilstand</label><br><br>
 <table border="1" cellspacing="0" cellpadding="2">
     <tbody>

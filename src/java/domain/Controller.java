@@ -70,4 +70,8 @@ public class Controller {
     public void addRoom(int bID, String rName, String rComment,String rRecommendation){
         f.addRoom(bID, rName, rComment, rRecommendation);
     }
+    
+    public void addReportInfo(int rID, String rDate, int pID, String bResponsible, int bID){
+        f.addReportInfo(rID, rDate, pID, bResponsible, bID);
+    }
 }
