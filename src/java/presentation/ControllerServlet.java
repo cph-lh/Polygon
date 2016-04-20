@@ -16,8 +16,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 @MultipartConfig
-public class ControllerServlet extends HttpServlet
-{
+public class ControllerServlet extends HttpServlet {
 
     Controller con = new Controller();
 
@@ -26,8 +25,9 @@ public class ControllerServlet extends HttpServlet
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
                 cName, bID, pID, bUsage;
-        int cID, rID;
         
+        int cID, rID;
+
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
         {
@@ -44,7 +44,7 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/floorPlan.jsp");
                     break;
                 case "adminButtons":
-                    switch (request.getParameter("aButton").substring(0,4))
+                    switch (request.getParameter("aButton").substring(0, 4))
                     {
                         case "Tilf"/*Tilføj Kunde*/:
                             forward(request, response, "/adminCustomerHandler.jsp");
@@ -65,7 +65,7 @@ public class ControllerServlet extends HttpServlet
                 case "reportButtons":
                     switch (request.getParameter("rButton"))
                     {
-                        case "Udfyld rapport":                    
+                        case "Udfyld rapport":
                             bID = request.getParameter("bID");
                             session.setAttribute("bID", bID);
                             name = request.getParameter("name");
@@ -82,34 +82,38 @@ public class ControllerServlet extends HttpServlet
                             session.setAttribute("size", size);
                             year = request.getParameter("year");
                             session.setAttribute("year", year);
-                            forward(request, response, "/report.jsp");    
+                            forward(request, response, "/report.jsp");
                             break;
                         case "Se rapport":
-                        forward(request, response, "/blankReport.jsp"); //ny JSP her
+                            forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
                 case "Gem rapport":
                 case "submitReport":
+                    bID = request.getParameter("bID");
                     
-                    if(request.getParameter("usage") != null && !request.getParameter("usage").isEmpty()
-                       && request.getParameter("pID") != null && !request.getParameter("pID").isEmpty()
-                       && request.getParameter("customer") != null && !request.getParameter("customer").isEmpty())
+                    
+                    if (request.getParameter("usage") != null && !request.getParameter("usage").isEmpty()
+                            && request.getParameter("pID") != null && !request.getParameter("pID").isEmpty()
+                            && request.getParameter("customer") != null && !request.getParameter("customer").isEmpty())
                     {
-                         date = request.getParameter("usage");
-                         date = request.getParameter("pID");
-                         date = request.getParameter("customer");
-                        forward(request, response, "/customerPage.jsp");
-                    } else {
+
+                        bUsage = request.getParameter("usage");
+                        pID = request.getParameter("pID");
+                        cName = request.getParameter("customer");
+                       // con.addUsage(Integer.parseInt(bID), bUsage);
+                        forward(request, response, "/adminCustomerBuilding.jsp");
+                    } else
+                    {
                         forward(request, response, "/report.jsp");
                     }
-                    
+
                     /*date = request.getParameter("date");
                     pID = request.getParameter("pID");
                     cName = request.getParameter("cName");
                     bID = request.getParameter("bID");
                     con.addReportInfo(date, Integer.parseInt(pID), cName, Integer.parseInt(bID));*/
                     //bID = request.getParameter("bID");
-                   
 //                    con.addUsage(Integer.parseInt(bID), bUsage);
 //                    
 //                    forward(request, response, "/blankReport.jsp");

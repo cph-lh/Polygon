@@ -280,9 +280,11 @@
                 </tbody>
             </table><br>
             <label for="pName">Bygningsgennemgangen er foretaget af&#160</label>
-            <input type="text" id="pName" name="pID" size="30">
+            <input type="text" id="pName" name="pID" size="30" value="<%=request.getParameter("pID") != null ? request.getParameter("pID") : ""%>">
             <label for="cName">, Polygon<br> i samarpolygonbejde med&#160</label>
-            <input type="text" id="pID" name="customer" size="41"><label>(bygningsansvarlig).</label><br><br>
+            <input type="text" id="pID" name="customer" size="41" 
+                   value="<%=request.getParameter("customer") != null ? request.getParameter("customer") : ""%>">
+            <label>(bygningsansvarlig).</label><br><br>
             <label class="header">Bygningstilstand</label><br><br>
             <table border="1" cellspacing="0" cellpadding="2">
                 <thead class="thead">
@@ -321,7 +323,8 @@
                 </tbody>
             </table><br>
 
-            <input class="button" type="submit" value="Gem rapport" name="submitReport" >        
+            <input class="button" type="submit" value="Gem rapport" name="submitReport" > 
+            <input type="hidden" name="bID" value="<%= request.getParameter("bID")%>">
             <input type="hidden" name="do_this" value="submitReport">&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
             <input type="button" value="Annuller" onClick="window.location = 'adminPage.jsp';
             return true;">

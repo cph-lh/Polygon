@@ -142,7 +142,7 @@ public class BuildingDataMapper
     public void addUsage(int bID, String bUsage){
         try
         {
-            String query = "insert into buildings (bUsage) values ('" + bUsage + "') where bID = '" + bID + "'";
+            String query = "update buildings set bUsage ='"+ bUsage+"' where bID = '" + bID + "'";
 
             new Connector().connect().createStatement().executeQuery(query);
         } catch (SQLException ex)
