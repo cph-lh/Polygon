@@ -142,9 +142,10 @@ public class BuildingDataMapper
     public void addUsage(int bID, String bUsage){
         try
         {
-            String query = "update buildings set bUsage ='"+ bUsage+"' where bID = '" + bID + "'";
+            String query = "update buildings set bUsage='"+ bUsage+"' where bID =" + bID+";";
+                       // update buildings set bUsage='lager' where bID=1000;
 
-            new Connector().connect().createStatement().executeQuery(query);
+            new Connector().connect().createStatement().executeUpdate(query);
         } catch (SQLException ex)
         {
             Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);

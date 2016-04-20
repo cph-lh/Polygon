@@ -101,7 +101,7 @@ public class ControllerServlet extends HttpServlet {
                         bUsage = request.getParameter("usage");
                         pID = request.getParameter("pID");
                         cName = request.getParameter("customer");
-                       // con.addUsage(Integer.parseInt(bID), bUsage);
+                        con.addUsage(Integer.parseInt(bID), bUsage);
                         forward(request, response, "/adminCustomerBuilding.jsp");
                     } else
                     {
