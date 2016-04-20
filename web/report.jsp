@@ -24,8 +24,8 @@
         <h1>Bygningsrapport</h1>
         <label for="reportNumber">Rapport nr.</label>
         <label id="reportNumber"></label><br>
-        <label for="date">Dato</label>  
-        <input type="text" id="date" name="date"><br>
+        <label for="date">Dato(yy/mm/dd)</label>  
+        <input type=date id="date" name="date"><br>
         <label for="customerID">Kunde ID</label>
         <input type="text" id="customerID" name="customerID" value="<%=session.getAttribute("cID")%>"><br>
         <label for="buildingName">Navn på bygning</label>
@@ -71,7 +71,7 @@
                                 </tr>
                             </tbody>
                         </table></td>
-                    <td><table border="0" cellspacing="0"cellpadding="2">
+                    <td><table border="0" cellspacing="0" cellpadding="2">
                             <tbody>
                                 <tr>
                                     <td>Billede&#160<input type="file" name="roofPicture"/></td>
@@ -106,10 +106,10 @@
                         </tbody>
                     </table></td>
                 <td>
-                    <table border="0" cellspacing="0"cellpadding="2">
+                    <table border="0" cellspacing="0" cellpadding="2">
                         <tbody>
                             <tr>
-                                <td>Billede&#160<input type="file" name="outerWallPicture" value="ON"/></td>
+                                <td>Billede&#160 <input type=file name="outerWallPicture"></td>
                             </tr>
 
                         </tbody>
@@ -148,12 +148,13 @@
     </tbody>
 </table><br>
 <table border="1" cellspacing="0" cellpadding="2">
-    <tbody>
-    <thead class="thead">
+      <thead class="theader">
         <tr>
             <th colspan="1">Skade</th>
         </tr>
     </thead>
+    <tbody>
+  
     <tr>
         <td><input type="checkbox" name="moisture/water" value="ON"/>Fugt/vand</td>
     </tr>
@@ -167,13 +168,12 @@
         <td><input type="checkbox" name="fire" value="ON"/>Brand</td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="other" value="ON"/>Anden skade&#160<input type="text" name="otherDamage" size="30"/></td></td>
+        <td><input type="checkbox" name="other" value="ON"/>Anden skade&#160<input type="text" name="otherDamage" size="30"/></td>
     </tr>
 </tbody>
 </table><br>
 <table border="1" cellspacing="0" cellpadding="2">
-    <tbody>
-    <thead class="thead">
+      <thead class="thead">
         <tr>
             <th align="left">Gennemgang af:</th>
             <th>Bemærkninger</th>
@@ -181,6 +181,8 @@
             <th>Billede</th>
         </tr>
     </thead>
+    <tbody>
+ 
     <tr>
         <td>Vægge</td>
         <td align="center"><input type="radio" name="wallC" value="on"/></td>
@@ -255,13 +257,13 @@
 </table><br><br>
 <label class="header">Konklusion</label><br><br>
 <table border="1" cellspacing="0" cellpadding="2">
-    <tbody>
     <thead class="thead">
         <tr>
             <th>Lokale</th>
             <th>Anbefalinger</th>
         </tr>
     </thead>
+    <tbody>
     <tr><td><input type="text" name="roomID" size="15"/></td>
         <td><input type="text" name="dmgRecomendation" size="60"/></td></tr>
     <tr><td><input type="text" name="roomID" size="15"/></td>
@@ -280,10 +282,9 @@
 <label for="pName">Bygningsgennemgangen er foretaget af&#160</label>
 <input type="text" id="pName" name="polygon" size="30">
 <label for="cName">, Polygon<br> i samarbejde med&#160</label>
-<input type="text" id="pID" name="customer" size=41"><label>(bygningsansvarlig).</label><br><br>
+<input type="text" id="pID" name="customer" size="41"><label>(bygningsansvarlig).</label><br><br>
 <label class="header">Bygningstilstand</label><br><br>
 <table border="1" cellspacing="0" cellpadding="2">
-    <tbody>
     <thead class="thead">
         <tr>
             <th>Tilstand</th>
@@ -292,28 +293,29 @@
             <th>Tilstandsgrad</th>
         </tr>
     </thead>
+    <tbody>
     <tr>
-        <td><label name="condition0">Tilstandsgrad 0</label></td>
-        <td><label name="describtion0">Bygningsdelen er ny og som bygget</label></td>
-        <td><label name="function0">Funktionen er som beskrevet</label></td>
+        <td><label>Tilstandsgrad 0</label></td>
+        <td><label>Bygningsdelen er ny og som bygget</label></td>
+        <td><label>Funktionen er som beskrevet</label></td>
         <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
     </tr>
     <tr>
-        <td><label name="condition1">Tilstandsgrad 1</label></td>
-        <td><label name="describtion1">Bygningsdelen er intakt, men med<br>begyndende slid og synlige skader<br>(kosmetiske skader)</label></td>
-        <td><label name="function1">Funktionen er som beskrevet</label></td>
+        <td><label>Tilstandsgrad 1</label></td>
+        <td><label>Bygningsdelen er intakt, men med<br>begyndende slid og synlige skader<br>(kosmetiske skader)</label></td>
+        <td><label>Funktionen er som beskrevet</label></td>
         <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
     </tr>
     <tr>
-        <td><label name="condition2">Tilstandsgrad 2</label></td>
-        <td><label name="describtion2">Bygningsdelen er begyndt at forfalde,<br>med enkelte defekte komponenter</label></td>
-        <td><label name="function2">Funktionen er nedsat - fare<br>for følgeskader</label></td>
+        <td><label>Tilstandsgrad 2</label></td>
+        <td><label>Bygningsdelen er begyndt at forfalde,<br>med enkelte defekte komponenter</label></td>
+        <td><label>Funktionen er nedsat - fare<br>for følgeskader</label></td>
         <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
     </tr>
     <tr>
-        <td><label name="condition3">Tilstandsgrad 3</label></td>
-        <td><label name="describtion3">Bygningsdelen er nedbru raft og<br>skal udskiftes</label></td>
-        <td><label name="function3">Funktionen er ophørt - fare<br>for følgeskader</label></td>
+        <td><label>Tilstandsgrad 3</label></td>
+        <td><label>Bygningsdelen er nedbru raft og<br>skal udskiftes</label></td>
+        <td><label>Funktionen er ophørt - fare<br>for følgeskader</label></td>
         <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
     </tr>
 </tbody>

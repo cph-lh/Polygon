@@ -71,7 +71,7 @@ public class Controller {
         f.addRoom(bID, rName, rComment, rRecommendation);
     }
     
-    public void addReportInfo(int rID, String rDate, int pID, String bResponsible, int bID){
-        f.addReportInfo(rID, rDate, pID, bResponsible, bID);
+    public void addReportInfo(String rDate, int pID, String bResponsible, int bID){
+        f.addReportInfo(rDate, pID, bResponsible, bID);
     }
 }

@@ -96,13 +96,13 @@ public class ControllerServlet extends HttpServlet
                             break;
                     }
                 case "Gem rapport":
-                    rID = Integer.parseInt(request.getParameter("rID"));
                     date = request.getParameter("date");
                     pID = Integer.parseInt(request.getParameter("pID"));
                     cName = request.getParameter("cName");
                     bID = request.getParameter("bID");
-                    con.addReportInfo(rID, date, pID, cName, Integer.parseInt(bID));
+                    con.addReportInfo(date, pID, cName, Integer.parseInt(bID));
                     
+                    forward(request, response, "/blankReport.jsp");
                     break;
                 case "addCustomer":
                     id = request.getParameter("cID");
