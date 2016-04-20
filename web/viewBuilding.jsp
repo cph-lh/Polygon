@@ -50,7 +50,7 @@
                         </form>
                     </td>
                     <td>
-                        <form action="ControllerServlet" method="post">
+                        <form action="ImageServlet" method="get">
                             <input type="submit" value="Se plantegning">
                             <input type="hidden" name="do_this" value="viewFP">                           
                         </form>

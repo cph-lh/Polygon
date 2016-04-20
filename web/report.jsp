@@ -36,6 +36,8 @@
         <input type="text" id="zip" name="zip" value="<%=session.getAttribute("zip")%>"><br>
         <label for="city">By</label>
         <input type="text" id="city" name="city" value="<%=session.getAttribute("city")%>"><br>
+        <label for="bID">BID</label>
+        <input type="text" id="city" name="bID" value="<%=session.getAttribute("bID")%>"><br>
         <label for="parcel">Matrikel nr.</label>
         <input type="text" id="parcel" name="parcel" value="<%=session.getAttribute("parcel")%>"><br><br><br>       
         <label style="font-size: 120%">Generel information om bygningen</label><br><br>

@@ -31,8 +31,8 @@ public class ControllerServlet extends HttpServlet
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
-                pName, cName;
-        int cID, bID, rID, pID;
+                pName, cName, bID;
+        int cID, rID, pID;
         
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
@@ -47,16 +47,12 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "viewFP":
-                    forward(request, response, "/viewBuilding.jsp");
+                    forward(request, response, "/floorPlan.jsp");
                     break;
                 case "adminButtons":
-                    System.out.println("1");
-                    System.out.println(request.getParameter("aButton").substring(0, 4));
-                 
                     switch (request.getParameter("aButton").substring(0,4))
                     {
                         case "Tilf"/*Tilføj Kunde*/:
-                            System.out.println("2");
                             forward(request, response, "/adminCustomerHandler.jsp");
                             break;
                         case "Kund"/*Kundeliste*/:
@@ -75,10 +71,9 @@ public class ControllerServlet extends HttpServlet
                 case "reportButtons":
                     switch (request.getParameter("rButton"))
                     {
-                        case "Udfyld rapport":
-                     
+                        case "Udfyld rapport":                     
                             session.setAttribute("date", df.format(dateobj));                     
-                            bID = Integer.parseInt(request.getParameter("bID"));
+                            bID = request.getParameter("bID");
                             session.setAttribute("bID", bID);
                             name = request.getParameter("name");
                             session.setAttribute("name", name);
@@ -105,8 +100,8 @@ public class ControllerServlet extends HttpServlet
                     date = request.getParameter("date");
                     pID = Integer.parseInt(request.getParameter("pID"));
                     cName = request.getParameter("cName");
-                    bID = Integer.parseInt(request.getParameter("bID"));
-                    con.addReportInfo(rID, date, pID, cName, bID);
+                    bID = request.getParameter("bID");
+                    con.addReportInfo(rID, date, pID, cName, Integer.parseInt(bID));
                     
                     break;
                 case "addCustomer":

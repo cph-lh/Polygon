@@ -62,8 +62,7 @@ public class Facade {
 
     public InputStream getFloorPlan(int bID)
     {
-
-        return null; //bdm.getFloorPlan();
+        return bdm.getFloorPlan(bID);
     }
     
     public void addComment(int bID, String column, String comment){

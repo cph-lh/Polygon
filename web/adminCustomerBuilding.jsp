@@ -44,7 +44,8 @@
                     <td class="align"><%= b.getFloors()%></td>
                     <td><%= b.getYear()%></td>                                       
                     <td>
-                        <form action="ControllerServlet" method="post">
+                        <form action="ImageServlet" method="get">
+                            <input type="hidden" name="bID" value="<%=b.getbID()%>">
                             <input type="submit" value="Se plantegning">
                             <input type="hidden" name="do_this" value="viewFP">
                         </form>

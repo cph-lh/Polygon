@@ -17,50 +17,54 @@ public class ImageServlet extends HttpServlet
 {
 
     Controller con = new Controller();
-   
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-            
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        
-        String bID = ""; 
-        try {
-        InputStream stream = con.getFloorPlan(Integer.parseInt(bID));
 
-        BufferedInputStream input = null;
-        BufferedOutputStream output = null;
-        System.out.println("bcus Tim");
+        String bID = "";
+        bID += request.getParameter("bID");
+        System.out.println(bID);
+        System.out.println("FØR try");
         try
         {
-            System.out.println("1");
-            input = new BufferedInputStream(stream, 16177215);
+            InputStream stream = con.getFloorPlan(Integer.parseInt(bID));
 
-            response.setContentType("image/jpeg");
-
-            output = new BufferedOutputStream(response.getOutputStream(), 16177215);
-            System.out.println("2");
-
-            byte[] buffer = new byte[16177215];
-            int length;
-            while ((length = input.read(buffer)) > 0)
+            BufferedInputStream input = null;
+            BufferedOutputStream output = null;
+            System.out.println("bcus Tim");
+            try
             {
-                output.write(buffer, 0, length);
+                System.out.println("111111");
+                input = new BufferedInputStream(stream, 16177215);
+
+                response.setContentType("image/jpeg");
+
+                output = new BufferedOutputStream(response.getOutputStream(), 16177215);
+                System.out.println("222222");
+
+                byte[] buffer = new byte[16177215];
+                int length;
+                while ((length = input.read(buffer)) > 0)
+                {
+                    output.write(buffer, 0, length);
+                }
+            } finally
+            {
+                output.close();
+                input.close();
             }
-        } finally
+
+            forward(request, response, "/floorPlan.jsp");
+        } catch (Exception e)
         {
-            output.close();
-            input.close();
-        }
-        
-        forward(request, response, "/floorPlan.jsp");
-        }
-        catch (Exception e) {
             e.printStackTrace();
         }
     }
