@@ -6,10 +6,10 @@ import java.util.logging.Logger;
 
 public class ReportDataMapper {
     
-    public void addReportInfo(int rID, String rDate, int pID, String bResponsible, int bID){
+    public void addReportInfo(String rDate, int pID, String bResponsible, int bID){
         
-        String query = "insert into reportInfo (rID, rDate, pID, bResponsible, bID) "
-                + "values('" + rID + "','" + rDate + "','" + pID + "','"
+        String query = "insert into reportInfo (rDate, pID, bResponsible, bID) "
+                + "values('" + rDate + "','" + pID + "','"
                 + bResponsible + "','" + bID + "')";
         
         try
