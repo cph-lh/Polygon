@@ -54,7 +54,7 @@ public class Controller {
         f.addFloorPlan(bID, input);
     }
 
-    public byte[] getFloorPlan(int bID)
+    public InputStream getFloorPlan(int bID)
     {
         return f.getFloorPlan(bID);
     }

@@ -10,9 +10,7 @@
         <title>Polygon - Kunder <%= session.getAttribute("cID")%> - Buildings</title>
     </head>
     <body>
-        <h1>POLYGON</h1>
-        <hr>
-        <h2>Registrede bygninger</h2>
+        <h1>Registrede bygninger</h1>
         <table>
             <thead>
                 <tr>

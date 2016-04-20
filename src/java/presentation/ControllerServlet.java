@@ -47,13 +47,6 @@ public class ControllerServlet extends HttpServlet
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "viewFP":
-                    id = request.getParameter("bID");
-                    byte[] imgData = con.getFloorPlan(Integer.parseInt(id));
-                    response.setContentType("image/gif");
-                    OutputStream output = response.getOutputStream();
-                    output.write(imgData);
-                    output.flush();
-                    output.close();
                     forward(request, response, "/viewBuilding.jsp");
                     break;
                 case "adminButtons":

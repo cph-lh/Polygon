@@ -1,4 +1,4 @@
-    package data;
+package data;
 
 import domain.Building;
 import java.io.InputStream;
@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BuildingDataMapper {
+public class BuildingDataMapper
+{
 
     public void addBuilding(int id, String name, String address, int zip, int parcel, int size, int floors, int year)
     {
@@ -101,37 +102,38 @@ public class BuildingDataMapper {
         }
     }
 
-    public byte[] getFloorPlan(int bID)
+    public InputStream getFloorPlan(int bID) throws
+            IllegalArgumentException, SQLException, ClassNotFoundException
     {
+        Connection con = new Connector().connect();
+        PreparedStatement pstmt = null;
+        ResultSet res = null;
+        InputStream stream = null;
 
         try
         {
-            Blob img;
-            byte[] imgData = null;
-
-            String query = "select floor_plan from floor_plan where bID = '" + bID + "'";
-
-            ResultSet res = new Connector().connect().createStatement().executeQuery(query);
-
+            pstmt = con.prepareStatement("select from floor_plan where bID = '" + bID + "'");
+            res = pstmt.executeQuery();
+            
             while (res.next())
             {
-                img = res.getBlob("floor_plans");
-                imgData = img.getBytes(1, (int) img.length());
+                stream = res.getBinaryStream("image");
             }
-            return imgData;
+            return stream;
         } catch (SQLException ex)
         {
             Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
-    
-    public void setStatus(int bID, int status){
-        
+
+    public void setStatus(int bID, int status)
+    {
+
         try
         {
             String query = "insert into buildings (status) values ('" + status + "' where bID = '" + bID + "'";
-            
+
             new Connector().connect().createStatement().executeQuery(query);
         } catch (SQLException ex)
         {
