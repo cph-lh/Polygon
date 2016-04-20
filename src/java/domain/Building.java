@@ -3,8 +3,14 @@ package domain;
 public class Building
 {
     int cID, bID, zip, parcel, size, floors, year;
-    String name, address, city;
+    String name, address, city, bUsage;
 
+    public Building(String bUsage)
+    {
+        this.bUsage = bUsage;
+    }
+    
+    
     public Building(int cID, String name, String address, int zip, int parcel, int size)
     {
         this.cID = cID;

@@ -130,7 +130,19 @@ public class BuildingDataMapper
 
         try
         {
-            String query = "insert into buildings (status) values ('" + status + "' where bID = '" + bID + "'";
+            String query = "insert into buildings (status) values ('" + status + "') where bID = '" + bID + "'";
+
+            new Connector().connect().createStatement().executeQuery(query);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void addUsage(int bID, String bUsage){
+        try
+        {
+            String query = "insert into buildings (bUsage) values ('" + bUsage + "') where bID = '" + bID + "'";
 
             new Connector().connect().createStatement().executeQuery(query);
         } catch (SQLException ex)

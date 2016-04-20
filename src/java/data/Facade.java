@@ -80,5 +80,9 @@ public class Facade {
     public void addReportInfo(String rDate, int pID, String bResponsible, int bID){
         repdm.addReportInfo(rDate, pID, bResponsible, bID);
     }
+    
+    public void addUsage(int bID, String bUsage){
+        bdm.addUsage(bID, bUsage);
+    }
 }
 

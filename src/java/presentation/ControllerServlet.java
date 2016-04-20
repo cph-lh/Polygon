@@ -2,13 +2,9 @@ package presentation;
 
 import domain.Customer;
 import domain.Controller;
-import java.util.Date;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -24,15 +20,13 @@ public class ControllerServlet extends HttpServlet
 {
 
     Controller con = new Controller();
-    DateFormat df = new SimpleDateFormat("yy/mm/dd");
-    Date dateobj = new Date();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
-                pName, cName, bID;
-        int cID, rID, pID;
+                cName, bID, pID, bUsage;
+        int cID, rID;
         
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
@@ -71,8 +65,7 @@ public class ControllerServlet extends HttpServlet
                 case "reportButtons":
                     switch (request.getParameter("rButton"))
                     {
-                        case "Udfyld rapport":                     
-                            session.setAttribute("date", df.format(dateobj));                     
+                        case "Udfyld rapport":                    
                             bID = request.getParameter("bID");
                             session.setAttribute("bID", bID);
                             name = request.getParameter("name");
@@ -96,13 +89,30 @@ public class ControllerServlet extends HttpServlet
                             break;
                     }
                 case "Gem rapport":
-                    date = request.getParameter("date");
-                    pID = Integer.parseInt(request.getParameter("pID"));
+                case "submitReport":
+                    
+                    if(request.getParameter("usage") != null && !request.getParameter("usage").isEmpty()
+                       && request.getParameter("pID") != null && !request.getParameter("pID").isEmpty()
+                       && request.getParameter("customer") != null && !request.getParameter("customer").isEmpty())
+                    {
+                         date = request.getParameter("usage");
+                         date = request.getParameter("pID");
+                         date = request.getParameter("customer");
+                        forward(request, response, "/customerPage.jsp");
+                    } else {
+                        forward(request, response, "/report.jsp");
+                    }
+                    
+                    /*date = request.getParameter("date");
+                    pID = request.getParameter("pID");
                     cName = request.getParameter("cName");
                     bID = request.getParameter("bID");
-                    con.addReportInfo(date, pID, cName, Integer.parseInt(bID));
-                    
-                    forward(request, response, "/blankReport.jsp");
+                    con.addReportInfo(date, Integer.parseInt(pID), cName, Integer.parseInt(bID));*/
+                    //bID = request.getParameter("bID");
+                   
+//                    con.addUsage(Integer.parseInt(bID), bUsage);
+//                    
+//                    forward(request, response, "/blankReport.jsp");
                     break;
                 case "addCustomer":
                     id = request.getParameter("cID");

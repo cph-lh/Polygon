@@ -74,4 +74,8 @@ public class Controller {
     public void addReportInfo(String rDate, int pID, String bResponsible, int bID){
         f.addReportInfo(rDate, pID, bResponsible, bID);
     }
+    
+    public void addUsage(int bID, String bUsage){
+        f.addUsage(bID, bUsage);
+    }
 }
