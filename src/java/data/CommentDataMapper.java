@@ -8,7 +8,7 @@ public class CommentDataMapper {
 
     public void addComment(int bID, String column, String comment)
     {
-        String query = "insert into comments (bID'" + column + "') values('" + bID + "','" + comment + "')";
+        String query = "update comments set '" + column + "'='" + comment + "' where bID ="+bID+";";
         try
         {
             new Connector().connect().createStatement().executeUpdate(query);

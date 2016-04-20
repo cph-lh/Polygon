@@ -88,7 +88,7 @@ public class ControllerServlet extends HttpServlet {
                             forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
-                case "Gem rapport":
+                //case "Gem rapport":
                 case "submitReport":
                     bID = request.getParameter("bID");
                     
