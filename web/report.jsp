@@ -300,25 +300,25 @@
                         <td><label>Tilstandsgrad 0</label></td>
                         <td><label>Bygningsdelen er ny og som bygget</label></td>
                         <td><label>Funktionen er som beskrevet</label></td>
-                        <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
+                        <td align="center"><input type="radio" name="bStatus" value="0"/></td>
                     </tr>
                     <tr>
                         <td><label>Tilstandsgrad 1</label></td>
                         <td><label>Bygningsdelen er intakt, men med<br>begyndende slid og synlige skader<br>(kosmetiske skader)</label></td>
                         <td><label>Funktionen er som beskrevet</label></td>
-                        <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
+                        <td align="center"><input type="radio" name="bStatus" value="1"/></td>
                     </tr>
                     <tr>
                         <td><label>Tilstandsgrad 2</label></td>
                         <td><label>Bygningsdelen er begyndt at forfalde,<br>med enkelte defekte komponenter</label></td>
                         <td><label>Funktionen er nedsat - fare<br>for følgeskader</label></td>
-                        <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
+                        <td align="center"><input type="radio" name="bStatus" value="2"/></td>
                     </tr>
                     <tr>
                         <td><label>Tilstandsgrad 3</label></td>
-                        <td><label>Bygningsdelen er nedbru raft og<br>skal udskiftes</label></td>
+                        <td><label>Bygningsdelen er nedbrudt og<br>skal udskiftes</label></td>
                         <td><label>Funktionen er ophørt - fare<br>for følgeskader</label></td>
-                        <td align="center"><input type="radio" name="bStatus" value="ON"/></td>
+                        <td align="center"><input type="radio" name="bStatus" value="3"/></td>
                     </tr>
                 </tbody>
             </table><br>

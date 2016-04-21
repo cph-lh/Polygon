@@ -148,12 +148,11 @@ public class BuildingDataMapperTest {
     public void testSetStatus()
     {
         System.out.println("setStatus");
-        int bID = 0;
-        int status = 0;
+        int bID = 1000;
+        int status = 1;
         BuildingDataMapper instance = new BuildingDataMapper();
         instance.setStatus(bID, status);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**

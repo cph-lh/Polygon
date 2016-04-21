@@ -130,7 +130,7 @@ public class BuildingDataMapper
 
         try
         {
-            String query = "update buildings set status='" + status + "' where bID = " + bID + ";";
+            String query = "update buildings set bStatus='" + status + "' where bID = " + bID + ";";
 
             new Connector().connect().createStatement().executeUpdate(query);
         } catch (SQLException ex)

@@ -24,9 +24,9 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
-                bResponsible, bID, pID, bUsage;
+                bResponsible, bID, pID, bUsage, status;
 
-        int cID, rID;
+        int cID;
 
         HttpSession session = request.getSession(true);
         try (PrintWriter out = response.getWriter())
@@ -88,7 +88,7 @@ public class ControllerServlet extends HttpServlet {
                             forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
-                //case "Gem rapport":
+                
                 case "submitReport":
                     bID = request.getParameter("bID");
 
@@ -104,6 +104,10 @@ public class ControllerServlet extends HttpServlet {
                         pID = request.getParameter("pID");
                         bResponsible = request.getParameter("customer");
                         con.addReportInfo(date, Integer.parseInt(pID), bResponsible, Integer.parseInt(bID));
+                        
+                        status = request.getParameter("bStatus");
+                        System.out.println("----------------->"+status);
+                        con.setStatus( Integer.parseInt(bID), Integer.parseInt(status));
                         forward(request, response, "/adminCustomerBuilding.jsp");
                     } else
                     {
