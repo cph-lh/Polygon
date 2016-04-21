@@ -25,7 +25,6 @@ public class ControllerServlet extends HttpServlet {
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
                 bResponsible, bID, pID, bUsage, status;
-
         int cID;
 
         HttpSession session = request.getSession(true);

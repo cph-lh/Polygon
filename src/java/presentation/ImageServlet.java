@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ImageServlet extends HttpServlet
 {
@@ -21,17 +22,14 @@ public class ImageServlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-
         String bID = "";
         bID += request.getParameter("bID");
-        System.out.println(bID);
         System.out.println("FØR try");
         try
         {
@@ -78,7 +76,17 @@ public class ImageServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        processRequest(request, response);
+//        String id;
+//        
+//        HttpSession session = request.getSession(true);
+//        switch (request.getParameter("do_this"))
+//        {
+//            case "viewFP":
+//                id = request.getParameter("id");
+//                session.setAttribute("bID", id);
+//                forward(request, response, "/floorPlan.jsp");
+//                break;
+//        }
     }
 
     /**
