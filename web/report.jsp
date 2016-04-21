@@ -27,7 +27,7 @@
             <label for="reportNumber">Rapport nr.</label>
             <label id="reportNumber"></label><br>
             <label for="date">Dato</label>  
-            <input type=date id="date" name="date"><br>
+            <input type="text" id="date" name="date"><br>
             <label for="customerID">Kunde ID</label>
             <input type="text" id="customerID" name="customerID" value="<%=session.getAttribute("cID")%>"><br>
             <label for="buildingName">Navn på bygning</label>
@@ -282,7 +282,7 @@
             <label for="pName">Bygningsgennemgangen er foretaget af&#160</label>
             <input type="text" id="pName" name="pID" size="30" value="<%=request.getParameter("pID") != null ? request.getParameter("pID") : ""%>">
             <label for="cName">, Polygon<br> i samarpolygonbejde med&#160</label>
-            <input type="text" id="pID" name="customer" size="41" 
+            <input type="text" id="cName" name="customer" size="41" 
                    value="<%=request.getParameter("customer") != null ? request.getParameter("customer") : ""%>">
             <label>(bygningsansvarlig).</label><br><br>
             <label class="header">Bygningstilstand</label><br><br>

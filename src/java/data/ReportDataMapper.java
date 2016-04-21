@@ -8,9 +8,9 @@ public class ReportDataMapper {
     
     public void addReportInfo(String rDate, int pID, String bResponsible, int bID){
         
-        String query = "insert into reportInfo (rDate, pID, bResponsible, bID) "
+        String query = "insert into reportInfo (reportDate, pID, bResponsible, bID)"
                 + "values('" + rDate + "','" + pID + "','"
-                + bResponsible + "','" + bID + "')";
+                + bResponsible + "','" + bID + "');";
         
         try
         {

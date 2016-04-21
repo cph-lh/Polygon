@@ -24,8 +24,8 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
-                cName, bID, pID, bUsage;
-        
+                bResponsible, bID, pID, bUsage;
+
         int cID, rID;
 
         HttpSession session = request.getSession(true);
@@ -91,32 +91,25 @@ public class ControllerServlet extends HttpServlet {
                 //case "Gem rapport":
                 case "submitReport":
                     bID = request.getParameter("bID");
-                    
-                    
+
                     if (request.getParameter("usage") != null && !request.getParameter("usage").isEmpty()
                             && request.getParameter("pID") != null && !request.getParameter("pID").isEmpty()
                             && request.getParameter("customer") != null && !request.getParameter("customer").isEmpty())
                     {
 
                         bUsage = request.getParameter("usage");
-                        pID = request.getParameter("pID");
-                        cName = request.getParameter("customer");
                         con.addUsage(Integer.parseInt(bID), bUsage);
+                        
+                        date = request.getParameter("date");
+                        pID = request.getParameter("pID");
+                        bResponsible = request.getParameter("customer");
+                        con.addReportInfo(date, Integer.parseInt(pID), bResponsible, Integer.parseInt(bID));
                         forward(request, response, "/adminCustomerBuilding.jsp");
                     } else
                     {
                         forward(request, response, "/report.jsp");
                     }
 
-                    /*date = request.getParameter("date");
-                    pID = request.getParameter("pID");
-                    cName = request.getParameter("cName");
-                    bID = request.getParameter("bID");
-                    con.addReportInfo(date, Integer.parseInt(pID), cName, Integer.parseInt(bID));*/
-                    //bID = request.getParameter("bID");
-//                    con.addUsage(Integer.parseInt(bID), bUsage);
-//                    
-//                    forward(request, response, "/blankReport.jsp");
                     break;
                 case "addCustomer":
                     id = request.getParameter("cID");
