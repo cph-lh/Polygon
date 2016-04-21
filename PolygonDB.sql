@@ -28,7 +28,7 @@ CREATE TABLE buildings	(
         bFloors INT DEFAULT NULL,
         bStatus int(1) DEFAULT NULL,
         bYear YEAR NOT NULL,
-        bUsage varchar(25),
+        bUsage varchar(75),
 primary key (bID),
 foreign key (cID) references customers(cID), 
 foreign key(zip) references zipcodes(zip));
@@ -42,8 +42,7 @@ alter table polygonEmployee auto_increment=100;
 ##report
 CREATE TABLE reportINFO (
 		reportID INT NOT NULL auto_increment,
-		reportDate DATE,
-		cName VARCHAR (25),
+		reportDate varchar(10),
 		pID INT,
 		bID INT,
 		bResponsible varchar(25),
@@ -1302,6 +1301,7 @@ insert into customers VALUES (1111,'TestPerson1','22334455','gadegade 123','2500
 insert into customers VALUES (1122,'TestPerson2','22332233','gadegade 123','2800','1234');
 insert into customers VALUES (2211,'TestPerson4','22334455','gadegade 123','2900','1234');
 insert into customers VALUES (2222,'TestPerson3','22332233','gadegade 123','2700','1234');
+insert into polygonemployee values (10, 'poly1');
 insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (1111,'A422','gade 123','2500',123,40,2,1990);
 insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (1122,'A423','gade 123','2700',123,40,2,1990);
 select * from customers natural join zipcodes;
