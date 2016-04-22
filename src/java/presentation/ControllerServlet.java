@@ -1,6 +1,7 @@
 package presentation;
 
 import domain.Customer;
+import domain.Comment;
 import domain.Controller;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +25,16 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
-                bResponsible, bID, pID, bUsage, status;
+                bResponsible, bID, pID, bUsage, status, comment, column;
+        
+        String bOutsideC = "";
+        String roofC = "";
+        String outerWallsC = "";
+        String wallsC = "";
+        String celingC = "";
+        String floorC = "";
+        String windows_doorsC = "";
+                
         int cID;
 
         HttpSession session = request.getSession(true);
@@ -87,7 +97,7 @@ public class ControllerServlet extends HttpServlet {
                             forward(request, response, "/blankReport.jsp"); //ny JSP her
                             break;
                     }
-                
+
                 case "submitReport":
                     bID = request.getParameter("bID");
 
@@ -98,15 +108,33 @@ public class ControllerServlet extends HttpServlet {
 
                         bUsage = request.getParameter("usage");
                         con.addUsage(Integer.parseInt(bID), bUsage);
-                        
+
                         date = request.getParameter("date");
                         pID = request.getParameter("pID");
                         bResponsible = request.getParameter("customer");
                         con.addReportInfo(date, Integer.parseInt(pID), bResponsible, Integer.parseInt(bID));
-                        
+
                         status = request.getParameter("bStatus");
-                        System.out.println("----------------->"+status);
-                        con.setStatus( Integer.parseInt(bID), Integer.parseInt(status));
+                        con.setStatus(Integer.parseInt(bID), Integer.parseInt(status));
+                        
+                        roofC = request.getParameter("");
+                        outerWallsC = request.getParameter(name);
+                        request.getParameter(name);
+                        request.getParameter(name);
+                        request.getParameter(name);
+                        request.getParameter(name);
+                        request.getParameter(name);
+                        Comment cmt = new Comment(bID, bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC);
+                        con.createComment(Integer.parseInt(bID), cmt);
+                        
+//                        if (request.getParameter("roofC").equals("on") && request.getParameter("roofComment") != null
+//                                && request.getParameter("roofComment") != "")
+//                        {
+//                            column = "roofC";
+//                            comment = request.getParameter("roofComment");
+//                            con.addComment(Integer.parseInt(bID), column, comment);
+//                        }
+
                         forward(request, response, "/adminCustomerBuilding.jsp");
                     } else
                     {
