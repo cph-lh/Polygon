@@ -65,10 +65,6 @@ public class Facade {
         return bdm.getFloorPlan(bID);
     }
     
-    public void addComment(int bID, String column, String comment){
-        comdm.addComment(bID, column, comment);
-    }
-    
     public void setStatus(int bID, int status){
         bdm.setStatus(bID, status);
     }

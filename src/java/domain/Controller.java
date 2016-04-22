@@ -59,10 +59,6 @@ public class Controller {
         return f.getFloorPlan(bID);
     }
     
-    public void addComment(int bID, String column, String comment){
-        f.addComment(bID, column, comment);
-    }
-    
     public void setStatus(int bID, int status){
         f.setStatus(bID, status);
     }
