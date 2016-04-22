@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Comment
 {
     String bID, bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC;
@@ -96,5 +98,30 @@ public class Comment
     {
         this.windows_doorsC = windows_doorsC;
     }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (getClass() != obj.getClass())
+        {
+            return false;
+        }
+        final Comment other = (Comment) obj;
+        if (!Objects.equals(this.bID, other.bID))
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }
