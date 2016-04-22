@@ -118,12 +118,12 @@ public class ControllerServlet extends HttpServlet {
                         con.setStatus(Integer.parseInt(bID), Integer.parseInt(status));
                         
                         roofC = request.getParameter("");
-                        outerWallsC = request.getParameter(name);
-                        request.getParameter(name);
-                        request.getParameter(name);
-                        request.getParameter(name);
-                        request.getParameter(name);
-                        request.getParameter(name);
+                        outerWallsC = request.getParameter("");
+                        request.getParameter("");
+                        request.getParameter("");
+                        request.getParameter("");
+                        request.getParameter("");
+                        request.getParameter("");
                         Comment cmt = new Comment(bID, bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC);
                         con.createComment(Integer.parseInt(bID), cmt);
                         
