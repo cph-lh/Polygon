@@ -26,7 +26,7 @@ public class ControllerServlet extends HttpServlet {
     {
         String id, name, address, zip, parcel, size, year, floors, phone, password, city, date,
                 bResponsible, bID, pID, bUsage, status, comment, column;
-        
+
         String bOutsideC = "";
         String roofC = "";
         String outerWallsC = "";
@@ -34,7 +34,7 @@ public class ControllerServlet extends HttpServlet {
         String celingC = "";
         String floorC = "";
         String windows_doorsC = "";
-                
+
         int cID;
 
         HttpSession session = request.getSession(true);
@@ -116,24 +116,59 @@ public class ControllerServlet extends HttpServlet {
 
                         status = request.getParameter("bStatus");
                         con.setStatus(Integer.parseInt(bID), Integer.parseInt(status));
-                        
-                        roofC = request.getParameter("");
-                        outerWallsC = request.getParameter("");
-                        request.getParameter("");
-                        request.getParameter("");
-                        request.getParameter("");
-                        request.getParameter("");
-                        request.getParameter("");
-                        Comment cmt = new Comment(bID, bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC);
-                        con.createComment(Integer.parseInt(bID), cmt);
-                        
-//                        if (request.getParameter("roofC").equals("on") && request.getParameter("roofComment") != null
-//                                && request.getParameter("roofComment") != "")
-//                        {
-//                            column = "roofC";
-//                            comment = request.getParameter("roofComment");
-//                            con.addComment(Integer.parseInt(bID), column, comment);
-//                        }
+
+//                        bOutsideC = request.getParameter("");
+//                       outerWallsC = request.getParameter("outerWallComment");
+//                        wallsC = request.getParameter("");
+//                        celingC = request.getParameter("");
+//                        floorC = request.getParameter("");
+//                        windows_doorsC = request.getParameter("");
+//                        Comment cmt = new Comment(bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC);
+//                        con.createComment(Integer.parseInt(bID), cmt);
+                        if (request.getParameter("roofC").equals("on") && request.getParameter("roofComment") != null
+                                && request.getParameter("roofComment") != "")
+                        {
+
+                            roofC = request.getParameter("roofComment");
+
+                        }
+                        if (request.getParameter("outerWallsC").equals("on") && request.getParameter("outerWallComment") != null
+                                && request.getParameter("outerWallComment") != "")
+                        {
+
+                            outerWallsC = request.getParameter("outerWallComment");
+
+                        }
+                        if (request.getParameter("wallC").equals("on") && request.getParameter("wallComment") != null
+                                && request.getParameter("wallComment") != "")
+                        {
+
+                            wallsC = request.getParameter("wallComment");
+
+                        }
+                        if (request.getParameter("ceilingC").equals("on") && request.getParameter("ceilingComment") != null
+                                && request.getParameter("ceilingComment") != "")
+                        {
+
+                            celingC = request.getParameter("ceilingComment");
+
+                        }
+                        if (request.getParameter("floorC").equals("on") && request.getParameter("floorComment") != null
+                                && request.getParameter("floorComment") != "")
+                        {
+
+                            floorC = request.getParameter("floorComment");
+
+                        }
+                        if (request.getParameter("window/doorC").equals("on") && request.getParameter("window/doorComment") != null
+                                && request.getParameter("window/doorComment") != "")
+                        {
+
+                            windows_doorsC = request.getParameter("window/doorComment");
+
+                        }
+
+                        con.createComment(Integer.parseInt(bID), bOutsideC, roofC, outerWallsC, wallsC, celingC, floorC, windows_doorsC);
 
                         forward(request, response, "/adminCustomerBuilding.jsp");
                     } else
