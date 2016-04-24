@@ -80,8 +80,12 @@ public class Facade {
         bdm.addUsage(bID, bUsage);
     }
     
-    public void createComment(int bID, Comment comment){
-        comdm.createComment(bID, comment);
+    public void createComment(int bID, String bOutsideC, String roofC, String outerWallsC, String wallsC, String celingC, String floorC, String windows_doorsC){
+        comdm.createComment(bID, bOutsideC, roofC, outerWallsC, wallsC, celingC, floorC, windows_doorsC);
+    }
+    
+    public void updateCommentColumn(int bID, String column, String comment){
+        comdm.updateCommentColumn(bID, column, comment);
     }
 }
 

@@ -2,13 +2,14 @@ package domain;
 
 import java.util.Objects;
 
-public class Comment
-{
-    String bID, bOutsideC, roofC, outerWallsC, wallsC, celingC ,floorC ,windows_doorsC;
+public class Comment {
 
-    public Comment(String bID, String bOutsideC, String roofC, String outerWallsC, String wallsC, String celingC, String floorC, String windows_doorsC)
+    String bOutsideC, roofC, outerWallsC, wallsC, celingC, floorC, windows_doorsC;
+    
+
+    public Comment(String bOutsideC, String roofC, String outerWallsC, String wallsC, String celingC, String floorC, String windows_doorsC)
     {
-        this.bID = bID;
+     
         this.bOutsideC = bOutsideC;
         this.roofC = roofC;
         this.outerWallsC = outerWallsC;
@@ -17,17 +18,7 @@ public class Comment
         this.floorC = floorC;
         this.windows_doorsC = windows_doorsC;
     }
-    
-    
-    public String getbID()
-    {
-        return bID;
-    }
 
-    public void setbID(String bID)
-    {
-        this.bID = bID;
-    }
 
     public String getbOutsideC()
     {
@@ -99,29 +90,5 @@ public class Comment
         this.windows_doorsC = windows_doorsC;
     }
 
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (getClass() != obj.getClass())
-        {
-            return false;
-        }
-        final Comment other = (Comment) obj;
-        if (!Objects.equals(this.bID, other.bID))
-        {
-            return false;
-        }
-        return true;
-    }
-    
-    
     
 }

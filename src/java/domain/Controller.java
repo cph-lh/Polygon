@@ -76,7 +76,11 @@ public class Controller {
     }
     
     
-    public void createComment(int bID, Comment comment){
-        f.createComment(bID, comment);
+    public void createComment(int bID, String bOutsideC, String roofC, String outerWallsC, String wallsC, String celingC, String floorC, String windows_doorsC){
+        f.createComment(bID, bOutsideC, roofC, outerWallsC, wallsC, celingC, floorC, windows_doorsC);
+    }
+    
+    public void updateCommentColumn(int bID, String column, String comment){
+        f.updateCommentColumn(bID, column, comment);
     }
 }
