@@ -74,4 +74,9 @@ public class Controller {
     public void addUsage(int bID, String bUsage){
         f.addUsage(bID, bUsage);
     }
+    
+    
+    public void createComment(int bID, Comment comment){
+        f.createComment(bID, comment);
+    }
 }

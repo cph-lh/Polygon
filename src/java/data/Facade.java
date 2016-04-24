@@ -1,7 +1,6 @@
 package data;
-
-import domain.Customer;
-import domain.Building;
+ 
+import domain.*;
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -79,6 +78,10 @@ public class Facade {
     
     public void addUsage(int bID, String bUsage){
         bdm.addUsage(bID, bUsage);
+    }
+    
+    public void createComment(int bID, Comment comment){
+        comdm.createComment(bID, comment);
     }
 }
 
