@@ -43,7 +43,7 @@
                     <td><%= b.getYear() %></td>                                       
                     <td>Upload plantegning<br>
                         <form action="ControllerServlet" method="post" enctype="multipart/form-data">
-                            <input type="file" name="file" accept="image/*, application/x-pdf">
+                            <input type="file" name="file" accept="image/*">
                             <input type="hidden" name="do_this" value="uploadFP"><br>
                             <input type="hidden" name="bID" value="<%=b.getbID()%>">
                             <input type="submit" value="Upload">
