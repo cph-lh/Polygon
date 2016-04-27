@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <title>Polygon - Kunder <%= session.getAttribute("cID")%> - Buildings</title>
+        <title>Polygon - Kunde <%= session.getAttribute("cID")%> - Bygninger</title>
     </head>
     <body>
         <h1>Registrede bygninger</h1>
