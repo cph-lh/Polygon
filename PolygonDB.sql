@@ -1304,7 +1304,6 @@ insert into customers VALUES (2222,'TestPerson3','22332233','gadegade 123','2700
 insert into polygonemployee values (10, 'poly1');
 insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (1111,'A422','gade 123','2500',123,40,2,1990);
 insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (1122,'A423','gade 123','2700',123,40,2,1990);
-select * from customers natural join zipcodes;
-select * from buildings natural join zipcodes;
-
-
+insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (1111,'A33','gade 7913','2700',321,50,1,1999);
+insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (2222,'A34','gade 33','2800',30,200,3,2005);
+insert into buildings (cID,bName,bAddress,zip,bParcel,bSize,bFloors,bYear)VALUES (2211,'A35','gade 11','2600',30,20,3,2004);
