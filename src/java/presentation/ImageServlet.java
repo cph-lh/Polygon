@@ -30,7 +30,6 @@ public class ImageServlet extends HttpServlet
     {
         String bID = "";
         bID += request.getParameter("bID");
-        System.out.println("FØR try");
         try
         {
             InputStream stream = con.getFloorPlan(Integer.parseInt(bID));
@@ -76,17 +75,7 @@ public class ImageServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-//        String id;
-//        
-//        HttpSession session = request.getSession(true);
-//        switch (request.getParameter("do_this"))
-//        {
-//            case "viewFP":
-//                id = request.getParameter("id");
-//                session.setAttribute("bID", id);
-//                forward(request, response, "/floorPlan.jsp");
-//                break;
-//        }
+
     }
 
     /**
