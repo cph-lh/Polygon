@@ -109,15 +109,15 @@ public class BuildingDataMapper
             Connection con = new Connector().connect();
             PreparedStatement pstmt = null;
             ResultSet res = null;
-            InputStream stream = null;
+            InputStream input = null;
             pstmt = con.prepareStatement("select * from floor_plan where bID = '" + bID + "';");
             res = pstmt.executeQuery();
             
             while (res.next())
             {
-                stream = res.getBinaryStream("floor_plan");
+                input = res.getBinaryStream("floor_plan");
             }
-            return stream;
+            return input;
         } catch (SQLException | IllegalArgumentException ex)
         {
             Logger.getLogger(BuildingDataMapper.class.getName()).log(Level.SEVERE, null, ex);
