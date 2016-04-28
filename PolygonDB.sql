@@ -57,36 +57,6 @@ CREATE TABLE buildingFloor (
 		fSize INT DEFAULT NULL,
 foreign key (bID) references buildings(bID));
 
-CREATE TABLE room (
-		roomID INT NOT NULL,
-		roomName VARCHAR(25),
-		roomComment VARCHAR (50),
-		rRecommendation VARCHAR (50),
-primary key (roomID));
-
-CREATE TABLE moistureAnalysis (
-		roomID INT NOT NULL,
-		moistureScan BOOLEAN DEFAULT NULL,
-		analysisResult DOUBLE DEFAULT NULL,
-		analysisComment VARCHAR (50) default null,
-foreign key (roomID) references room(roomID));    
-
-CREATE TABLE damageRepair (
-		roomID INT NOT NULL,
-		damaged boolean default false,
-		dmgDate DATE,
-		dmgLocation VARCHAR (20),
-		dmgDone VARCHAR (50),
-		dmgRepaired VARCHAR (50),
-foreign key(roomID) references room(roomID));
-
-CREATE TABLE damageType (
-		moisture_water	BOOLEAN DEFAULT NULL,
-		rot_fungus	BOOLEAN DEFAULT NULL,
-		mould	BOOLEAN DEFAULT NULL,
-		fire	BOOLEAN DEFAULT NULL,
-		otherDamage	BOOLEAN DEFAULT NULL);
-		
 CREATE TABLE pictures (
 		bID INT NOT NULL,
 		bOutside MEDIUMBLOB,
