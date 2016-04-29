@@ -10,8 +10,7 @@
         <h1>Admin forside</h1>
         <form action="ControllerServlet" method="post">
             <input type="submit" value="Tilføj kunde" name="aButton">
-            <input type="submit" value="Kundeliste" name="aButton">
-            <input type="submit" value="Udfyld rapport" name="aButton">        
+            <input type="submit" value="Kundeliste" name="aButton">      
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
         <form action="index.html" method="post"><br>

@@ -20,7 +20,7 @@
             <input type="hidden" name="do_this" value="addBuilding">
         </form>
         <form action="customerPage.jsp" method="post">
-        <input type="button" value="Back" onClick="window.location = 'customerPage.jsp'; return true;">
+        <input type="button" value="Tilbage" onClick="window.location = 'customerPage.jsp'; return true;">
         </form>
     </body>
 </html>
