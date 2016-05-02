@@ -14,7 +14,7 @@
             <input type="hidden" name="do_this" value="adminButtons">
         </form>
         <form action="index.html" method="post"><br>
-            <input type="button" value="Tilbage" onClick="window.location = 'index.html'; return true;"> 
+            <input type="button" value="Kunde login" onClick="window.location = 'customerLogin.jsp'; return true;"> 
         </form>
     </body>
 </html>
