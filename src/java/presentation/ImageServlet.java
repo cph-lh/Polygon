@@ -28,8 +28,9 @@ public class ImageServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+        HttpSession session = request.getSession(true);
         String bID = "";
-        bID += request.getParameter("bID");
+        bID += session.getAttribute("bID");
         try
         {
             InputStream stream = con.getFloorPlan(Integer.parseInt(bID));
@@ -39,24 +40,16 @@ public class ImageServlet extends HttpServlet
             try
             {
                 input = new BufferedInputStream(stream, 16177215);
-
-                response.setContentType("image/jpeg");
-
                 output = new BufferedOutputStream(response.getOutputStream(), 16177215);
 
                 byte[] buffer = new byte[16177215];
-                int length;
-                while ((length = input.read(buffer)) > 0)
-                {
-                    output.write(buffer, 0, length);
-                }
+                int length = input.read(buffer);
+                output.write(buffer, 0, length);
             } finally
             {
                 output.close();
                 input.close();
             }
-
-            forward(request, response, "/floorPlan.jsp");
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -75,7 +68,14 @@ public class ImageServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-
+        HttpSession session = request.getSession(true);
+        switch (request.getParameter("do_this"))
+        {
+            case "viewFP":
+                session.setAttribute("bID", request.getParameter("bID"));
+                forward(request, response, "/floorPlan.jsp");
+                break;
+        }
     }
 
     /**

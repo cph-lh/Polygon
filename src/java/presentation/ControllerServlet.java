@@ -49,9 +49,6 @@ public class ControllerServlet extends HttpServlet {
                     con.addFloorPlan(Integer.parseInt(id), input);
                     forward(request, response, "/viewBuilding.jsp");
                     break;
-                case "viewFP":
-                    forward(request, response, "/floorPlan.jsp");
-                    break;
                 case "adminButtons":
                     switch (request.getParameter("aButton").substring(0, 4))
                     {
